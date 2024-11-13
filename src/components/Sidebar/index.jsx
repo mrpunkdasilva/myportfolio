@@ -1,20 +1,15 @@
-import Avatar from '../../img/user.png';
-
 import { SocialNetworks } from '../SocialNetworks'
 import { InformationContainer } from '../InformationContainer';
 
 import './style.sass';
 
 export const Sidebar = () => {
-
-
 	return (	
 		<aside id="sidebar">
-			<img src={Avatar} alt="Gustavo Henrique" />
 
 			<p className="title">
 				FullStack Developer<br/><br/>
-				Nickname: <span className="nick">Mr. Nullus</span>
+				Nickname: <span className="nick">Mr. Punk da Silva</span>
 			</p>
 
 			<SocialNetworks />
@@ -22,7 +17,7 @@ export const Sidebar = () => {
 			<InformationContainer />
 
 			<a 
-				href="../../../Curriculo - Gustavo Henrique.pdf" 
+				href="../../../resources/Currículo%20Gustavo%20Henrique%20de%20Jesus%20da%20Silva.pdf"
 				className="btn" 
 				download={true}
 				role="button" 

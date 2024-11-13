@@ -40,11 +40,6 @@ const projects = [
 		link: "https://doceria-velha-infancia.vercel.app/",
 	},
     {
-		title: "Chief Delas Fotos",
-		description: "This repository was made for a website project for a photographer, built in HTML5 and CSS3",
-		link: "https://mrnullus.github.io/site_photo/",
-	},
-    {
 		title: "Mental Health DB",
 		description: "Mental Health DB is a website to provide information about Mental Health: also dealing with other issues that intertwine with our health. Focused in created project is a implementation of techniques for acessibility",
 		link: "https://mrnullus.github.io/mental-health-db/",
@@ -68,6 +63,11 @@ const projects = [
 		title: "React Search",
 		description: "In this project I put into practice ways of doing research with React.Being them: Simple search locally, With Database, With API",
 		link: "https://react-search-sand.vercel.app/",
+	},
+	   {
+		title: "Chief Delas Fotos",
+		description: "This repository was made for a website project for a photographer, built in HTML5 and CSS3",
+		link: "https://mrnullus.github.io/site_photo/",
 	},
 	{
 		title: "MyGatsby",

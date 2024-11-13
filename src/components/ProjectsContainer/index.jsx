@@ -1,5 +1,5 @@
 import "./style.sass";
-import { projects } from "../../data/projects";
+import { projects } from "../../data/projects.jsx";
 import { ProjectArticle } from "../ArticleProject";
 
 export const ProjectsContainer = () => {
@@ -10,6 +10,8 @@ export const ProjectsContainer = () => {
 			<p>
 				Get to know my projects that I have done, implementing all the technologies that I master and that I am learning.
 			</p>
+			<br/>
+			<br/>
 
 			{projects.map((project) => (
 				<>
@@ -26,7 +28,7 @@ export const ProjectsContainer = () => {
 			))}
 
 			<p>
-				Made with 💜 by Gustavo Henrique | Mr Nullus
+				Made with 💜 by Gustavo Henrique
 			</p>
 		</section>
 	);
