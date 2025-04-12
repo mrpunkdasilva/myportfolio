@@ -2,78 +2,89 @@
 @use '../../styles/mixins'
 
 #technologies-container
-	margin-bottom: 1rem
+  margin-bottom: 1rem
 
-	.technologies-grid
-		display: flex
-		flex-wrap: wrap
-		gap: 1.5rem
+  h2
+    margin-bottom: 2rem
 
-		.technology-card
-			@include mixins.center
-			gap: 1rem
-			min-width: 42%
-			border: 1px solid #333
-			border-radius: variables.$card-border-radius
-			padding: 1rem
+  .technologies-grid
+    display: flex
+    flex-wrap: wrap
+    gap: 1.5rem
 
-		h3
-			color: variables.$text-color
-			margin-bottom: 1rem
+    .technology-card
+      @include mixins.center
+      gap: 1rem
+      min-width: 42%
+      border: 1px solid #333
+      border-radius: variables.$card-border-radius
+      padding: 1rem
+      transition: all 0.3s ease
 
-		svg
-			font-size: 5rem
+      &:hover
+        transform: translateY(-5px)
+        border-color: variables.$accent-color
+        box-shadow: 0 5px 15px rgba(variables.$accent-color, 0.2)
 
+      .technology-info
+        h3
+          color: variables.$text-color
+          margin-bottom: 1rem
+
+        p
+          color: variables.$text-color-secondary
+
+      svg
+        font-size: 5rem
 
 #html svg
-	color: #E44D26
+  color: #E44D26
 
 #css svg
-	color: #1572B6
+  color: #1572B6
 
 #js svg
-	color: #F0DB4F
+  color: #F0DB4F
 
 #sqlServer svg
-	color: #00618A
+  color: #00618A
 
 #mySql svg
-	color: #E44D26
+  color: #E44D26
 
-#react  svg
-	color: #61DAFB
+#react svg
+  color: #61DAFB
 
 #php svg
-	color: #4F5D93
+  color: #4F5D93
 
-#python svg 
-	color: #3572A5
-
+#python svg
+  color: #3572A5
 
 #tailwindcss svg
-	color: #06B6D4
+  color: #06B6D4
 
 #github svg
-	color: #121821
+  color: #121821
 
 #ruby svg
-	color: #701516
+  color: #701516
 
 #figma svg
-	color: #F44336
+  color: #F44336
 
 #git svg
-	color: #F14E32
+  color: #F14E32
 
 #nextjs svg
-	color: #000000
+  color: #000000
 
 #express svg
-	color: #000000
+  color: #000000
 
 #firebase svg
-	color: #AA4465
+  color: #AA4465
 
 #laravel svg
-	color: #F05033
+  color: #F05033
 

@@ -1,19 +1,70 @@
-@use '_variables'
+@use 'variables'
 
 @mixin center
-	display: flex
-	justify-content: center
-	align-items: center
+  display: flex
+  align-items: center
+  justify-content: center
 
-@mixin btn
-	padding: 1rem 1.2rem
-	border-radius: 3rem
-	color: variables.$text-color
-	background: variables.$gradient
-	text-decoration: none
+@mixin glass-effect
+  background: variables.$glass-gradient
+  backdrop-filter: blur(10px)
+  border: 1px solid rgba(255, 255, 255, 0.1)
 
-@mixin gradient-border
-	content: ""
-	background: variables.$gradient
-	height: 3px
-	width: 30%
+@mixin neon-border
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    inset: 0
+    border: 1px solid variables.$accent-color
+    box-shadow: variables.$neon-glow
+    pointer-events: none
+
+@mixin cyber-button
+  position: relative
+  padding: 1rem 2rem
+  background: variables.$bg-color
+  color: variables.$text-color
+  border: 1px solid variables.$accent-color
+  text-transform: uppercase
+  letter-spacing: 2px
+  font-family: variables.$font-mono
+  font-size: 0.9rem
+  overflow: hidden
+  transition: variables.$hover-transition
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    background: variables.$gradient
+    transition: variables.$hover-transition
+    z-index: -1
+  
+  &:hover
+    color: variables.$text-color
+    box-shadow: variables.$neon-glow
+    &::before
+      left: 0
+
+@mixin section-title
+  font-size: 2.5rem
+  font-family: variables.$font-mono
+  color: variables.$text-color
+  margin-bottom: 2rem
+  padding-bottom: 1rem
+  border-bottom: 2px solid variables.$accent-color
+  text-transform: uppercase
+  letter-spacing: 3px
+  position: relative
+  
+  &::after
+    content: '</'
+    font-size: 1rem
+    color: variables.$accent-color
+    position: absolute
+    right: 0
+    bottom: -1rem

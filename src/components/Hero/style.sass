@@ -1,0 +1,146 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.hero
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  overflow: hidden
+  background-color: variables.$body-bg-color
+  
+  // Grid pattern using CSS
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-image: linear-gradient(variables.$accent-color 1px, transparent 1px), linear-gradient(90deg, variables.$accent-color 1px, transparent 1px)
+    background-size: 30px 30px
+    background-position: center center
+    opacity: 0.1
+    transform-origin: center
+    animation: grid-scroll 20s linear infinite
+    
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: radial-gradient(circle at center, transparent 0%, variables.$body-bg-color 70%)
+
+  .model-container
+    position: absolute
+    left: 5%
+    width: 400px
+    height: 400px
+    canvas
+      width: 100% !important
+      height: 100% !important
+    
+  .hero-content
+    @include mixins.glass-effect
+    max-width: 800px
+    margin-left: auto
+    padding: 3rem
+    text-align: center
+    position: relative
+    z-index: 1
+    border: 1px solid rgba(variables.$accent-color, 0.2)
+    box-shadow: 0 0 20px rgba(variables.$accent-color, 0.1)
+    
+    &::before
+      content: '<>'
+      position: absolute
+      top: 1rem
+      left: 1rem
+      font-family: variables.$font-mono
+      color: variables.$accent-color
+      opacity: 0.5
+      font-size: 0.8rem
+    
+    &::after
+      content: '</>'
+      position: absolute
+      bottom: 1rem
+      right: 1rem
+      font-family: variables.$font-mono
+      color: variables.$accent-color
+      opacity: 0.5
+      font-size: 0.8rem
+    
+    h1
+      font-size: 4rem
+      font-family: variables.$font-mono
+      margin-bottom: 1rem
+      background: variables.$gradient
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      text-shadow: 0 0 20px rgba(variables.$accent-color, 0.5)
+      letter-spacing: 2px
+      
+    .title-accent
+      color: variables.$accent-color
+      font-size: 1.5rem
+      margin-bottom: 2rem
+      font-family: variables.$font-mono
+      text-transform: uppercase
+      letter-spacing: 3px
+      
+    p
+      color: variables.$text-color-secondary
+      font-size: 1.2rem
+      margin-bottom: 2rem
+      font-family: variables.$font-mono
+      
+    .cta-buttons
+      display: flex
+      gap: 1.5rem
+      justify-content: center
+      margin-top: 2rem
+      
+      .primary-btn, .secondary-btn
+        @include mixins.cyber-button
+        min-width: 200px
+      
+      .secondary-btn
+        background: transparent
+        &:hover
+          border-color: variables.$accent-color-secondary
+
+@keyframes grid-scroll
+  0%
+    transform: translateY(0) rotate(0deg)
+  100%
+    transform: translateY(-100%) rotate(0deg)
+
+// Responsive adjustments
+@media (max-width: 1200px)
+  .hero
+    .model-container
+      display: none
+    
+    .hero-content
+      margin: 0 auto
+
+@media (max-width: 768px)
+  .hero
+    .hero-content
+      margin: 1rem
+      padding: 2rem
+      
+      h1
+        font-size: 2.5rem
+      
+      .title-accent
+        font-size: 1.2rem
+      
+      .cta-buttons
+        flex-direction: column
+        align-items: center
+        gap: 1rem
