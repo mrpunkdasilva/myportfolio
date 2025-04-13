@@ -36,6 +36,12 @@
     min-height: 100vh
     overflow: hidden
     
+    @include mixins.tablet
+        padding: 4rem 1rem
+    
+    @include mixins.mobile
+        padding: 3rem 1rem
+    
     .floating-cubes-container
         position: absolute
         top: 0
@@ -70,8 +76,12 @@
         text-align: center
         margin-bottom: 4rem
         
+        @include mixins.mobile
+            margin-bottom: 2rem
+        
         .glitch-container
             margin-bottom: 1rem
+            overflow: hidden // Previne que o efeito glitch ultrapasse
             
             h2
                 font-family: variables.$font-mono
@@ -82,6 +92,15 @@
                 letter-spacing: 4px
                 animation: glitch 3s infinite
                 position: relative
+                
+                @include mixins.tablet
+                    font-size: 2.5rem
+                    letter-spacing: 3px
+                
+                @include mixins.mobile
+                    font-size: 1.75rem
+                    letter-spacing: 2px
+                    word-break: break-word // Permite quebra de palavra se necessário
                 
                 &::before, &::after
                     content: attr(data-text)
@@ -134,6 +153,11 @@
             opacity: 0.8
             margin-top: 1rem
             text-shadow: 0 0 5px variables.$accent-color
+            
+            @include mixins.mobile
+                font-size: 0.85rem
+                padding: 0 1rem
+                word-break: break-word
 
     .projects-grid
         display: flex
@@ -141,10 +165,21 @@
         gap: 2.5rem
         justify-content: center
         
+        @include mixins.mobile
+            gap: 1.5rem
+        
         .project-card
             flex: 1
-            min-width: 400px
+            min-width: 300px // Reduzido de 400px para melhor adaptação mobile
             max-width: calc(33.33% - 2.5rem)
+            
+            @include mixins.tablet
+                min-width: 280px
+                max-width: calc(50% - 1.5rem)
+            
+            @include mixins.mobile
+                min-width: 100%
+                max-width: 100%
             background: rgba(variables.$bg-color-secondary, 0.7)
             backdrop-filter: blur(10px)
             border-radius: 4px
@@ -230,3 +265,22 @@
             .project-card
                 max-width: 100%  // 1 card por linha
                 min-width: 250px
+
+// Ajuste da animação glitch para mobile
+@include mixins.mobile
+    @keyframes glitch
+        0%
+            transform: translate(0)
+            text-shadow: -1px 1px #ff00c1, 1px -1px #3498db
+        25%
+            transform: translate(-1px, 1px)
+            text-shadow: 1px -1px #ff00c1, -1px 1px #3498db
+        50%
+            transform: translate(1px, -1px)
+            text-shadow: -1px 1px #ff00c1, 1px -1px #3498db
+        75%
+            transform: translate(-1px, 1px)
+            text-shadow: 1px -1px #ff00c1, -1px 1px #3498db
+        100%
+            transform: translate(0)
+            text-shadow: -1px 1px #ff00c1, 1px -1px #3498db

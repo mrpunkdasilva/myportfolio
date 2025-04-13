@@ -68,3 +68,43 @@
     position: absolute
     right: 0
     bottom: -1rem
+
+// Breakpoints
+@mixin mobile
+  @media (max-width: 480px)
+    @content
+
+@mixin tablet
+  @media (max-width: 768px)
+    @content
+
+@mixin laptop
+  @media (max-width: 1024px)
+    @content
+
+@mixin desktop
+  @media (max-width: 1200px)
+    @content
+
+// Flex helpers
+@mixin flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin flex-column
+  display: flex
+  flex-direction: column
+
+// Container padrão responsivo
+@mixin container
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 1rem
+  
+  @include tablet
+    padding: 0 1.5rem
+  
+  @include mobile
+    padding: 0 1rem

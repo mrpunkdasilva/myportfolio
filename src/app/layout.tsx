@@ -5,6 +5,11 @@ import '../styles/globals.sass'
 export const metadata: Metadata = {
   title: 'Gustavo Henrique | Portfolio',
   description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas. Confira meus projetos e experiência em desenvolvimento web.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1, // opcional - impede zoom em inputs em iOS
+  },
   keywords: 'Full Stack Developer, React, Node.js, TypeScript, Web Development, Portfolio',
   authors: [{ name: 'Gustavo Henrique' }],
   creator: 'Gustavo Henrique',
@@ -59,15 +64,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#7928ca" />
-        <meta name="msapplication-TileColor" content="#7928ca" />
-        <meta name="theme-color" content="#0a0a0a" />
-      </head>
       <body>
         {children}
         <Footer />

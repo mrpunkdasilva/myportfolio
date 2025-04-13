@@ -7,45 +7,19 @@
   box-sizing: border-box
   font-family: variables.$font-stack
 
-// Seleção de texto
-::selection
-  background: variables.$accent-color
-  color: variables.$bg-color
-  text-shadow: none
-
-// Firefox
-::-moz-selection
-  background: variables.$accent-color
-  color: variables.$bg-color
-  text-shadow: none
-
-// Scrollbar - Webkit (Chrome, Safari, Edge, etc)
-::-webkit-scrollbar
-  width: 10px
+html
+  font-size: 16px
   
-::-webkit-scrollbar-track
-  background: variables.$bg-color-secondary
-  
-::-webkit-scrollbar-thumb
-  background: variables.$accent-color
-  border-radius: 4px
-  
-  &:hover
-    background: darken(variables.$accent-color, 10%)
-
-// Scrollbar - Firefox
-*
-  scrollbar-width: thin
-  scrollbar-color: variables.$accent-color variables.$bg-color-secondary
+  @include mixins.mobile
+    font-size: 14px
 
 body
   background-color: variables.$bg-color
   color: variables.$text-color
+  overflow-x: hidden
 
 .main-container
-  max-width: 1200px
-  margin: 0 auto
-  padding: 2rem
+  @include mixins.container
 
 .hero
   display: flex
@@ -54,10 +28,14 @@ body
   min-height: 80vh
   padding: 2rem 0
   
-  @media (max-width: 768px)
+  @include mixins.tablet
     flex-direction: column
     text-align: center
     gap: 2rem
+    padding: 4rem 0
+  
+  @include mixins.mobile
+    padding: 2rem 0
 
   .model-container
     flex: 1
@@ -67,13 +45,22 @@ body
       border-radius: 10px
       background: rgba(variables.$accent-color, 0.05)
     
-    @media (max-width: 768px)
+    @include mixins.tablet
       width: 100%
       height: 300px
+    
+    @include mixins.mobile
+      height: 250px
 
   .hero-content
     flex: 1
     padding: 2rem
+    
+    @include mixins.tablet
+      padding: 1rem
+    
+    @include mixins.mobile
+      padding: 0
 
     h1
       font-size: 3rem
@@ -82,7 +69,10 @@ body
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
       
-      @media (max-width: 768px)
+      @include mixins.tablet
+        font-size: 2.5rem
+      
+      @include mixins.mobile
         font-size: 2rem
 
     .title-accent
@@ -90,7 +80,7 @@ body
       color: variables.$accent-color
       margin-bottom: 1rem
       
-      @media (max-width: 768px)
+      @include mixins.mobile
         font-size: 1.2rem
 
     p
@@ -98,20 +88,34 @@ body
       margin-bottom: 2rem
       font-size: 1.1rem
       line-height: 1.6
+      
+      @include mixins.mobile
+        font-size: 1rem
+        margin-bottom: 1.5rem
 
     .cta-buttons
       display: flex
       gap: 1rem
       
-      @media (max-width: 768px)
+      @include mixins.tablet
         justify-content: center
+      
+      @include mixins.mobile
+        flex-direction: column
+        gap: 0.8rem
 
       .primary-btn, .secondary-btn
-        @include mixins.cyber-button
         padding: 0.8rem 1.5rem
         font-size: 1rem
         text-decoration: none
+        border-radius: 4px
+        transition: all 0.3s ease
         
+        @include mixins.mobile
+          width: 100%
+          padding: 1rem
+          text-align: center
+
         &:hover
           transform: translateY(-2px)
 
@@ -122,3 +126,50 @@ body
       .secondary-btn
         border: 1px solid variables.$accent-color
         color: variables.$accent-color
+
+// Scrollbar styles
+::-webkit-scrollbar
+  width: 8px
+  
+  @include mixins.mobile
+    width: 4px
+
+::-webkit-scrollbar-track
+  background: variables.$bg-color-secondary
+
+::-webkit-scrollbar-thumb
+  background: variables.$accent-color
+  border-radius: 4px
+  
+  &:hover
+    background: darken(variables.$accent-color, 10%)
+
+// Selection styles
+::selection
+  background: variables.$accent-color
+  color: variables.$bg-color
+  text-shadow: none
+
+::-moz-selection
+  background: variables.$accent-color
+  color: variables.$bg-color
+  text-shadow: none
+
+// Utility classes
+.hidden-mobile
+  @include mixins.mobile
+    display: none
+
+.show-mobile
+  display: none
+  
+  @include mixins.mobile
+    display: block
+
+.text-center-mobile
+  @include mixins.mobile
+    text-align: center
+
+.full-width-mobile
+  @include mixins.mobile
+    width: 100%
