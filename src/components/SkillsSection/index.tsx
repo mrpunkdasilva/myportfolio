@@ -48,7 +48,7 @@ export const SkillsSection = () => {
     return (
         <section id="skills" className="skills-section">
             <div className="section-header">
-                <h2>Skills & Technologies</h2>
+                <h2 data-text="Skills & Technologies">Skills & Technologies</h2>
                 <p>Technologies I've been working with recently</p>
             </div>
 
@@ -112,7 +112,7 @@ export const SkillsSection = () => {
                             '--skill-color': tech.color || '#666'
                         } as React.CSSProperties}
                     >
-                        <div className="skill-icon">
+                        <div className={`skill-icon ${tech.id}-icon`}>
                             {tech.icon}
                         </div>
                         <div className="skill-info">

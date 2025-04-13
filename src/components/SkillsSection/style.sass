@@ -3,51 +3,71 @@
 
 .skills-section
     padding: 4rem 2rem
-    background: linear-gradient(to bottom right, rgba(variables.$bg-color-secondary, 0.95), rgba(variables.$bg-color, 0.98))
+    background: linear-gradient(135deg, rgba(variables.$bg-color-secondary, 0.92), rgba(variables.$bg-color, 0.95))
     border-radius: 24px
     margin: 2rem 0
-    border: 1px solid rgba(variables.$accent-color, 0.1)
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2)
-    backdrop-filter: blur(10px)
+    border: 1px solid rgba(variables.$accent-color, 0.15)
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(variables.$accent-color, 0.1), inset 0 0 32px rgba(variables.$accent-color, 0.05)
+    backdrop-filter: blur(20px)
     position: relative
     overflow: hidden
 
-    // Efeito de brilho no topo
+    // Efeito de grid cyberpunk no background
     &::before
         content: ''
         position: absolute
         top: 0
-        left: 15%
-        right: 15%
-        height: 1px
-        background: variables.$gradient
-        opacity: 0.5
+        left: 0
+        right: 0
+        bottom: 0
+        background: linear-gradient(90deg, rgba(variables.$accent-color, 0.03) 1px, transparent 1px), linear-gradient(0deg, rgba(variables.$accent-color, 0.03) 1px, transparent 1px)
+        background-size: 20px 20px
+        pointer-events: none
+        animation: gridMove 20s linear infinite
+        z-index: 0
 
     .section-header
+        position: relative
+        z-index: 1
         text-align: center
         margin-bottom: 4rem
-        position: relative
 
         h2
-            font-size: 3rem
+            font-size: 3.5rem
             margin-bottom: 1rem
-            background: variables.$gradient
+            background: linear-gradient(135deg, variables.$accent-color, variables.$accent-color-secondary)
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
             font-weight: 700
-            letter-spacing: -0.5px
-            
-            // Efeito de sombra no texto
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+            text-transform: uppercase
+            font-family: variables.$font-mono
+            position: relative
+            display: inline-block
 
-        p
-            color: variables.$text-color-secondary
-            font-size: 1.2rem
-            max-width: 600px
-            margin: 0 auto
-            line-height: 1.6
+            &::before, &::after
+                content: attr(data-text)
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: linear-gradient(135deg, variables.$accent-color, variables.$accent-color-secondary)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+
+            &::before
+                left: 2px
+                text-shadow: -2px 0 variables.$accent-color
+                animation: glitch 2s infinite linear alternate-reverse
+
+            &::after
+                left: -2px
+                text-shadow: 2px 0 variables.$accent-color-secondary
+                animation: glitch 3s infinite linear alternate-reverse
 
     .skills-filters
+        position: relative
+        z-index: 1
         margin-bottom: 3rem
 
         .search-bar
@@ -63,15 +83,17 @@
                 border: 1px solid rgba(variables.$accent-color, 0.2)
                 color: variables.$text-color
                 font-size: 1.1rem
+                font-family: variables.$font-mono
+                letter-spacing: 1px
                 transition: all 0.3s ease
-                
+
                 &::placeholder
                     color: rgba(variables.$text-color-secondary, 0.7)
 
                 &:focus
                     outline: none
                     border-color: variables.$accent-color
-                    box-shadow: 0 0 0 4px rgba(variables.$accent-color, 0.1)
+                    box-shadow: 0 0 15px rgba(variables.$accent-color, 0.2)
                     background: rgba(variables.$bg-color, 0.8)
 
             .filter-icon
@@ -79,7 +101,7 @@
                 right: 1.2rem
                 top: 50%
                 transform: translateY(-50%)
-                color: variables.$text-color-secondary
+                color: variables.$accent-color
                 font-size: 1.2rem
                 pointer-events: none
 
@@ -101,12 +123,27 @@
                 font-size: 1rem
                 font-weight: 500
                 letter-spacing: 0.5px
-                
+                position: relative
+                overflow: hidden
+
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: -100%
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(90deg, transparent, rgba(variables.$accent-color, 0.2), transparent)
+                    transition: 0.5s
+
                 &:hover
                     background: rgba(variables.$accent-color, 0.15)
                     transform: translateY(-2px)
                     box-shadow: 0 4px 12px rgba(variables.$accent-color, 0.15)
-                
+
+                    &::before
+                        left: 100%
+
                 &.active
                     background: linear-gradient(135deg, rgba(variables.$accent-color, 0.2), rgba(variables.$accent-color, 0.3))
                     border-color: variables.$accent-color
@@ -114,6 +151,8 @@
                     box-shadow: 0 4px 12px rgba(variables.$accent-color, 0.2)
 
     .skills-grid
+        position: relative
+        z-index: 1
         display: grid
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
         gap: 2rem
@@ -121,69 +160,44 @@
         padding: 0 1rem
 
         .skill-card
-            background: rgba(variables.$bg-color, 0.7)
+            background: rgba(variables.$bg-color, 0.4)
+            backdrop-filter: blur(10px)
+            border: 1px solid rgba(255, 255, 255, 0.1)
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 0 32px rgba(var(--skill-color), 0.05)
             border-radius: 16px
             padding: 2rem
             display: flex
             align-items: center
             gap: 1.5rem
-            border: 1px solid rgba(var(--skill-color), 0.2)
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-            backdrop-filter: blur(5px)
             position: relative
             overflow: hidden
 
-            // Efeito de brilho no canto superior
             &::before
                 content: ''
                 position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: 100%
-                background: linear-gradient(
-                    135deg,
-                    rgba(var(--skill-color), 0.1) 0%,
-                    transparent 50%,
-                    transparent 100%
-                )
+                inset: -1px
+                background: linear-gradient(135deg, rgba(var(--skill-color), 0.5), rgba(var(--skill-color), 0.1), rgba(255, 255, 255, 0.1))
+                border-radius: inherit
+                z-index: -1
                 opacity: 0
                 transition: opacity 0.3s ease
 
-            // Linha decorativa
             &::after
                 content: ''
                 position: absolute
-                bottom: 0
-                left: 0
-                width: 30%
-                height: 2px
-                background: rgb(var(--skill-color))
-                opacity: 0.3
-                transition: width 0.3s ease
+                inset: 1px
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))
+                border-radius: inherit
+                z-index: -1
 
             &:hover
-                transform: translateY(-6px) scale(1.02)
-                box-shadow: 0 8px 24px rgba(var(--skill-color), 0.15), 0 0 0 1px rgba(var(--skill-color), 0.3)
-                background: rgba(variables.$bg-color, 0.8)
+                background: rgba(variables.$bg-color, 0.6)
+                transform: translateY(-8px)
+                box-shadow: 0 8px 32px rgba(var(--skill-color), 0.2), 0 0 0 1px rgba(var(--skill-color), 0.3), inset 0 0 48px rgba(var(--skill-color), 0.1)
 
                 &::before
                     opacity: 1
-
-                &::after
-                    width: 100%
-
-                .skill-icon
-                    transform: scale(1.1) rotate(5deg)
-                    filter: drop-shadow(0 4px 8px rgba(var(--skill-color), 0.4))
-
-                .skill-info
-                    h4
-                        color: rgb(var(--skill-color))
-                        text-shadow: 0 0 8px rgba(var(--skill-color), 0.3)
-
-                    .skill-level
-                        color: rgba(variables.$text-color, 0.9)
 
             .skill-icon
                 font-size: 2.8rem
@@ -198,130 +212,278 @@
                 justify-content: center
                 min-width: 64px
                 height: 64px
+                background: rgba(var(--skill-color), 0.1)
+                box-shadow: 0 0 20px rgba(var(--skill-color), 0.2), inset 0 0 16px rgba(var(--skill-color), 0.2)
+                border: 1px solid rgba(var(--skill-color), 0.3)
+
+                &:hover
+                    box-shadow: 0 0 30px rgba(var(--skill-color), 0.3), inset 0 0 24px rgba(var(--skill-color), 0.3)
 
             .skill-info
                 flex: 1
-                position: relative
-                padding-left: 1rem
-
-                // Linha vertical decorativa
-                &::before
-                    content: ''
-                    position: absolute
-                    left: 0
-                    top: 50%
-                    transform: translateY(-50%)
-                    width: 2px
-                    height: 70%
-                    background: rgb(var(--skill-color))
-                    opacity: 0.3
 
                 h4
+                    color: variables.$text-color
                     font-size: 1.2rem
                     margin-bottom: 0.5rem
-                    color: variables.$text-color
-                    font-weight: 600
-                    transition: all 0.3s ease
                     display: flex
                     align-items: center
                     gap: 0.5rem
 
-                    // Indicador de nível opcional
-                    &::after
-                        content: ''
-                        display: inline-block
-                        width: 8px
-                        height: 8px
-                        border-radius: 50%
-                        background: rgb(var(--skill-color))
-                        opacity: 0.8
-
                 .skill-level
                     font-size: 0.9rem
                     color: variables.$text-color-secondary
-                    display: block
-                    line-height: 1.4
-                    transition: all 0.3s ease
-                    padding: 0.3rem 0
+                    display: flex
+                    align-items: center
+                    gap: 0.5rem
 
-            // Efeito de brilho nos cantos
-            .corner-glow
-                position: absolute
-                width: 100px
-                height: 100px
-                background: radial-gradient(
-                    circle,
-                    rgba(var(--skill-color), 0.15) 0%,
-                    transparent 70%
-                )
-                opacity: 0
-                transition: opacity 0.3s ease
+                    .level-indicator
+                        display: flex
+                        gap: 2px
 
-                &.top-right
-                    top: -50px
-                    right: -50px
+                        .level-dot
+                            width: 8px
+                            height: 8px
+                            border-radius: 50%
+                            background: rgba(var(--skill-color), 0.3)
 
-                &.bottom-left
-                    bottom: -50px
-                    left: -50px
+                            &.active
+                                background: rgb(var(--skill-color))
 
-            &:hover
-                .corner-glow
-                    opacity: 1
+            // Animação de entrada
+            animation: skillCardEnter 0.5s ease forwards
+            opacity: 0
 
-        // Animação de entrada
-        @keyframes skillCardEnter
-            from
-                opacity: 0
-                transform: translateY(20px)
-            to
-                opacity: 1
-                transform: translateY(0)
+            @for $i from 1 through 12
+                &:nth-child(#{$i})
+                    animation-delay: #{$i * 0.1}s
+
+        // Cores específicas para cada tecnologia
+        .html-icon
+            color: #E44D26 !important
+
+        .css-icon
+            color: #1572B6 !important
+
+        .js-icon
+            color: #F0DB4F !important
+
+        .typescript-icon
+            color: #3178C6 !important
+
+        .react-icon
+            color: #61DAFB !important
+
+        .next-icon
+            color: #000000 !important
+
+        .node-icon
+            color: #339933 !important
+
+        .python-icon
+            color: #3776AB !important
+
+        .java-icon
+            color: #007396 !important
+
+        .php-icon
+            color: #777BB4 !important
+
+        .ruby-icon
+            color: #CC342D !important
+
+        .git-icon
+            color: #F05032 !important
+
+        .docker-icon
+            color: #2496ED !important
+
+        .aws-icon
+            color: #FF9900 !important
+
+        .sass-icon
+            color: #CC6699 !important
+
+        .tailwind-icon
+            color: #06B6D4 !important
+
+        .vue-icon
+            color: #4FC08D !important
+
+        .angular-icon
+            color: #DD0031 !important
+
+        .mysql-icon
+            color: #4479A1 !important
+
+        .mongodb-icon
+            color: #47A248 !important
+
+        .postgresql-icon
+            color: #336791 !important
+
+        .firebase-icon
+            color: #FFCA28 !important
+
+        .graphql-icon
+            color: #E10098 !important
+
+        .redux-icon
+            color: #764ABC !important
+
+        .webpack-icon
+            color: #8DD6F9 !important
+
+        .jest-icon
+            color: #C21325 !important
+
+        .cypress-icon
+            color: #17202C !important
+
+        .figma-icon
+            color: #F24E1E !important
+
+        .bootstrap-icon
+            color: #7952B3 !important
+
+        .laravel-icon
+            color: #FF2D20 !important
+
+        .spring-icon
+            color: #6DB33F !important
+
+    @keyframes skillCardEnter
+        from
+            opacity: 0
+            transform: translateY(20px)
+        to
+            opacity: 1
+            transform: translateY(0)
+
+    // Media queries para responsividade
+    @media (max-width: 768px)
+        .skill-card
+            padding: 1.5rem
+
+            .skill-icon
+                font-size: 2.4rem
+                min-width: 48px
+                height: 48px
+                padding: 0.8rem
+
+            .skill-info
+                h4
+                    font-size: 1.1rem
+
+                .skill-level
+                    font-size: 0.85rem
+
+    @media (max-width: 480px)
+        .skill-card
+            flex-direction: column
+            text-align: center
+            padding: 1.2rem
+
+            .skill-icon
+                margin-bottom: 1rem
+
+            .skill-info
+                padding-left: 0
+
+                &::before
+                    display: none
+
+                h4
+                    justify-content: center
+
+    .pagination
+        position: relative
+        z-index: 1
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 1rem
+        margin-top: 3rem
+        padding: 1rem
+
+        .pagination-btn
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 3rem
+            height: 3rem
+            border: 1px solid rgba(variables.$accent-color, 0.2)
+            border-radius: 12px
+            background: rgba(variables.$bg-color, 0.6)
+            color: variables.$text-color
+            cursor: pointer
+            transition: all 0.3s ease
+
+            &:hover:not(:disabled)
+                background: rgba(variables.$accent-color, 0.15)
+                transform: translateY(-2px)
+                box-shadow: 0 4px 12px rgba(variables.$accent-color, 0.15)
+
+            &:disabled
+                opacity: 0.5
+                cursor: not-allowed
+
+            svg
+                width: 1.4rem
+                height: 1.4rem
+
+        span
+            padding: 0 1.5rem
+            color: variables.$text-color
+            font-size: 1.1rem
+            font-weight: 500
+            font-family: variables.$font-mono
+
+    @keyframes gridMove
+        0%
+            transform: translateY(0)
+        100%
+            transform: translateY(20px)
+
+    @keyframes glitch
+        0%
+            transform: translate(0)
+        20%
+            transform: translate(-2px, 2px)
+        40%
+            transform: translate(-2px, -2px)
+        60%
+            transform: translate(2px, 2px)
+        80%
+            transform: translate(2px, -2px)
+        100%
+            transform: translate(0)
+
+    // Media queries existentes
+    @media (max-width: 768px)
+        padding: 2rem 1rem
+        border-radius: 16px
+
+        .section-header
+            margin-bottom: 3rem
+
+            h2
+                font-size: 2.5rem
+
+        .skills-filters
+            .search-bar
+                input
+                    padding: 1rem 2.5rem 1rem 1rem
+                    font-size: 1rem
+
+            .category-filters
+                .category-btn
+                    padding: 0.6rem 1.4rem
+                    font-size: 0.9rem
 
         .skills-grid
-            .skill-card
-                animation: skillCardEnter 0.5s ease forwards
-                opacity: 0
-
-                @for $i from 1 through 12
-                    &:nth-child(#{$i})
-                        animation-delay: #{$i * 0.1}s
-
-        // Media queries para responsividade
-        @media (max-width: 768px)
-            .skill-card
-                padding: 1.5rem
-
-                .skill-icon
-                    font-size: 2.4rem
-                    min-width: 48px
-                    height: 48px
-                    padding: 0.8rem
-
-                .skill-info
-                    h4
-                        font-size: 1.1rem
-
-                    .skill-level
-                        font-size: 0.85rem
-
-        @media (max-width: 480px)
-            .skill-card
-                flex-direction: column
-                text-align: center
-                padding: 1.2rem
-
-                .skill-icon
-                    margin-bottom: 1rem
-
-                .skill-info
-                    padding-left: 0
-
-                    &::before
-                        display: none
-
-                    h4
-                        justify-content: center
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+            gap: 1.5rem
 
     .no-results
         text-align: center
@@ -335,7 +497,7 @@
     gap: 1rem
     margin-top: 3rem
     padding: 1rem
-        
+
     .pagination-btn
         display: flex
         align-items: center
@@ -348,16 +510,16 @@
         color: variables.$text-color
         cursor: pointer
         transition: all 0.3s ease
-        
+
         &:hover:not(:disabled)
             background: rgba(variables.$accent-color, 0.15)
             transform: translateY(-2px)
             box-shadow: 0 4px 12px rgba(variables.$accent-color, 0.15)
-        
+
         &:disabled
             opacity: 0.5
             cursor: not-allowed
-        
+
         svg
             width: 1.4rem
             height: 1.4rem
