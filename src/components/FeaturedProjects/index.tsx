@@ -3,25 +3,37 @@
 import './style.sass'
 import { projects } from '@/data/projects'
 import { ProjectArticle } from '../ArticleProject'
+import { FloatingCubes } from './FloatingCubes'
 
 export const FeaturedProjects = () => {
-    const featuredProjects = projects.slice(0, 3)
+    const featuredProjects = projects.slice(0, 3).map(project => ({
+        ...project,
+        isFeatured: true
+    }))
 
     return (
         <section className="featured-projects">
-            <div className="section-header">
-                <h2>Featured Projects</h2>
-                <a href="/projects" className="view-all">
-                    View All Projects
-                </a>
-            </div>
-
-            <div className="projects-grid">
-                {featuredProjects.map((project) => (
-                    <div key={project.title} className="project-card">
-                        <ProjectArticle {...project} isFeatured={true} />
+            <FloatingCubes />
+            <div className="content-wrapper">
+                <div className="section-header">
+                    <div className="glitch-container">
+                        <h2 data-text="FEATURED_PROJECTS">FEATURED_PROJECTS</h2>
                     </div>
-                ))}
+                    <div className="cyber-line"></div>
+                    <p>SELECT * FROM projects WHERE featured = true</p>
+                </div>
+
+                <div className="projects-grid">
+                    {featuredProjects.map((project) => (
+                        <div key={project.title} className="project-card">
+                            <div className="card-frame top"></div>
+                            <div className="card-frame right"></div>
+                            <div className="card-frame bottom"></div>
+                            <div className="card-frame left"></div>
+                            <ProjectArticle {...project} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

@@ -4,6 +4,18 @@
 .about-me
   padding: 4rem 2rem
   background-color: variables.$bg-color
+  position: relative
+  overflow: hidden
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    height: 1px
+    background: variables.$gradient
+    opacity: 0.5
   
   .about-content
     max-width: variables.$max-width
@@ -11,28 +23,55 @@
     padding: 4rem
     position: relative
     
-    h2
-      @include mixins.section-title
-      text-align: center
-      border-bottom: none
+    .section-header
       margin-bottom: 3rem
-      font-family: variables.$font-mono
+      text-align: center
       
-      .blink
-        animation: blink 1s step-end infinite
-        color: variables.$accent-color
+      h2
+        @include mixins.section-title
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 1rem
+        font-size: 2.5rem
+        
+        .header-decorator
+          color: variables.$accent-color
+          font-size: 1.5rem
+          opacity: 0.8
+        
+        .blink
+          animation: blink 1s infinite
+      
+      .terminal-line
+        text-align: center
+        font-family: variables.$font-mono
+        color: variables.$text-color-secondary
+        margin-top: 1rem
+        
+        .line-number
+          color: variables.$accent-color
+          margin-right: 1rem
+        
+        .line-content
+          color: variables.$text-color-secondary
 
     .bio
-      text-align: left
-      padding: 2.5rem
+      @include mixins.glass-effect
+      padding: 3rem
       margin-bottom: 4rem
-      background: rgba(variables.$bg-color-secondary, 0.7)
       border-radius: 16px
       border: 1px solid rgba(variables.$accent-color, 0.2)
-      backdrop-filter: blur(10px)
       position: relative
       
+      // Removendo o pseudo-elemento que criava a borda superior
+      &::before
+        display: none
+      
       .bio-header
+        display: flex
+        justify-content: space-between
+        align-items: center
         margin-bottom: 2rem
         
         .status-indicator
@@ -40,8 +79,9 @@
           align-items: center
           gap: 0.5rem
           padding: 0.5rem 1rem
-          background: rgba(variables.$accent-color, 0.1)
+          background: rgba(#50fa7b, 0.1)
           border-radius: 20px
+          border: 1px solid rgba(#50fa7b, 0.2)
           
           .status-dot
             width: 8px
@@ -54,37 +94,96 @@
             font-size: 0.9rem
             color: #50fa7b
             font-family: variables.$font-mono
-      
-      p
-        font-size: 1.2rem
-        line-height: 1.6
-        color: variables.$text-color
-        margin-bottom: 2rem
         
-        .highlight
+        .experience-badge
+          display: flex
+          align-items: center
+          gap: 0.5rem
+          padding: 0.5rem 1rem
+          background: rgba(variables.$accent-color, 0.1)
+          border-radius: 20px
+          font-family: variables.$font-mono
+          font-size: 0.9rem
           color: variables.$accent-color
-          font-weight: 500
+      
+      .bio-content
+        p
+          font-size: 1.2rem
+          line-height: 1.8
+          color: variables.$text-color
+          margin-bottom: 1.5rem
+          
+          &.intro
+            font-size: 1.3rem
+            font-weight: 500
+          
+          .highlight
+            color: variables.$accent-color
+            font-weight: 500
+            position: relative
+            
+            &::after
+              content: ''
+              position: absolute
+              bottom: -2px
+              left: 0
+              width: 100%
+              height: 1px
+              background: variables.$accent-color
+              opacity: 0.3
       
       .cta-container
         text-align: center
+        margin-top: 3rem
+        position: relative
         
         .contact-button
           @include mixins.cyber-button
           display: inline-flex
           align-items: center
           gap: 1rem
-          padding: 1rem 2rem
-          font-size: 1rem
+          padding: 1rem 2.5rem
+          font-size: 1.1rem
           border-radius: 8px
           transition: all 0.3s ease
+          position: relative
+          overflow: hidden
           
-          .button-icon
-            transition: transform 0.3s ease
+          &::before
+            content: ''
+            position: absolute
+            top: -2px
+            left: -2px
+            right: -2px
+            bottom: -2px
+            background: variables.$gradient
+            z-index: -1
+            opacity: 0
+            transition: opacity 0.3s ease
           
           &:hover
             transform: translateY(-2px)
+            
+            &::before
+              opacity: 1
+            
             .button-icon
               transform: translateX(5px)
+        
+        .cta-decorator
+          margin-top: 1rem
+          font-family: variables.$font-mono
+          color: variables.$text-color-secondary
+          font-size: 0.9rem
+          opacity: 0.7
+          
+          .decorator-line
+            display: inline-block
+            width: 20px
+            height: 1px
+            background: variables.$accent-color
+            margin: 0 0.5rem
+            vertical-align: middle
 
     .highlights
       display: grid
@@ -93,16 +192,31 @@
       margin-bottom: 4rem
 
       .highlight-item
+        @include mixins.glass-effect
         padding: 2rem
-        background: rgba(variables.$bg-color-secondary, 0.7)
         border-radius: 12px
         border: 1px solid rgba(variables.$accent-color, 0.1)
         transition: all 0.3s ease
+        position: relative
+        overflow: hidden
+
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 2px
+          height: 0
+          background: variables.$gradient
+          transition: height 0.3s ease
 
         &:hover
           transform: translateY(-5px)
           border-color: rgba(variables.$accent-color, 0.3)
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+          
+          &::before
+            height: 100%
 
         h3
           margin-bottom: 1rem
@@ -115,16 +229,26 @@
 
           .icon
             font-size: 1.4rem
+            color: variables.$accent-color
 
         p
           line-height: 1.6
           color: variables.$text-color-secondary
+          margin-bottom: 1.5rem
 
-@keyframes blink
-  0%, 100%
-    opacity: 1
-  50%
-    opacity: 0
+        .tech-tags
+          display: flex
+          flex-wrap: wrap
+          gap: 0.5rem
+          list-style: none
+          
+          li
+            font-size: 0.8rem
+            padding: 0.3rem 0.8rem
+            background: rgba(variables.$accent-color, 0.1)
+            border-radius: 12px
+            color: variables.$accent-color
+            font-family: variables.$font-mono
 
 @keyframes pulse
   0%
@@ -137,6 +261,14 @@
     transform: scale(1)
     opacity: 1
 
+@keyframes blink
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+
 @media (max-width: 768px)
   .about-me
     padding: 3rem 1rem
@@ -144,16 +276,19 @@
     .about-content
       padding: 2rem
       
-      h2
+      .section-header h2
         font-size: 2rem
-
+      
       .bio
         padding: 1.5rem
-        margin-bottom: 3rem
         
-        p
+        .bio-header
+          flex-direction: column
+          gap: 1rem
+          
+        .bio-content p
           font-size: 1.1rem
-
+      
       .highlights
         grid-template-columns: 1fr
         gap: 1.5rem

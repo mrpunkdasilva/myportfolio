@@ -2,6 +2,7 @@
 
 import './style.sass'
 import { TechStack } from '../TechStack'
+import { FiTerminal, FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
 
 export const AboutMe = () => {
   const scrollToContact = () => {
@@ -12,7 +13,14 @@ export const AboutMe = () => {
   return (
     <section className="about-me">
       <div className="about-content">
-        <h2>About Me<span className="blink">_</span></h2>
+        <div className="section-header">
+          <h2>
+            <span className="header-decorator">&lt;</span>
+            About_Me
+            <span className="header-decorator">/&gt;</span>
+            <span className="blink">_</span>
+          </h2>
+        </div>
 
         <div className="bio">
           <div className="bio-header">
@@ -20,84 +28,101 @@ export const AboutMe = () => {
               <span className="status-dot"></span>
               <span className="status-text">Available for hire</span>
             </div>
+            <div className="experience-badge">
+              <span className="badge-icon">⚡</span>
+              <span>3+ Years of Development Experience</span>
+            </div>
           </div>
           
-          <p>
-            <span className="highlight">Full-Stack Developer</span> with hands-on experience 
-            in freelance projects, specializing in modern web technologies and solutions. 
-            Currently pursuing a Bachelor's degree in Software Engineering at Jala University.
-          </p>
-          
+          <div className="bio-content">
+            <p className="intro">
+              <span className="highlight">Desenvolvedor Full-Stack</span> apaixonado por criar 
+              soluções inovadoras e escaláveis. Especializado em arquiteturas modernas e 
+              práticas de desenvolvimento ágil, com foco em performance e experiência do usuário.
+            </p>
+            
+            <p className="journey">
+              Atualmente cursando <span className="highlight">Engenharia de Software</span> na 
+              Jala University, onde desenvolvo uma base sólida em princípios de arquitetura 
+              de software, padrões de projeto e metodologias ágeis. Minha jornada inclui 
+              experiência prática com projetos freelance e desenvolvimento de soluções 
+              empresariais.
+            </p>
+
+            <p className="approach">
+              Minha abordagem combina <span className="highlight">criatividade técnica</span> com 
+              <span className="highlight"> metodologias ágeis</span>, permitindo entregar 
+              soluções robustas que atendem às necessidades do negócio e proporcionam 
+              experiências excepcionais aos usuários.
+            </p>
+          </div>
+
           <div className="cta-container">
             <button onClick={scrollToContact} className="contact-button">
-              <span className="button-text">Contact Me</span>
+              <span className="button-text">Iniciar Conexão</span>
               <span className="button-icon">→</span>
             </button>
+            <div className="cta-decorator">
+              <span className="decorator-line"></span>
+              <span className="decorator-text">sys.initiate_contact()</span>
+            </div>
           </div>
         </div>
 
         <div className="highlights">
           <div className="highlight-item">
             <h3>
-              <span className="icon">⚡</span>
-              Development
+              <FiCode className="icon" />
+              Desenvolvimento Frontend
             </h3>
             <p>
-              Experienced in both frontend and backend development, creating responsive
-              and efficient web applications using modern frameworks and best practices.
+              Desenvolvedor com experiência em projetos freelance, utilizando React, 
+              Next.js e tecnologias modernas. Criação de interfaces responsivas e 
+              interativas com HTML5, CSS3, JavaScript e frameworks populares.
             </p>
+            <ul className="tech-tags">
+              <li>React</li>
+              <li>Next.js</li>
+              <li>JavaScript</li>
+            </ul>
           </div>
 
           <div className="highlight-item">
             <h3>
-              <span className="icon">🔮</span>
-              Problem Solving
+              <FiDatabase className="icon" />
+              Desenvolvimento Backend
             </h3>
             <p>
-              Strong analytical skills and ability to transform complex requirements
-              into elegant solutions, with a focus on code quality and performance.
+              Experiência em desenvolvimento backend com Node.js, PHP e Java. 
+              Conhecimento em bancos de dados relacionais como MySQL e PostgreSQL, 
+              e não relacionais como MongoDB.
             </p>
+            <ul className="tech-tags">
+              <li>Node.js</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+            </ul>
           </div>
 
           <div className="highlight-item">
             <h3>
-              <span className="icon">🤝</span>
-              Collaboration
+              <FiLayers className="icon" />
+              Metodologias & Ferramentas
             </h3>
             <p>
-              Proficient in agile methodologies and version control systems,
-              with excellent communication skills for team environments.
+              Conhecimento em metodologias ágeis (Scrum) e ferramentas de versionamento. 
+              Experiência em desenvolvimento de sistemas web completos, desde o frontend 
+              até o backend.
             </p>
+            <ul className="tech-tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Scrum</li>
+            </ul>
           </div>
         </div>
 
         <TechStack />
-
-        <div className="contact-info" id={"contact"}>
-          <h3>Let's Connect</h3>
-          <div className="info-cards">
-            <div className="info-card">
-              <div>
-                <h4>Phone</h4>
-                <p>55+ (11) 98597-6152</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <div>
-                <h4>Email</h4>
-                <p>gustavojs417@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <div>
-                <h4>Location</h4>
-                <p>SP - SP, Brazil</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

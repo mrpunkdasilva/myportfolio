@@ -8,6 +8,7 @@ export interface Project {
     learnings: string[];
     link?: string;
     githubLink?: string;
+    isFeatured?: boolean;
 }
 
 export const projects: Project[] = [
