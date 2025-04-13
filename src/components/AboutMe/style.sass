@@ -1,0 +1,206 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.about-me
+  padding: 4rem 2rem
+  background-color: variables.$bg-color
+  
+  .about-content
+    max-width: variables.$max-width
+    margin: 0 auto
+    padding: 4rem
+    position: relative
+    
+    &::before
+      content: '<about>'
+      position: absolute
+      top: 0
+      left: 0
+      font-family: variables.$font-mono
+      color: variables.$accent-color
+      opacity: 0.5
+      font-size: 0.9rem
+    
+    &::after
+      content: '</about>'
+      position: absolute
+      bottom: 0
+      right: 0
+      font-family: variables.$font-mono
+      color: variables.$accent-color
+      opacity: 0.5
+      font-size: 0.9rem
+
+    h2
+      @include mixins.section-title
+      text-align: center
+      border-bottom: none
+      margin-bottom: 3rem
+
+    .bio
+      text-align: center
+      padding: 2rem
+      margin-bottom: 4rem
+      background: variables.$bg-color-secondary
+      border-radius: 8px
+      position: relative
+      
+      p
+        font-size: 1.2rem
+        line-height: 1.6
+        color: variables.$text-color
+        margin-bottom: 2rem
+      
+      .contact-button
+        @include mixins.cyber-button
+        margin-top: 1rem
+        
+        &:hover
+          cursor: pointer
+
+    .highlights
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+      gap: 2rem
+      margin-bottom: 4rem
+
+      .highlight-item
+        padding: 2rem
+        background: variables.$bg-color-secondary
+        border-radius: 8px
+        border-left: 3px solid variables.$accent-color
+        transition: variables.$hover-transition
+
+        &:hover
+          transform: translateY(-5px)
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+
+        h3
+          margin-bottom: 1rem
+          color: variables.$accent-color
+          font-family: variables.$font-mono
+          font-size: 1.2rem
+          display: flex
+          align-items: center
+          gap: 0.5rem
+
+          &::before
+            content: '>'
+            color: variables.$accent-color-secondary
+
+        p
+          line-height: 1.6
+          color: variables.$text-color-secondary
+
+    .contact-info
+      margin-top: 4rem
+      text-align: center
+      padding: 3rem 2rem
+      background: variables.$bg-color-secondary
+      border-radius: 8px
+      position: relative
+      
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 50px
+        height: 3px
+        background: variables.$gradient
+
+      h3
+        font-size: 2rem
+        margin-bottom: 3rem
+        color: variables.$text-color
+        font-family: variables.$font-mono
+
+      .info-cards
+        display: flex
+        justify-content: center
+        gap: 2rem
+        flex-wrap: wrap
+
+        .info-card
+          display: flex
+          align-items: center
+          gap: 1.5rem
+          padding: 1.5rem
+          background: variables.$bg-color
+          border-radius: 8px
+          min-width: 280px
+          transition: variables.$hover-transition
+          border-left: 3px solid transparent
+
+          &:hover
+            transform: translateY(-3px)
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+
+          .icon
+            color: white!important
+            font-size: 1.8rem
+            padding: 1rem
+            border-radius: 8px
+            background: variables.$bg-color-secondary
+            transition: variables.$hover-transition
+
+          // Estilos específicos para cada ícone
+          &:nth-child(1)
+            border-left-color: #e93b81
+
+          &:nth-child(2)
+            border-left-color: #6ab5b9
+
+          &:nth-child(3)
+            border-left-color: #c17ceb
+
+          div
+            text-align: left
+
+            h4
+              color: variables.$text-color-secondary
+              font-size: 0.9rem
+              margin-bottom: 0.5rem
+              text-transform: uppercase
+              letter-spacing: 1px
+
+            p
+              color: variables.$text-color
+              font-weight: 500
+              font-size: 1.1rem
+
+@media (max-width: 768px)
+  .about-me
+    padding: 3rem 1rem
+
+    .about-content
+      padding: 2rem
+      
+      h2
+        font-size: 2rem
+
+      .bio
+        padding: 1.5rem
+        margin-bottom: 3rem
+        
+        p
+          font-size: 1.1rem
+
+      .highlights
+        grid-template-columns: 1fr
+        gap: 1.5rem
+
+      .contact-info
+        padding: 2rem 1rem
+        
+        .info-cards
+          flex-direction: column
+          align-items: stretch
+          gap: 1rem
+
+          .info-card
+            width: 100%
+            .contact-button
+              width: 100%
+              margin-top: 1.5rem
