@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import { Hero } from '@/components/Hero'
+import { Hero3DModel } from '@/components/Hero3DModel'
+import { AnimatedTitle } from '@/components/AnimatedTitle'
 import { TechnologiesContainer } from '@/components/TechnologiesContainer'
 import { ProjectsContainer } from '@/components/ProjectsContainer'
 import { InformationContainer } from '@/components/InformationContainer'
@@ -12,7 +13,21 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="main-container">
-      <Hero />
+      <section className="hero">
+        <Hero3DModel />
+        <div className="hero-content">
+          <h1>GUSTAVO HENRIQUE</h1>
+          <div className="title-accent">
+            <AnimatedTitle />
+          </div>
+          <p>Crafting digital experiences with code and creativity</p>
+          <div className="cta-buttons">
+            <a href="#projects" className="primary-btn">View Projects</a>
+            <a href="#contact" className="secondary-btn">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
       <InformationContainer />
       <TechnologiesContainer />
       <ProjectsContainer />

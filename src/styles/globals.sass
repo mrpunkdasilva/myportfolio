@@ -7,20 +7,87 @@
   box-sizing: border-box
   font-family: variables.$font-stack
 
-html, body
-  background: variables.$body-bg-color
+body
+  background-color: variables.$bg-color
   color: variables.$text-color
-  min-height: 100vh
-
-a
-  color: inherit
-  text-decoration: none
-  transition: variables.$hover-transition
-
-  &:hover
-    color: variables.$accent-color
 
 .main-container
-  max-width: variables.$max-width
+  max-width: 1200px
   margin: 0 auto
   padding: 2rem
+
+.hero
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-height: 80vh
+  padding: 2rem 0
+  
+  @media (max-width: 768px)
+    flex-direction: column
+    text-align: center
+    gap: 2rem
+
+  .model-container
+    flex: 1
+    height: 400px
+    
+    canvas
+      border-radius: 10px
+      background: rgba(variables.$accent-color, 0.05)
+    
+    @media (max-width: 768px)
+      width: 100%
+      height: 300px
+
+  .hero-content
+    flex: 1
+    padding: 2rem
+
+    h1
+      font-size: 3rem
+      margin-bottom: 1rem
+      background: linear-gradient(45deg, variables.$text-color, variables.$accent-color)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      
+      @media (max-width: 768px)
+        font-size: 2rem
+
+    .title-accent
+      font-size: 1.5rem
+      color: variables.$accent-color
+      margin-bottom: 1rem
+      
+      @media (max-width: 768px)
+        font-size: 1.2rem
+
+    p
+      color: variables.$text-color-secondary
+      margin-bottom: 2rem
+      font-size: 1.1rem
+      line-height: 1.6
+
+    .cta-buttons
+      display: flex
+      gap: 1rem
+      
+      @media (max-width: 768px)
+        justify-content: center
+
+      .primary-btn, .secondary-btn
+        @include mixins.cyber-button
+        padding: 0.8rem 1.5rem
+        font-size: 1rem
+        text-decoration: none
+        
+        &:hover
+          transform: translateY(-2px)
+
+      .primary-btn
+        background: variables.$accent-color
+        color: variables.$bg-color
+
+      .secondary-btn
+        border: 1px solid variables.$accent-color
+        color: variables.$accent-color

@@ -1,5 +1,5 @@
 import './styles.sass';
-import { technologies, Technology } from "../../data/technologies";
+import { technologies, Technology } from "@/data/technologies";
 
 export const TechnologiesContainer = () => {
     return (
