@@ -1,0 +1,232 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+@keyframes glitch
+    0%
+        transform: translate(0)
+        text-shadow: -2px 2px #ff00c1, 2px -2px #3498db
+    25%
+        transform: translate(-2px, 2px)
+        text-shadow: 2px -2px #ff00c1, -2px 2px #3498db
+    50%
+        transform: translate(2px, -2px)
+        text-shadow: -2px 2px #ff00c1, 2px -2px #3498db
+    75%
+        transform: translate(-2px, 2px)
+        text-shadow: 2px -2px #ff00c1, -2px 2px #3498db
+    100%
+        transform: translate(0)
+        text-shadow: -2px 2px #ff00c1, 2px -2px #3498db
+
+@keyframes borderFlash
+    0%, 100%
+        border-color: variables.$accent-color
+    50%
+        border-color: darken(variables.$accent-color, 20%)
+
+@keyframes frameGlow
+    0%, 100%
+        box-shadow: 0 0 5px variables.$accent-color
+    50%
+        box-shadow: 0 0 20px variables.$accent-color
+
+.featured-projects
+    padding: 6rem 2rem
+    position: relative
+    min-height: 100vh
+    overflow: hidden
+    
+    .floating-cubes-container
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 1
+        
+        canvas
+            position: fixed
+            top: 0
+            left: 0
+            pointer-events: none
+            opacity: 0.6
+    
+    .content-wrapper
+        position: relative
+        z-index: 2
+        backdrop-filter: blur(5px)
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 1px
+        background: variables.$gradient
+        box-shadow: 0 0 15px variables.$accent-color
+    
+    .section-header
+        text-align: center
+        margin-bottom: 4rem
+        
+        .glitch-container
+            margin-bottom: 1rem
+            
+            h2
+                font-family: variables.$font-mono
+                font-size: 3rem
+                font-weight: 700
+                color: variables.$text-color
+                text-transform: uppercase
+                letter-spacing: 4px
+                animation: glitch 3s infinite
+                position: relative
+                
+                &::before, &::after
+                    content: attr(data-text)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                
+                &::before
+                    left: 2px
+                    text-shadow: -2px 0 #ff00c1
+                    clip: rect(44px, 450px, 56px, 0)
+                    animation: glitch-anim 5s infinite linear alternate-reverse
+                
+                &::after
+                    left: -2px
+                    text-shadow: -2px 0 #3498db
+                    clip: rect(44px, 450px, 56px, 0)
+                    animation: glitch-anim 5s infinite linear alternate-reverse
+        
+        .cyber-line
+            width: 150px
+            height: 3px
+            background: variables.$accent-color
+            margin: 1rem auto
+            position: relative
+            box-shadow: 0 0 10px variables.$accent-color
+            
+            &::before, &::after
+                content: ''
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                width: 10px
+                height: 10px
+                background: variables.$accent-color
+                box-shadow: 0 0 10px variables.$accent-color
+            
+            &::before
+                left: -5px
+            
+            &::after
+                right: -5px
+        
+        p
+            font-family: variables.$font-mono
+            color: variables.$accent-color
+            font-size: 1rem
+            opacity: 0.8
+            margin-top: 1rem
+            text-shadow: 0 0 5px variables.$accent-color
+
+    .projects-grid
+        display: flex
+        flex-wrap: wrap
+        gap: 2.5rem
+        justify-content: center
+        
+        .project-card
+            flex: 1
+            min-width: 400px
+            max-width: calc(33.33% - 2.5rem)
+            background: rgba(variables.$bg-color-secondary, 0.7)
+            backdrop-filter: blur(10px)
+            border-radius: 4px
+            position: relative
+            transition: all 0.3s ease
+            
+            .hover-model-container
+                position: absolute
+                bottom: 10px        // Alterado de top para bottom
+                right: 10px
+                width: 60px
+                height: 60px
+                pointer-events: none
+                z-index: 10
+                opacity: 0
+                transition: opacity 0.3s ease
+                mix-blend-mode: screen
+
+                canvas
+                    width: 100%
+                    height: 100%
+                    opacity: 0.6
+            
+            .card-frame
+                position: absolute
+                background: variables.$accent-color
+                transition: all 0.3s ease
+                animation: frameGlow 2s infinite
+                
+                &.top, &.bottom
+                    height: 2px
+                    width: 100%
+                
+                &.left, &.right
+                    width: 2px
+                    height: 100%
+                
+                &.top
+                    top: 0
+                    left: 0
+                
+                &.right
+                    top: 0
+                    right: 0
+                
+                &.bottom
+                    bottom: 0
+                    right: 0
+                
+                &.left
+                    bottom: 0
+                    left: 0
+            
+            &:hover
+                transform: translateY(-10px) scale(1.02)
+                box-shadow: 0 10px 30px rgba(variables.$accent-color, 0.2)
+                
+                .hover-model-container
+                    opacity: 1
+                
+                .card-frame
+                    background: lighten(variables.$accent-color, 20%)
+                    box-shadow: 0 0 20px variables.$accent-color
+
+@media (max-width: 1200px)
+    .featured-projects
+        .projects-grid
+            .project-card
+                max-width: calc(50% - 2.5rem)  // 2 cards por linha
+
+@media (max-width: 768px)
+    .featured-projects
+        padding: 4rem 1rem
+        
+        .section-header
+            h2
+                font-size: 2rem
+            
+            p
+                font-size: 0.9rem
+        
+        .projects-grid
+            .project-card
+                max-width: 100%  // 1 card por linha
+                min-width: 250px
