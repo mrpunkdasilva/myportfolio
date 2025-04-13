@@ -1,5 +1,4 @@
 import {Metadata} from 'next'
-import {ProjectsContainer} from '@/components/ProjectsContainer'
 import {Hero} from "@/components/Hero"
 import {AboutMe} from "@/components/AboutMe"
 import {FeaturedProjects} from "@/components/FeaturedProjects"
@@ -10,17 +9,22 @@ import {ProjectsSection} from "@/components/ProjectsSection";
 export const metadata: Metadata = {
     title: 'Gustavo Henrique | Full Stack Developer',
     description: 'Creative Full Stack Developer crafting digital experiences with modern web technologies.',
+    alternates: {
+        canonical: 'https://mrpunkdasilva.vercel.app'
+    }
 }
 
 export default function Home() {
     return (
         <main className="main-container">
-            <Hero/>
-            <AboutMe/>
-            <SkillsSection/>
-            <FeaturedProjects/>
-            <ContactSection/>
-            <ProjectsSection/>
+            <article>
+                <Hero/>
+                <AboutMe/>
+                <SkillsSection/>
+                <FeaturedProjects/>
+                <ContactSection/>
+                <ProjectsSection/>
+            </article>
         </main>
     )
 }
