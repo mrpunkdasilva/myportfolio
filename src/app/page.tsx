@@ -1,9 +1,10 @@
 import {Metadata} from 'next'
 import {TechnologiesContainer} from '@/components/TechnologiesContainer'
 import {ProjectsContainer} from '@/components/ProjectsContainer'
-import {Hero} from "@/components/Hero";
-import {AboutMe} from "@/components/AboutMe";
-import {FeaturedProjects} from "@/components/FeaturedProjects";
+import {Hero} from "@/components/Hero"
+import {AboutMe} from "@/components/AboutMe"
+import {FeaturedProjects} from "@/components/FeaturedProjects"
+import {ContactSection} from "@/components/ContactSection"
 
 export const metadata: Metadata = {
     title: 'Gustavo Henrique | Full Stack Developer',
@@ -15,6 +16,7 @@ export default function Home() {
         <main className="main-container">
             <Hero/>
             <AboutMe/>
+            <ContactSection/>
             <FeaturedProjects/>
             <TechnologiesContainer/>
             <ProjectsContainer/>

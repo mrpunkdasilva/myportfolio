@@ -1,0 +1,116 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.contact-section
+    padding: 4rem 0
+    background: variables.$bg-color-secondary
+    
+    .section-header
+        text-align: center
+        margin-bottom: 3rem
+        
+        h2
+            font-size: 2.5rem
+            margin-bottom: 1rem
+            background: linear-gradient(135deg, variables.$accent-color, #FF0080)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+        
+        p
+            color: variables.$text-color-secondary
+            font-size: 1.1rem
+
+    .contact-container
+        display: flex
+        gap: 4rem
+        max-width: 1200px
+        margin: 0 auto
+        padding: 0 2rem
+
+        @media (max-width: 768px)
+            flex-direction: column
+
+    .contact-info
+        flex: 1
+        
+        .info-item
+            display: flex
+            align-items: center
+            margin-bottom: 2rem
+            padding: 1.5rem
+            background: rgba(255, 255, 255, 0.05)
+            border-radius: 8px
+            transition: transform 0.3s ease
+            
+            &:hover
+                transform: translateX(10px)
+                
+            .icon
+                font-size: 1.5rem
+                color: variables.$accent-color
+                margin-right: 1rem
+            
+            .info-content
+                h3
+                    font-size: 1.1rem
+                    margin-bottom: 0.5rem
+                    color: variables.$text-color
+                
+                a, p
+                    color: variables.$text-color-secondary
+                    text-decoration: none
+                    transition: color 0.3s ease
+                    
+                    &:hover
+                        color: variables.$accent-color
+
+    .contact-form
+        flex: 1.5
+        
+        .form-group
+            margin-bottom: 1.5rem
+            
+            input, textarea
+                width: 100%
+                padding: 1rem
+                background: rgba(255, 255, 255, 0.05)
+                border: 1px solid rgba(255, 255, 255, 0.1)
+                border-radius: 8px
+                color: variables.$text-color
+                font-size: 1rem
+                transition: all 0.3s ease
+                
+                &:focus
+                    outline: none
+                    border-color: variables.$accent-color
+                    background: rgba(255, 255, 255, 0.08)
+                
+                &::placeholder
+                    color: variables.$text-color-secondary
+            
+            textarea
+                min-height: 150px
+                resize: vertical
+
+        .submit-btn
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 0.5rem
+            width: 100%
+            padding: 1rem
+            background: variables.$accent-color
+            border: none
+            border-radius: 8px
+            color: #fff
+            font-size: 1rem
+            font-weight: 600
+            cursor: pointer
+            transition: all 0.3s ease
+            
+            &:hover
+                background: darken(variables.$accent-color, 10%)
+                transform: translateY(-2px)
+            
+            .icon
+                font-size: 1.2rem
