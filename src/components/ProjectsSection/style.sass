@@ -1,6 +1,9 @@
 @use '../../styles/variables'
 @use '../../styles/mixins'
 
+// Definindo cores específicas para cada categoria
+$category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42B883, "node": #539E43, "typescript": #3178C6, "javascript": #F7DF1E)
+
 .projects-section
     padding: 6rem 2rem
     position: relative
@@ -67,7 +70,7 @@
         display: flex
         flex-direction: column
         gap: 1.5rem
-        
+
         .search-input
             padding: 1rem
             border: 1px solid rgba(variables.$accent-color, 0.3)
@@ -77,12 +80,12 @@
             font-size: 1rem
             width: 100%
             transition: variables.$hover-transition
-            
+
             &:focus
                 border-color: variables.$accent-color
                 box-shadow: 0 0 0 2px rgba(variables.$accent-color, 0.2)
                 outline: none
-        
+
         .filter-buttons
             display: flex
             gap: 1rem
@@ -90,22 +93,87 @@
             justify-content: center
             
             .filter-btn
-                padding: 0.75rem 1.5rem
-                border: 1px solid rgba(variables.$accent-color, 0.3)
-                background: transparent
+                padding: 0.8rem 1.8rem
+                background: rgba(variables.$bg-color-secondary, 0.5)
                 color: variables.$text-color
-                border-radius: variables.$card-border-radius
+                border-radius: 10px
                 cursor: pointer
-                transition: variables.$hover-transition
+                font-family: variables.$font-mono
+                font-size: 0.95rem
+                letter-spacing: 0.5px
+                transition: all 0.3s ease
+                position: relative
+                overflow: hidden
+                border: none
+                
+                // Iterando sobre as categorias para aplicar cores específicas
+                @each $category, $color in $category-colors
+                    &[data-category="#{$category}"]
+                        border: 2px solid rgba($color, 0.3)
+                        
+                        &:hover
+                            border-color: rgba($color, 0.8)
+                            box-shadow: 0 5px 15px rgba($color, 0.2)
+                            background: rgba($color, 0.1)
+                        
+                        &.active
+                            background: $color
+                            border-color: $color
+                            color: if(lightness($color) > 50, #000, #fff)
+                            box-shadow: 0 5px 15px rgba($color, 0.3)
+                            
+                            &:hover
+                                transform: translateY(-2px)
+                                box-shadow: 0 8px 20px rgba($color, 0.4)
+                
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    width: 0
+                    height: 0
+                    background: rgba(255, 255, 255, 0.1)
+                    border-radius: 50%
+                    transition: width 0.6s ease, height 0.6s ease
                 
                 &:hover
-                    background: rgba(variables.$accent-color, 0.1)
-                    border-color: variables.$accent-color
+                    transform: translateY(-2px)
+                    
+                    &::before
+                        width: 200px
+                        height: 200px
+
+                // Efeito de brilho nas bordas
+                &::after
+                    content: ''
+                    position: absolute
+                    inset: -2px
+                    border-radius: inherit
+                    background: variables.$gradient
+                    opacity: 0
+                    transition: opacity 0.3s ease
+                    z-index: -1
                 
-                &.active
-                    background: variables.$accent-color
-                    color: variables.$bg-color
-                    border-color: variables.$accent-color
+                &:hover::after
+                    opacity: 0.5
+
+// Adicione animação de entrada para os botões
+@keyframes buttonEnter
+    from
+        opacity: 0
+        transform: translateY(10px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+// Aplicando a animação aos botões
+.filter-buttons .filter-btn
+    animation: buttonEnter 0.3s ease forwards
+    @for $i from 1 through 10
+        &:nth-child(#{$i})
+            animation-delay: #{$i * 0.05}s
 
 @keyframes glitch-anim
     0%
@@ -222,11 +290,11 @@
 @media (max-width: 768px)
     .projects-section
         padding: 4rem 1rem
-        
+
         .section-header
             h2
                 font-size: 2rem
-            
+
         .projects-filters
             .filter-buttons
                 .filter-btn
