@@ -7,6 +7,37 @@
   box-sizing: border-box
   font-family: variables.$font-stack
 
+// Seleção de texto
+::selection
+  background: variables.$accent-color
+  color: variables.$bg-color
+  text-shadow: none
+
+// Firefox
+::-moz-selection
+  background: variables.$accent-color
+  color: variables.$bg-color
+  text-shadow: none
+
+// Scrollbar - Webkit (Chrome, Safari, Edge, etc)
+::-webkit-scrollbar
+  width: 10px
+  
+::-webkit-scrollbar-track
+  background: variables.$bg-color-secondary
+  
+::-webkit-scrollbar-thumb
+  background: variables.$accent-color
+  border-radius: 4px
+  
+  &:hover
+    background: darken(variables.$accent-color, 10%)
+
+// Scrollbar - Firefox
+*
+  scrollbar-width: thin
+  scrollbar-color: variables.$accent-color variables.$bg-color-secondary
+
 body
   background-color: variables.$bg-color
   color: variables.$text-color
