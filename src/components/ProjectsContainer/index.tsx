@@ -2,29 +2,44 @@ import "./style.sass"
 import { projects } from "@/data/projects"
 import { ProjectArticle } from "../ArticleProject"
 
-export const ProjectsContainer = () => {
+interface ProjectsContainerProps {
+    filter?: string
+    searchTerm?: string
+}
+
+export const ProjectsContainer = ({ filter = 'all', searchTerm = '' }: ProjectsContainerProps) => {
+    const filteredProjects = projects.filter(project => {
+        const matchesTech = filter === 'all' || 
+            project.technologies.some(tech => 
+                tech.toLowerCase().includes(filter.toLowerCase())
+            )
+        
+        const matchesSearch = 
+            project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            project.technologies.some(tech => 
+                tech.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+
+        return matchesTech && matchesSearch
+    })
+
     return (
         <section id="projects-container">
-            <h2>Projects</h2>
+            <div className="projects-grid">
+                {filteredProjects.map((project) => (
+                    <div key={project.title} className="project-wrapper">
+                        <ProjectArticle {...project} />
+                    </div>
+                ))}
+            </div>
 
-            <p>
-                Get to know my projects that I have done, implementing all the technologies that I master and that I am learning.
-            </p>
-            <br/>
-            <br/>
-
-            {projects.map((project) => (
-                <div key={project.title} className="project-wrapper">
-                    <ProjectArticle {...project} />
-                    <br />
-                    <hr />
-                    <br />
+            {filteredProjects.length === 0 && (
+                <div className="no-results">
+                    <h3>No projects found</h3>
+                    <p>Try adjusting your search or filter criteria</p>
                 </div>
-            ))}
-
-            <p>
-                Made with 💜 by Gustavo Henrique
-            </p>
+            )}
         </section>
     )
 }
