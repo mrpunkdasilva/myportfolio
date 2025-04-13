@@ -15,14 +15,21 @@
     left: 0
     width: 100%
     height: 100%
-    z-index: 1 // Garantindo que fique abaixo do Footer
+    z-index: 1
     canvas
       width: 100% !important
       height: 100% !important
     
   .model-wrapper
     position: relative
-    z-index: 2 // Mantendo acima do background mas abaixo do Footer
+    z-index: 2
+    width: 50%
+    
+    @media (max-width: 1024px)
+      width: 40%
+    
+    @media (max-width: 768px)
+      display: none
   
   .hero-content
     @include mixins.glass-effect
@@ -34,6 +41,16 @@
     border: 1px solid rgba(variables.$accent-color, 0.2)
     box-shadow: 0 0 20px rgba(variables.$accent-color, 0.1)
     border-radius: 4px
+    
+    @media (max-width: 1024px)
+      width: 60%
+      margin-right: 2rem
+      padding: 2rem
+    
+    @media (max-width: 768px)
+      width: 90%
+      margin: 2rem auto
+      padding: 2rem 1.5rem
     
     &::before, &::after
       content: ''
@@ -67,6 +84,15 @@
         -webkit-text-fill-color: transparent
         position: relative
         
+        @media (max-width: 1024px)
+          font-size: 3rem
+        
+        @media (max-width: 768px)
+          font-size: 2.5rem
+        
+        @media (max-width: 480px)
+          font-size: 2rem
+        
         &::before, &::after
           content: attr(data-text)
           position: absolute
@@ -96,20 +122,36 @@
       text-transform: uppercase
       letter-spacing: 3px
       
+      @media (max-width: 768px)
+        font-size: 1rem
+        letter-spacing: 2px
+      
     p
       color: variables.$text-color-secondary
       font-size: 1.1rem
       margin-bottom: 2rem
       font-family: variables.$font-mono
       
+      @media (max-width: 768px)
+        font-size: 1rem
+      
     .cta-buttons
       display: flex
       gap: 1.5rem
+      
+      @media (max-width: 768px)
+        flex-direction: column
+        gap: 1rem
       
       .primary-btn, .secondary-btn
         @include mixins.cyber-button
         padding: 0.8rem 1.5rem
         border-radius: 2px
+        width: auto
+        
+        @media (max-width: 768px)
+          width: 100%
+          text-align: center
       
       .secondary-btn
         background: transparent
@@ -121,15 +163,23 @@
       gap: 1.5rem
       margin-bottom: 2rem
       
+      @media (max-width: 768px)
+        justify-content: center
+        gap: 1rem
+      
       .social-link
         color: variables.$text-color-secondary
         font-size: 1.5rem
         transition: all 0.3s ease
         
+        @media (max-width: 768px)
+          font-size: 1.25rem
+        
         &:hover
           color: variables.$accent-color
           transform: translateY(-3px)
 
+// Mantendo as animações existentes
 @keyframes glitch-1
   0%, 100%
     clip-path: inset(50% 0 50% 0)
@@ -145,37 +195,3 @@
     clip-path: inset(20% 50% 20% 50%)
   40%
     clip-path: inset(60% 0 60% 0)
-
-// Responsive
-@media (max-width: 1200px)
-  .hero
-    .hero-content
-      width: 70%
-      margin-right: 2rem
-
-@media (max-width: 768px)
-  .hero
-    justify-content: center
-    
-    .hero-content
-      width: 90%
-      margin: 1rem
-      padding: 2rem
-      
-      h1
-        font-size: 2.5rem
-      
-      .title-accent
-        font-size: 1rem
-      
-      .cta-buttons
-        flex-direction: column
-        align-items: stretch
-        gap: 1rem
-
-      .social-links
-        justify-content: center
-        gap: 1rem
-        
-        .social-link
-          font-size: 1.25rem
