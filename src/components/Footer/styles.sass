@@ -1,0 +1,82 @@
+@use '@/styles/variables'
+@use '@/styles/mixins'
+
+.footer
+    width: 100%
+    padding: 2rem 0
+    background: variables.$bg-color-secondary
+    border-top: 1px solid rgba(variables.$accent-color, 0.1)
+    margin-top: 4rem
+    position: relative
+    z-index: 100 // Adicionando z-index alto para garantir que fique acima de outros elementos
+    
+    // Opcional: adicionar um backdrop-filter para garantir legibilidade
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+
+    .footer-content
+        max-width: 1200px
+        margin: 0 auto
+        padding: 0 2rem
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1.5rem
+        position: relative // Garante que o conteúdo também mantenha o z-index
+
+    .footer-social
+        display: flex
+        gap: 1.5rem
+        margin-bottom: 1rem
+
+        .social-link
+            color: variables.$text-color-secondary
+            font-size: 1.5rem
+            transition: all 0.3s ease
+
+            &:hover
+                color: variables.$accent-color
+                transform: translateY(-3px)
+
+    .footer-text
+        text-align: center
+        color: variables.$text-color-secondary
+
+        p
+            margin: 0.5rem 0
+            font-size: 0.9rem
+
+            a
+                color: variables.$accent-color
+                text-decoration: none
+                transition: color 0.3s ease
+
+                &:hover
+                    color: lighten(variables.$accent-color, 10%)
+
+        .heart-icon
+            color: #ff4d4d
+            animation: pulse 1.5s infinite
+
+        .copyright
+            font-size: 0.8rem
+            opacity: 0.8
+
+@keyframes pulse
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.2)
+    100%
+        transform: scale(1)
+
+@media (max-width: 768px)
+    .footer
+        .footer-content
+            padding: 0 1rem
+
+        .footer-social
+            gap: 1rem
+
+            .social-link
+                font-size: 1.25rem

@@ -1,5 +1,5 @@
-@use '../../styles/variables'
-@use '../../styles/mixins'
+@use '@/styles/variables'
+@use '@/styles/mixins'
 
 .contact-section
     padding: 6rem 0
@@ -268,3 +268,152 @@
         .contact-container
             padding: 0 1rem
             gap: 2rem
+
+.social-networks
+    margin-top: 3rem
+    padding: 2rem
+    background: rgba(variables.$bg-color-secondary, 0.5)
+    border: 1px solid rgba(variables.$accent-color, 0.1)
+    border-radius: 12px
+    backdrop-filter: blur(10px)
+    position: relative
+    overflow: hidden
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        height: 1px
+        background: variables.$gradient
+        opacity: 0.5
+    
+    h3
+        color: variables.$text-color
+        margin-bottom: 1.5rem
+        font-size: 1.4rem
+        text-transform: uppercase
+        letter-spacing: 2px
+        text-align: center
+        position: relative
+        
+        &::after
+            content: ''
+            position: absolute
+            bottom: -8px
+            left: 50%
+            transform: translateX(-50%)
+            width: 60px
+            height: 2px
+            background: variables.$gradient
+    
+    .social-links
+        display: flex
+        justify-content: center
+        gap: 2rem
+        margin-top: 2rem
+        
+        .social-link
+            position: relative
+            width: 60px
+            height: 60px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            background: variables.$bg-color-secondary
+            color: variables.$text-color-secondary
+            font-size: 1.8rem
+            transition: all 0.3s ease
+            border: 1px solid rgba(variables.$accent-color, 0.2)
+            
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                border-radius: 50%
+                background: variables.$gradient
+                opacity: 0
+                transition: opacity 0.3s ease
+                z-index: 0
+            
+            svg
+                position: relative
+                z-index: 1
+                transition: all 0.3s ease
+            
+            &:hover
+                transform: translateY(-5px)
+                border-color: transparent
+                
+                &::before
+                    opacity: 1
+                
+                svg
+                    color: variables.$text-color
+                    transform: scale(1.1)
+            
+            // Estilos específicos para cada rede social
+            &[aria-label*="linkedin"]
+                &:hover
+                    box-shadow: 0 5px 15px rgba(#0077B5, 0.3)
+            
+            &[aria-label*="github"]
+                &:hover
+                    box-shadow: 0 5px 15px rgba(#333, 0.3)
+            
+            &[aria-label*="instagram"]
+                &:hover
+                    box-shadow: 0 5px 15px rgba(#E4405F, 0.3)
+            
+            &[aria-label*="twitter"]
+                &:hover
+                    box-shadow: 0 5px 15px rgba(#1DA1F2, 0.3)
+
+        // Adicionar tooltip
+        .social-link::after
+            content: attr(aria-label)
+            position: absolute
+            bottom: -30px
+            left: 50%
+            transform: translateX(-50%)
+            background: variables.$bg-color-secondary
+            padding: 5px 10px
+            border-radius: 4px
+            font-size: 0.8rem
+            opacity: 0
+            visibility: hidden
+            transition: all 0.3s ease
+            white-space: nowrap
+            
+        .social-link:hover::after
+            opacity: 1
+            visibility: visible
+            bottom: -40px
+
+@media (max-width: 768px)
+    .social-networks
+        padding: 1.5rem
+        margin-top: 2rem
+        
+        h3
+            font-size: 1.2rem
+            
+            &::after
+                width: 40px
+        
+        .social-links
+            gap: 1rem
+            flex-wrap: wrap
+            
+            .social-link
+                width: 50px
+                height: 50px
+                font-size: 1.5rem
+                
+                &::after
+                    display: none // Remove tooltip em mobile

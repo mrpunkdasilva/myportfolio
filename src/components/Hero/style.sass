@@ -10,16 +10,20 @@
   overflow: hidden
   
   .background-container
-    position: fixed
+    position: absolute
     top: 0
     left: 0
     width: 100%
     height: 100%
-    z-index: 0
+    z-index: 1 // Garantindo que fique abaixo do Footer
     canvas
       width: 100% !important
       height: 100% !important
     
+  .model-wrapper
+    position: relative
+    z-index: 2 // Mantendo acima do background mas abaixo do Footer
+  
   .hero-content
     @include mixins.glass-effect
     width: 50%
@@ -112,6 +116,20 @@
         &:hover
           border-color: variables.$accent-color-secondary
 
+    .social-links
+      display: flex
+      gap: 1.5rem
+      margin-bottom: 2rem
+      
+      .social-link
+        color: variables.$text-color-secondary
+        font-size: 1.5rem
+        transition: all 0.3s ease
+        
+        &:hover
+          color: variables.$accent-color
+          transform: translateY(-3px)
+
 @keyframes glitch-1
   0%, 100%
     clip-path: inset(50% 0 50% 0)
@@ -154,3 +172,10 @@
         flex-direction: column
         align-items: stretch
         gap: 1rem
+
+      .social-links
+        justify-content: center
+        gap: 1rem
+        
+        .social-link
+          font-size: 1.25rem

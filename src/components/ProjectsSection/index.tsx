@@ -9,7 +9,7 @@ export const ProjectsSection = () => {
   const [searchTerm, setSearchTerm] = useState('')
 
   return (
-    <section className="projects-section">
+    <section className="projects-section" id={"projects"}>
       <div className="section-header">
         <div className="glitch-container">
           <h2 data-text="ALL_PROJECTS">ALL_PROJECTS</h2>

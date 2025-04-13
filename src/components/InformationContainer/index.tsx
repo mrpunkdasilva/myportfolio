@@ -23,8 +23,8 @@ export const InformationContainer = () => {
                         <li>
                             <span className="title">Email:</span>
                             <span>
-                                <a href="mailto:contact@gustavohenrique.dev">
-                                    contact@gustavohenrique.dev
+                                <a href="mailto:gustavojs417@gmail.com">
+                                    gustavojs417@gmail.com
                                 </a>
                             </span>
                         </li>

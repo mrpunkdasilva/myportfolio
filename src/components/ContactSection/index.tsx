@@ -1,59 +1,15 @@
 'use client'
 
-import { useState } from 'react'
-import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
+import listSocialNetworks from '@/data/socialNetworks'
 import './style.sass'
 
 export const ContactSection = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    })
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setIsSubmitting(true)
-        setSubmitStatus('idle')
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            })
-
-            if (!response.ok) throw new Error('Failed to send message')
-
-            setSubmitStatus('success')
-            setFormData({ name: '', email: '', message: '' })
-            
-            // Opcional: Mostrar mensagem de sucesso
-            alert('Message sent successfully!')
-        } catch (error) {
-            setSubmitStatus('error')
-            alert('Failed to send message. Please try again.')
-        } finally {
-            setIsSubmitting(false)
-        }
-    }
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
-    }
-
     return (
-        <section id="contact" className="contact-section">
+        <section className="contact-section" id="contact">
             <div className="section-header">
                 <h2>Let's Connect</h2>
-                <p>Interested in working together? Let's talk</p>
+                <p>Feel free to reach out through any of these channels</p>
             </div>
 
             <div className="contact-container">
@@ -81,53 +37,25 @@ export const ContactSection = () => {
                             <p>SP - SP, Brazil</p>
                         </div>
                     </div>
+
+                    <div className="social-networks">
+                        <h3>Connect With Me</h3>
+                        <div className="social-links">
+                            {listSocialNetworks.map((network) => (
+                                <a
+                                    key={network.name}
+                                    href={network.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social-link"
+                                    aria-label={`Connect on ${network.name}`}
+                                >
+                                    {network.icon}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-
-                <form className="contact-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            disabled={isSubmitting}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            disabled={isSubmitting}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <textarea
-                            name="message"
-                            placeholder="Your Message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                            disabled={isSubmitting}
-                        />
-                    </div>
-
-                    <button 
-                        type="submit" 
-                        className="submit-btn"
-                        disabled={isSubmitting}
-                    >
-                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                        <FiSend className="icon" />
-                    </button>
-                </form>
             </div>
         </section>
     )
