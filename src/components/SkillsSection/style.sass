@@ -2,7 +2,7 @@
 @use '../../styles/mixins'
 
 .skills-section
-    padding: 4rem 0
+    padding: 4rem 2rem
     background: variables.$bg-color-secondary
     border-radius: 16px
     margin: 2rem 0
@@ -13,7 +13,7 @@
         margin-bottom: 3rem
 
         h2
-            font-size: 2rem
+            font-size: 2.5rem
             margin-bottom: 1rem
             background: variables.$gradient
             -webkit-background-clip: text
@@ -23,66 +23,160 @@
             color: variables.$text-color-secondary
             font-size: 1.1rem
 
-    .skills-container
-        padding: 0 2rem
-        display: flex
-        flex-direction: column
-        gap: 3rem
+    .skills-filters
+        margin-bottom: 2rem
 
-        .skill-category
-            .category-header
-                margin-bottom: 1.5rem
+        .search-bar
+            position: relative
+            max-width: 500px
+            margin: 0 auto 2rem
+
+            input
+                width: 100%
+                padding: 1rem 2.5rem 1rem 1rem
+                border-radius: 8px
+                background: rgba(variables.$bg-color, 0.8)
+                border: 1px solid rgba(variables.$accent-color, 0.2)
+                color: variables.$text-color
+                font-size: 1rem
+
+                &:focus
+                    outline: none
+                    border-color: variables.$accent-color
+
+            .filter-icon
+                position: absolute
+                right: 1rem
+                top: 50%
+                transform: translateY(-50%)
+                color: variables.$text-color-secondary
+
+        .category-filters
+            display: flex
+            flex-wrap: wrap
+            gap: 1rem
+            justify-content: center
+
+            .category-btn
+                padding: 0.5rem 1.5rem
+                border-radius: 20px
+                background: rgba(variables.$bg-color, 0.8)
+                border: 1px solid rgba(variables.$accent-color, 0.2)
+                color: variables.$text-color-secondary
+                cursor: pointer
+                transition: all 0.3s ease
+                font-size: 0.9rem
+                z-index: 1
+                position: relative
+                outline: none
                 
-                h3
-                    font-size: 1.5rem
-                    margin-bottom: 0.5rem
+                &:hover
+                    background: rgba(variables.$accent-color, 0.1)
+                    transform: translateY(-2px)
+                
+                &.active
+                    background: rgba(variables.$accent-color, 0.2)
+                    border-color: variables.$accent-color
                     color: variables.$text-color
-                    border-bottom: 2px solid rgba(variables.$accent-color, 0.2)
-                    padding-bottom: 0.5rem
-                
-                p
+
+    .skills-grid
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+        gap: 1.5rem
+        margin: 2rem 0
+
+        .skill-card
+            background: rgba(variables.$bg-color, 0.8)
+            border-radius: 12px
+            padding: 1.5rem
+            display: flex
+            align-items: center
+            gap: 1rem
+            border: 1px solid rgba(var(--skill-color), 0.2)
+            transition: all 0.3s ease
+
+            &:hover
+                transform: translateY(-4px)
+                box-shadow: 0 4px 12px rgba(var(--skill-color), 0.1)
+
+            .skill-icon
+                font-size: 2.5rem
+                color: var(--skill-color)
+
+            .skill-info
+                h4
+                    font-size: 1.1rem
+                    margin-bottom: 0.25rem
+                    color: variables.$text-color
+
+                .skill-level
+                    font-size: 0.85rem
                     color: variables.$text-color-secondary
-                    font-size: 0.9rem
-                    margin-top: 0.5rem
+                    display: block
 
-            .skills-grid
-                display: grid
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
-                gap: 1.5rem
+    .no-results
+        text-align: center
+        padding: 2rem
+        color: variables.$text-color-secondary
 
-                .skill-card
-                    background: rgba(variables.$bg-color, 0.8)
-                    border-radius: 12px
-                    padding: 1.5rem
-                    display: flex
-                    align-items: center
-                    gap: 1rem
-                    border: 1px solid rgba(variables.$accent-color, 0.2)
-                    transition: all 0.3s ease
+.pagination
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 0.5rem
+    margin-top: 2rem
+    
+    .pagination-btn
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 2.5rem
+        height: 2.5rem
+        border: 1px solid #ddd
+        border-radius: 0.5rem
+        background: transparent
+        color: #666
+        cursor: pointer
+        transition: all 0.3s ease
+        
+        &:hover:not(:disabled)
+            background: #f0f0f0
+            color: #333
+        
+        &.active
+            background: #007bff
+            color: white
+            border-color: #007bff
+        
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
 
-                    &:hover
-                        border-color: variables.$accent-color
-                        box-shadow: 0 4px 12px rgba(variables.$accent-color, 0.1)
+        svg
+            width: 1.2rem
+            height: 1.2rem
 
-                    .skill-icon
-                        font-size: 2rem
-                        color: variables.$accent-color
-
-                    .skill-info
-                        h4
-                            font-size: 1rem
-                            margin-bottom: 0.25rem
-                            color: variables.$text-color
-
-                        .skill-level
-                            font-size: 0.85rem
-                            color: variables.$text-color-secondary
+// Responsividade para a paginação
+@media (max-width: 768px)
+    .pagination
+        .pagination-btn
+            width: 2rem
+            height: 2rem
+            font-size: 0.9rem
 
 @media (max-width: 768px)
     .skills-section
-        .skills-container
-            padding: 0 1rem
+        padding: 2rem 1rem
 
-            .skill-category
-                .skills-grid
-                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        .section-header
+            h2
+                font-size: 2rem
+
+        .skills-filters
+            .category-filters
+                .category-btn
+                    padding: 0.4rem 1rem
+                    font-size: 0.8rem
+
+        .skills-grid
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))

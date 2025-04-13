@@ -10,11 +10,36 @@ export const ContactSection = () => {
         email: '',
         message: ''
     })
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        // Implementar lógica de envio do formulário
-        console.log('Form submitted:', formData)
+        setIsSubmitting(true)
+        setSubmitStatus('idle')
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            if (!response.ok) throw new Error('Failed to send message')
+
+            setSubmitStatus('success')
+            setFormData({ name: '', email: '', message: '' })
+            
+            // Opcional: Mostrar mensagem de sucesso
+            alert('Message sent successfully!')
+        } catch (error) {
+            setSubmitStatus('error')
+            alert('Failed to send message. Please try again.')
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,7 +50,7 @@ export const ContactSection = () => {
     }
 
     return (
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
             <div className="section-header">
                 <h2>Let's Connect</h2>
                 <p>Interested in working together? Let's talk</p>
@@ -67,6 +92,7 @@ export const ContactSection = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
+                            disabled={isSubmitting}
                         />
                     </div>
 
@@ -78,6 +104,7 @@ export const ContactSection = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
+                            disabled={isSubmitting}
                         />
                     </div>
 
@@ -88,11 +115,16 @@ export const ContactSection = () => {
                             value={formData.message}
                             onChange={handleChange}
                             required
+                            disabled={isSubmitting}
                         />
                     </div>
 
-                    <button type="submit" className="submit-btn">
-                        <span>Send Message</span>
+                    <button 
+                        type="submit" 
+                        className="submit-btn"
+                        disabled={isSubmitting}
+                    >
+                        <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                         <FiSend className="icon" />
                     </button>
                 </form>

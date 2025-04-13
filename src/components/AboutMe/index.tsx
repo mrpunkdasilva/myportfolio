@@ -1,7 +1,6 @@
 'use client'
 
 import './style.sass'
-import { TechStack } from '../TechStack'
 import { FiTerminal, FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
 
 export const AboutMe = () => {
@@ -48,24 +47,6 @@ export const AboutMe = () => {
               experiência prática com projetos freelance e desenvolvimento de soluções 
               empresariais.
             </p>
-
-            <p className="approach">
-              Minha abordagem combina <span className="highlight">criatividade técnica</span> com 
-              <span className="highlight"> metodologias ágeis</span>, permitindo entregar 
-              soluções robustas que atendem às necessidades do negócio e proporcionam 
-              experiências excepcionais aos usuários.
-            </p>
-          </div>
-
-          <div className="cta-container">
-            <button onClick={scrollToContact} className="contact-button">
-              <span className="button-text">Iniciar Conexão</span>
-              <span className="button-icon">→</span>
-            </button>
-            <div className="cta-decorator">
-              <span className="decorator-line"></span>
-              <span className="decorator-text">sys.initiate_contact()</span>
-            </div>
           </div>
         </div>
 
@@ -80,11 +61,6 @@ export const AboutMe = () => {
               Next.js e tecnologias modernas. Criação de interfaces responsivas e 
               interativas com HTML5, CSS3, JavaScript e frameworks populares.
             </p>
-            <ul className="tech-tags">
-              <li>React</li>
-              <li>Next.js</li>
-              <li>JavaScript</li>
-            </ul>
           </div>
 
           <div className="highlight-item">
@@ -97,11 +73,6 @@ export const AboutMe = () => {
               Conhecimento em bancos de dados relacionais como MySQL e PostgreSQL, 
               e não relacionais como MongoDB.
             </p>
-            <ul className="tech-tags">
-              <li>Node.js</li>
-              <li>PHP</li>
-              <li>MySQL</li>
-            </ul>
           </div>
 
           <div className="highlight-item">
@@ -114,15 +85,8 @@ export const AboutMe = () => {
               Experiência em desenvolvimento de sistemas web completos, desde o frontend 
               até o backend.
             </p>
-            <ul className="tech-tags">
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>Scrum</li>
-            </ul>
           </div>
         </div>
-
-        <TechStack />
       </div>
     </section>
   )

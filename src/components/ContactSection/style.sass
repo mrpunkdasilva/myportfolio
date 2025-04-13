@@ -2,23 +2,74 @@
 @use '../../styles/mixins'
 
 .contact-section
-    padding: 4rem 0
+    padding: 6rem 0
     background: variables.$bg-color-secondary
+    position: relative
+    overflow: hidden
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 1px
+        background: variables.$gradient
+        opacity: 0.3
+    
+    &::after
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 1px
+        background: variables.$gradient
+        opacity: 0.3
     
     .section-header
         text-align: center
-        margin-bottom: 3rem
+        margin-bottom: 4rem
+        position: relative
         
         h2
-            font-size: 2.5rem
+            font-size: 3rem
             margin-bottom: 1rem
-            background: linear-gradient(135deg, variables.$accent-color, #FF0080)
+            font-family: variables.$font-mono
+            background: variables.$gradient
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
+            position: relative
+            display: inline-block
+            
+            &::before
+                content: '<'
+                position: absolute
+                left: -2rem
+                color: variables.$accent-color
+                opacity: 0.5
+            
+            &::after
+                content: '/>'
+                position: absolute
+                right: -2rem
+                color: variables.$accent-color
+                opacity: 0.5
         
         p
             color: variables.$text-color-secondary
-            font-size: 1.1rem
+            font-size: 1.2rem
+            font-family: variables.$font-mono
+            
+            &::before
+                content: '{'
+                color: variables.$accent-color
+                margin-right: 0.5rem
+            
+            &::after
+                content: '}'
+                color: variables.$accent-color
+                margin-left: 0.5rem
 
     .contact-container
         display: flex
@@ -26,9 +77,21 @@
         max-width: 1200px
         margin: 0 auto
         padding: 0 2rem
+        position: relative
 
         @media (max-width: 768px)
             flex-direction: column
+
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 100%
+            height: 100%
+            background: radial-gradient(circle at center, rgba(variables.$accent-color, 0.1) 0%, transparent 70%)
+            pointer-events: none
 
     .contact-info
         flex: 1
@@ -38,79 +101,170 @@
             align-items: center
             margin-bottom: 2rem
             padding: 1.5rem
-            background: rgba(255, 255, 255, 0.05)
+            background: rgba(variables.$bg-color, 0.5)
+            border: 1px solid rgba(variables.$accent-color, 0.1)
             border-radius: 8px
-            transition: transform 0.3s ease
+            transition: all 0.3s ease
+            position: relative
+            overflow: hidden
+            @include mixins.glass-effect
+            
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 2px
+                height: 100%
+                background: variables.$gradient
+                opacity: 0
+                transition: opacity 0.3s ease
             
             &:hover
                 transform: translateX(10px)
+                border-color: rgba(variables.$accent-color, 0.3)
+                box-shadow: 0 0 20px rgba(variables.$accent-color, 0.1)
                 
+                &::before
+                    opacity: 1
+                
+                .icon
+                    transform: rotate(15deg) scale(1.2)
+                    
             .icon
-                font-size: 1.5rem
+                font-size: 1.8rem
                 color: variables.$accent-color
-                margin-right: 1rem
+                margin-right: 1.5rem
+                transition: all 0.3s ease
             
             .info-content
                 h3
-                    font-size: 1.1rem
+                    font-size: 1.2rem
                     margin-bottom: 0.5rem
                     color: variables.$text-color
+                    font-family: variables.$font-mono
                 
                 a, p
                     color: variables.$text-color-secondary
                     text-decoration: none
                     transition: color 0.3s ease
+                    font-family: variables.$font-mono
                     
                     &:hover
                         color: variables.$accent-color
 
     .contact-form
         flex: 1.5
+        @include mixins.glass-effect
+        padding: 2rem
+        border-radius: 12px
+        border: 1px solid rgba(variables.$accent-color, 0.1)
+        position: relative
+        
+        &::before
+            content: ''
+            position: absolute
+            top: -1px
+            left: -1px
+            right: -1px
+            bottom: -1px
+            border-radius: 12px
+            padding: 1px
+            background: variables.$gradient
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+            -webkit-mask-composite: xor
+            mask-composite: exclude
+            pointer-events: none
         
         .form-group
             margin-bottom: 1.5rem
+            position: relative
+            
+            &::after
+                content: ''
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 1px
+                background: variables.$gradient
+                opacity: 0
+                transition: opacity 0.3s ease
             
             input, textarea
                 width: 100%
                 padding: 1rem
-                background: rgba(255, 255, 255, 0.05)
-                border: 1px solid rgba(255, 255, 255, 0.1)
+                background: rgba(variables.$bg-color, 0.3)
+                border: 1px solid rgba(variables.$accent-color, 0.1)
                 border-radius: 8px
                 color: variables.$text-color
                 font-size: 1rem
+                font-family: variables.$font-mono
                 transition: all 0.3s ease
                 
                 &:focus
                     outline: none
                     border-color: variables.$accent-color
-                    background: rgba(255, 255, 255, 0.08)
+                    background: rgba(variables.$bg-color, 0.5)
+                    box-shadow: 0 0 15px rgba(variables.$accent-color, 0.1)
                 
                 &::placeholder
-                    color: variables.$text-color-secondary
+                    color: rgba(variables.$text-color-secondary, 0.7)
             
             textarea
                 min-height: 150px
                 resize: vertical
 
         .submit-btn
-            display: flex
-            align-items: center
-            justify-content: center
-            gap: 0.5rem
+            @include mixins.cyber-button
             width: 100%
-            padding: 1rem
-            background: variables.$accent-color
-            border: none
-            border-radius: 8px
-            color: #fff
-            font-size: 1rem
-            font-weight: 600
-            cursor: pointer
-            transition: all 0.3s ease
+            padding: 1.2rem
+            font-size: 1.1rem
+            letter-spacing: 2px
+            position: relative
+            overflow: hidden
             
-            &:hover
-                background: darken(variables.$accent-color, 10%)
-                transform: translateY(-2px)
+            &:disabled
+                opacity: 0.7
+                cursor: not-allowed
+                
+                &:hover
+                    transform: none
+                    .icon
+                        transform: none
+            
+            span
+                position: relative
+                z-index: 1
             
             .icon
                 font-size: 1.2rem
+                margin-left: 0.5rem
+                transition: transform 0.3s ease
+            
+            &:not(:disabled):hover
+                .icon
+                    transform: translateX(5px)
+
+@keyframes pulse
+    0%
+        box-shadow: 0 0 0 0 rgba(variables.$accent-color, 0.4)
+    70%
+        box-shadow: 0 0 0 10px rgba(variables.$accent-color, 0)
+    100%
+        box-shadow: 0 0 0 0 rgba(variables.$accent-color, 0)
+
+@media (max-width: 768px)
+    .contact-section
+        padding: 4rem 0
+        
+        .section-header
+            h2
+                font-size: 2.5rem
+                
+                &::before, &::after
+                    display: none
+        
+        .contact-container
+            padding: 0 1rem
+            gap: 2rem
