@@ -136,11 +136,15 @@
             text-shadow: 0 0 5px variables.$accent-color
 
     .projects-grid
-        display: grid
-        grid-template-columns: repeat(3, 1fr)
+        display: flex
+        flex-wrap: wrap
         gap: 2.5rem
+        justify-content: center
         
         .project-card
+            flex: 1
+            min-width: 400px  // Largura mínima para cada card
+            max-width: calc(33.33% - 2.5rem)  // Máximo de 3 cards por linha
             background: rgba(variables.$bg-color-secondary, 0.7)
             backdrop-filter: blur(10px)
             border-radius: 4px
@@ -188,7 +192,8 @@
 @media (max-width: 1200px)
     .featured-projects
         .projects-grid
-            grid-template-columns: repeat(2, 1fr)
+            .project-card
+                max-width: calc(50% - 2.5rem)  // 2 cards por linha
 
 @media (max-width: 768px)
     .featured-projects
@@ -202,5 +207,6 @@
                 font-size: 0.9rem
         
         .projects-grid
-            grid-template-columns: 1fr
-            gap: 2rem
+            .project-card
+                max-width: 100%  // 1 card por linha
+                min-width: 250px
