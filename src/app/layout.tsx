@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Footer } from '@/components/Footer'
+import { CyberNav } from '@/components/CyberNav'
 import '../styles/globals.sass'
 
 export const metadata: Metadata = {
@@ -63,9 +64,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body>
-        {children}
+        <CyberNav />
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

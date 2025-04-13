@@ -1,0 +1,141 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.cyber-nav
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1000
+  transition: all 0.3s ease
+  background: rgba(variables.$bg-color, 0.8)
+  backdrop-filter: blur(10px)
+  border-bottom: 1px solid rgba(variables.$accent-color, 0.1)
+
+  &.scrolled
+    background: rgba(variables.$bg-color, 0.95)
+    box-shadow: 0 0 20px rgba(variables.$accent-color, 0.2)
+
+    .nav-border
+      opacity: 1
+
+  .nav-content
+    max-width: variables.$max-width
+    margin: 0 auto
+    padding: 1rem 2rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+
+  .logo
+    font-family: variables.$font-mono
+    font-size: 1.5rem
+    display: flex
+    align-items: center
+    gap: 0.2rem
+    
+    .bracket
+      color: variables.$accent-color
+      opacity: 0.8
+    
+    .text
+      background: variables.$gradient
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+  .menu-toggle
+    display: none
+    background: none
+    border: none
+    color: variables.$text-color
+    font-size: 1.5rem
+    cursor: pointer
+    padding: 0.5rem
+    z-index: 100
+
+    &:hover
+      color: variables.$accent-color
+
+  .nav-links
+    display: flex
+    gap: 2rem
+    list-style: none
+
+    .nav-link
+      position: relative
+      padding: 0.5rem 1rem
+      color: variables.$text-color
+      text-decoration: none
+      font-family: variables.$font-mono
+      font-size: 0.9rem
+      letter-spacing: 1px
+      transition: all 0.3s ease
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: variables.$gradient
+        opacity: 0
+        transition: all 0.3s ease
+        z-index: -1
+        transform: skewX(-15deg)
+
+      &:hover
+        color: variables.$bg-color
+        
+        &::before
+          opacity: 1
+
+  .nav-border
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 2px
+    background: variables.$gradient
+    opacity: 0
+    transition: opacity 0.3s ease
+
+  // Responsividade
+  @media (max-width: 768px)
+    .menu-toggle
+      display: block
+
+    .nav-links
+      position: fixed
+      top: 0
+      right: -100%
+      width: 100%
+      height: 100vh
+      background: rgba(variables.$bg-color, 0.98)
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      transition: all 0.3s ease
+      backdrop-filter: blur(10px)
+
+    &.open
+      .nav-links
+        right: 0
+
+      .nav-link
+        font-size: 1.2rem
+        margin: 1rem 0
+
+        &::before
+          transform: skewX(-15deg) translateX(-100%)
+
+        &:hover::before
+          transform: skewX(-15deg) translateX(0)
+
+  @media (max-width: 480px)
+    .nav-content
+      padding: 1rem
+
+    .logo
+      font-size: 1.2rem

@@ -10,7 +10,7 @@ export const AboutMe = () => {
   }
 
   return (
-    <section className="about-me">
+    <section className="about-me" id={"about"}>
       <div className="about-content">
         <div className="section-header">
           <h2>
