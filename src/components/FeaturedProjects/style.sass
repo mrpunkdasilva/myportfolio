@@ -143,13 +143,30 @@
         
         .project-card
             flex: 1
-            min-width: 400px  // Largura mínima para cada card
-            max-width: calc(33.33% - 2.5rem)  // Máximo de 3 cards por linha
+            min-width: 400px
+            max-width: calc(33.33% - 2.5rem)
             background: rgba(variables.$bg-color-secondary, 0.7)
             backdrop-filter: blur(10px)
             border-radius: 4px
             position: relative
             transition: all 0.3s ease
+            
+            .hover-model-container
+                position: absolute
+                bottom: 10px        // Alterado de top para bottom
+                right: 10px
+                width: 60px
+                height: 60px
+                pointer-events: none
+                z-index: 10
+                opacity: 0
+                transition: opacity 0.3s ease
+                mix-blend-mode: screen
+
+                canvas
+                    width: 100%
+                    height: 100%
+                    opacity: 0.6
             
             .card-frame
                 position: absolute
@@ -184,6 +201,9 @@
             &:hover
                 transform: translateY(-10px) scale(1.02)
                 box-shadow: 0 10px 30px rgba(variables.$accent-color, 0.2)
+                
+                .hover-model-container
+                    opacity: 1
                 
                 .card-frame
                     background: lighten(variables.$accent-color, 20%)

@@ -4,12 +4,16 @@ import './style.sass'
 import { projects } from '@/data/projects'
 import { ProjectArticle } from '../ArticleProject'
 import { FloatingCubes } from './FloatingCubes'
+import { useState } from 'react'
+import { HoverModel } from './HoverModel'
 
 export const FeaturedProjects = () => {
     const featuredProjects = projects.slice(0, 3).map(project => ({
         ...project,
         isFeatured: true
     }))
+
+    const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
     return (
         <section className="featured-projects">
@@ -25,11 +29,17 @@ export const FeaturedProjects = () => {
 
                 <div className="projects-grid">
                     {featuredProjects.map((project) => (
-                        <div key={project.title} className="project-card">
+                        <div 
+                            key={project.title} 
+                            className="project-card"
+                            onMouseEnter={() => setHoveredCard(project.title)}
+                            onMouseLeave={() => setHoveredCard(null)}
+                        >
                             <div className="card-frame top"></div>
                             <div className="card-frame right"></div>
                             <div className="card-frame bottom"></div>
                             <div className="card-frame left"></div>
+                            <HoverModel isVisible={hoveredCard === project.title} />
                             <ProjectArticle {...project} />
                         </div>
                     ))}
