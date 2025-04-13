@@ -12,22 +12,36 @@ export const AboutMe = () => {
   return (
     <section className="about-me">
       <div className="about-content">
-        <h2>About Me</h2>
+        <h2>About Me<span className="blink">_</span></h2>
 
         <div className="bio">
+          <div className="bio-header">
+            <div className="status-indicator">
+              <span className="status-dot"></span>
+              <span className="status-text">Available for hire</span>
+            </div>
+          </div>
+          
           <p>
-            Full-Stack Developer with hands-on experience in freelance projects,
-            specializing in modern web technologies and solutions. Currently pursuing
-            a Bachelor's degree in Software Engineering at Jala University.
+            <span className="highlight">Full-Stack Developer</span> with hands-on experience 
+            in freelance projects, specializing in modern web technologies and solutions. 
+            Currently pursuing a Bachelor's degree in Software Engineering at Jala University.
           </p>
-          <button onClick={scrollToContact} className="contact-button">
-            Contact Me
-          </button>
+          
+          <div className="cta-container">
+            <button onClick={scrollToContact} className="contact-button">
+              <span className="button-text">Contact Me</span>
+              <span className="button-icon">→</span>
+            </button>
+          </div>
         </div>
 
         <div className="highlights">
           <div className="highlight-item">
-            <h3>Development</h3>
+            <h3>
+              <span className="icon">⚡</span>
+              Development
+            </h3>
             <p>
               Experienced in both frontend and backend development, creating responsive
               and efficient web applications using modern frameworks and best practices.
@@ -35,7 +49,10 @@ export const AboutMe = () => {
           </div>
 
           <div className="highlight-item">
-            <h3>Problem Solving</h3>
+            <h3>
+              <span className="icon">🔮</span>
+              Problem Solving
+            </h3>
             <p>
               Strong analytical skills and ability to transform complex requirements
               into elegant solutions, with a focus on code quality and performance.
@@ -43,9 +60,12 @@ export const AboutMe = () => {
           </div>
 
           <div className="highlight-item">
-            <h3>Collaboration</h3>
+            <h3>
+              <span className="icon">🤝</span>
+              Collaboration
+            </h3>
             <p>
-              Proficient in agile methodologies (Scrum) and version control systems (Git),
+              Proficient in agile methodologies and version control systems,
               with excellent communication skills for team environments.
             </p>
           </div>

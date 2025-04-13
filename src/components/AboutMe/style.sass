@@ -11,52 +11,80 @@
     padding: 4rem
     position: relative
     
-    &::before
-      content: '<about>'
-      position: absolute
-      top: 0
-      left: 0
-      font-family: variables.$font-mono
-      color: variables.$accent-color
-      opacity: 0.5
-      font-size: 0.9rem
-    
-    &::after
-      content: '</about>'
-      position: absolute
-      bottom: 0
-      right: 0
-      font-family: variables.$font-mono
-      color: variables.$accent-color
-      opacity: 0.5
-      font-size: 0.9rem
-
     h2
       @include mixins.section-title
       text-align: center
       border-bottom: none
       margin-bottom: 3rem
+      font-family: variables.$font-mono
+      
+      .blink
+        animation: blink 1s step-end infinite
+        color: variables.$accent-color
 
     .bio
-      text-align: center
-      padding: 2rem
+      text-align: left
+      padding: 2.5rem
       margin-bottom: 4rem
-      background: variables.$bg-color-secondary
-      border-radius: 8px
+      background: rgba(variables.$bg-color-secondary, 0.7)
+      border-radius: 16px
+      border: 1px solid rgba(variables.$accent-color, 0.2)
+      backdrop-filter: blur(10px)
       position: relative
+      
+      .bio-header
+        margin-bottom: 2rem
+        
+        .status-indicator
+          display: inline-flex
+          align-items: center
+          gap: 0.5rem
+          padding: 0.5rem 1rem
+          background: rgba(variables.$accent-color, 0.1)
+          border-radius: 20px
+          
+          .status-dot
+            width: 8px
+            height: 8px
+            background: #50fa7b
+            border-radius: 50%
+            animation: pulse 2s infinite
+          
+          .status-text
+            font-size: 0.9rem
+            color: #50fa7b
+            font-family: variables.$font-mono
       
       p
         font-size: 1.2rem
         line-height: 1.6
         color: variables.$text-color
         margin-bottom: 2rem
-      
-      .contact-button
-        @include mixins.cyber-button
-        margin-top: 1rem
         
-        &:hover
-          cursor: pointer
+        .highlight
+          color: variables.$accent-color
+          font-weight: 500
+      
+      .cta-container
+        text-align: center
+        
+        .contact-button
+          @include mixins.cyber-button
+          display: inline-flex
+          align-items: center
+          gap: 1rem
+          padding: 1rem 2rem
+          font-size: 1rem
+          border-radius: 8px
+          transition: all 0.3s ease
+          
+          .button-icon
+            transition: transform 0.3s ease
+          
+          &:hover
+            transform: translateY(-2px)
+            .button-icon
+              transform: translateX(5px)
 
     .highlights
       display: grid
@@ -66,109 +94,48 @@
 
       .highlight-item
         padding: 2rem
-        background: variables.$bg-color-secondary
-        border-radius: 8px
-        border-left: 3px solid variables.$accent-color
-        transition: variables.$hover-transition
+        background: rgba(variables.$bg-color-secondary, 0.7)
+        border-radius: 12px
+        border: 1px solid rgba(variables.$accent-color, 0.1)
+        transition: all 0.3s ease
 
         &:hover
           transform: translateY(-5px)
+          border-color: rgba(variables.$accent-color, 0.3)
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
 
         h3
           margin-bottom: 1rem
-          color: variables.$accent-color
+          color: variables.$text-color
           font-family: variables.$font-mono
           font-size: 1.2rem
           display: flex
           align-items: center
           gap: 0.5rem
 
-          &::before
-            content: '>'
-            color: variables.$accent-color-secondary
+          .icon
+            font-size: 1.4rem
 
         p
           line-height: 1.6
           color: variables.$text-color-secondary
 
-    .contact-info
-      margin-top: 4rem
-      text-align: center
-      padding: 3rem 2rem
-      background: variables.$bg-color-secondary
-      border-radius: 8px
-      position: relative
-      
-      &::before
-        content: ''
-        position: absolute
-        top: 0
-        left: 50%
-        transform: translateX(-50%)
-        width: 50px
-        height: 3px
-        background: variables.$gradient
+@keyframes blink
+  0%, 100%
+    opacity: 1
+  50%
+    opacity: 0
 
-      h3
-        font-size: 2rem
-        margin-bottom: 3rem
-        color: variables.$text-color
-        font-family: variables.$font-mono
-
-      .info-cards
-        display: flex
-        justify-content: center
-        gap: 2rem
-        flex-wrap: wrap
-
-        .info-card
-          display: flex
-          align-items: center
-          gap: 1.5rem
-          padding: 1.5rem
-          background: variables.$bg-color
-          border-radius: 8px
-          min-width: 280px
-          transition: variables.$hover-transition
-          border-left: 3px solid transparent
-
-          &:hover
-            transform: translateY(-3px)
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
-
-          .icon
-            color: white!important
-            font-size: 1.8rem
-            padding: 1rem
-            border-radius: 8px
-            background: variables.$bg-color-secondary
-            transition: variables.$hover-transition
-
-          // Estilos específicos para cada ícone
-          &:nth-child(1)
-            border-left-color: #e93b81
-
-          &:nth-child(2)
-            border-left-color: #6ab5b9
-
-          &:nth-child(3)
-            border-left-color: #c17ceb
-
-          div
-            text-align: left
-
-            h4
-              color: variables.$text-color-secondary
-              font-size: 0.9rem
-              margin-bottom: 0.5rem
-              text-transform: uppercase
-              letter-spacing: 1px
-
-            p
-              color: variables.$text-color
-              font-weight: 500
-              font-size: 1.1rem
+@keyframes pulse
+  0%
+    transform: scale(1)
+    opacity: 1
+  50%
+    transform: scale(1.2)
+    opacity: 0.7
+  100%
+    transform: scale(1)
+    opacity: 1
 
 @media (max-width: 768px)
   .about-me
@@ -190,17 +157,3 @@
       .highlights
         grid-template-columns: 1fr
         gap: 1.5rem
-
-      .contact-info
-        padding: 2rem 1rem
-        
-        .info-cards
-          flex-direction: column
-          align-items: stretch
-          gap: 1rem
-
-          .info-card
-            width: 100%
-            .contact-button
-              width: 100%
-              margin-top: 1.5rem
