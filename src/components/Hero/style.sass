@@ -5,88 +5,88 @@
   min-height: 100vh
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: flex-end
   position: relative
   overflow: hidden
-  background-color: variables.$body-bg-color
   
-  // Grid pattern using CSS
-  &::before
-    content: ''
-    position: absolute
+  .background-container
+    position: fixed
     top: 0
     left: 0
-    right: 0
-    bottom: 0
-    background-image: linear-gradient(variables.$accent-color 1px, transparent 1px), linear-gradient(90deg, variables.$accent-color 1px, transparent 1px)
-    background-size: 30px 30px
-    background-position: center center
-    opacity: 0.1
-    transform-origin: center
-    animation: grid-scroll 20s linear infinite
-    
-  &::after
-    content: ''
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    background: radial-gradient(circle at center, transparent 0%, variables.$body-bg-color 70%)
-
-  .model-container
-    position: absolute
-    left: 5%
-    width: 400px
-    height: 400px
+    width: 100%
+    height: 100%
+    z-index: 0
     canvas
       width: 100% !important
       height: 100% !important
     
   .hero-content
     @include mixins.glass-effect
-    max-width: 800px
-    margin-left: auto
+    width: 50%
+    margin-right: 5rem
     padding: 3rem
-    text-align: center
     position: relative
-    z-index: 1
+    z-index: 2
     border: 1px solid rgba(variables.$accent-color, 0.2)
     box-shadow: 0 0 20px rgba(variables.$accent-color, 0.1)
+    border-radius: 4px
+    
+    &::before, &::after
+      content: ''
+      position: absolute
+      width: 20px
+      height: 20px
+      border: 2px solid variables.$accent-color
+      opacity: 0.5
     
     &::before
-      content: '<>'
-      position: absolute
-      top: 1rem
-      left: 1rem
-      font-family: variables.$font-mono
-      color: variables.$accent-color
-      opacity: 0.5
-      font-size: 0.8rem
+      top: 10px
+      left: 10px
+      border-right: none
+      border-bottom: none
     
     &::after
-      content: '</>'
-      position: absolute
-      bottom: 1rem
-      right: 1rem
-      font-family: variables.$font-mono
-      color: variables.$accent-color
-      opacity: 0.5
-      font-size: 0.8rem
+      bottom: 10px
+      right: 10px
+      border-left: none
+      border-top: none
     
-    h1
-      font-size: 4rem
-      font-family: variables.$font-mono
-      margin-bottom: 1rem
-      background: variables.$gradient
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      text-shadow: 0 0 20px rgba(variables.$accent-color, 0.5)
-      letter-spacing: 2px
+    .glitch-container
+      position: relative
+      
+      h1
+        font-size: 3.5rem
+        font-family: variables.$font-mono
+        margin-bottom: 1rem
+        background: variables.$gradient
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        position: relative
+        
+        &::before, &::after
+          content: attr(data-text)
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background: variables.$gradient
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
+        
+        &::before
+          left: 2px
+          text-shadow: -2px 0 variables.$accent-color
+          animation: glitch-1 2s infinite linear alternate-reverse
+        
+        &::after
+          left: -2px
+          text-shadow: 2px 0 variables.$accent-color-secondary
+          animation: glitch-2 3s infinite linear alternate-reverse
       
     .title-accent
       color: variables.$accent-color
-      font-size: 1.5rem
+      font-size: 1.2rem
       margin-bottom: 2rem
       font-family: variables.$font-mono
       text-transform: uppercase
@@ -94,43 +94,53 @@
       
     p
       color: variables.$text-color-secondary
-      font-size: 1.2rem
+      font-size: 1.1rem
       margin-bottom: 2rem
       font-family: variables.$font-mono
       
     .cta-buttons
       display: flex
       gap: 1.5rem
-      justify-content: center
-      margin-top: 2rem
       
       .primary-btn, .secondary-btn
         @include mixins.cyber-button
-        min-width: 200px
+        padding: 0.8rem 1.5rem
+        border-radius: 2px
       
       .secondary-btn
         background: transparent
         &:hover
           border-color: variables.$accent-color-secondary
 
-@keyframes grid-scroll
-  0%
-    transform: translateY(0) rotate(0deg)
-  100%
-    transform: translateY(-100%) rotate(0deg)
+@keyframes glitch-1
+  0%, 100%
+    clip-path: inset(50% 0 50% 0)
+  20%
+    clip-path: inset(0% 0 0% 0)
+  40%
+    clip-path: inset(0% 50% 0% 50%)
 
-// Responsive adjustments
+@keyframes glitch-2
+  0%, 100%
+    clip-path: inset(40% 0 40% 0)
+  20%
+    clip-path: inset(20% 50% 20% 50%)
+  40%
+    clip-path: inset(60% 0 60% 0)
+
+// Responsive
 @media (max-width: 1200px)
   .hero
-    .model-container
-      display: none
-    
     .hero-content
-      margin: 0 auto
+      width: 70%
+      margin-right: 2rem
 
 @media (max-width: 768px)
   .hero
+    justify-content: center
+    
     .hero-content
+      width: 90%
       margin: 1rem
       padding: 2rem
       
@@ -138,9 +148,9 @@
         font-size: 2.5rem
       
       .title-accent
-        font-size: 1.2rem
+        font-size: 1rem
       
       .cta-buttons
         flex-direction: column
-        align-items: center
+        align-items: stretch
         gap: 1rem

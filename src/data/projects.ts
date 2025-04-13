@@ -19,10 +19,6 @@ export const projects: Project[] = [
             "TypeScript",
             "Redux Toolkit",
             "Styled Components",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "Stripe API"
         ],
         challenges: [
             "Implementing a responsive design that maintains visual appeal across all device sizes",
