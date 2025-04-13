@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Footer } from '@/components/Footer'
 import '../styles/globals.sass'
-import { Head } from 'next/head'
 
 export const metadata: Metadata = {
   title: 'Gustavo Henrique | Portfolio',
