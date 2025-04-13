@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { technologies, Technology } from '@/data/technologies'
+import { useState, useEffect } from 'react'
+import { technologies } from '@/data/technologies'
 import { FiFilter, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import './style.sass'
 
@@ -11,19 +11,39 @@ export const SkillsSection = () => {
     const [selectedCategory, setSelectedCategory] = useState<CategoryType>('all')
     const [currentPage, setCurrentPage] = useState(1)
     const [searchTerm, setSearchTerm] = useState('')
-
     const ITEMS_PER_PAGE = 12
 
-    // Simplificando a lógica de filtragem
     const filteredTech = technologies.filter(tech => {
         const matchCategory = selectedCategory === 'all' || tech.category === selectedCategory
         const matchSearch = tech.name.toLowerCase().includes(searchTerm.toLowerCase())
         return matchCategory && matchSearch
     })
 
-    const totalPages = Math.ceil(filteredTech.length / ITEMS_PER_PAGE)
+    const totalPages = Math.max(1, Math.ceil(filteredTech.length / ITEMS_PER_PAGE))
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
     const visibleTech = filteredTech.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [selectedCategory, searchTerm])
+
+    const handlePrevPage = () => {
+        console.log('Navegação: Página anterior', {
+            de: currentPage,
+            para: Math.max(1, currentPage - 1),
+            itensVisiveis: visibleTech.length
+        })
+        setCurrentPage(prev => Math.max(1, prev - 1))
+    }
+
+    const handleNextPage = () => {
+        console.log('Navegação: Próxima página', {
+            de: currentPage,
+            para: Math.min(totalPages, currentPage + 1),
+            itensVisiveis: visibleTech.length
+        })
+        setCurrentPage(prev => Math.min(totalPages, prev + 1))
+    }
 
     return (
         <section id="skills" className="skills-section">
@@ -103,25 +123,27 @@ export const SkillsSection = () => {
                 ))}
             </div>
 
-            {totalPages > 1 && (
-                <div className="pagination">
-                    <button 
-                        onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                        disabled={currentPage === 1}
-                        className="pagination-btn"
-                    >
-                        <FiChevronLeft />
-                    </button>
-                    <span>{currentPage} of {totalPages}</span>
-                    <button 
-                        onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                        disabled={currentPage === totalPages}
-                        className="pagination-btn"
-                    >
-                        <FiChevronRight />
-                    </button>
-                </div>
-            )}
+            <div className="pagination">
+                <button 
+                    onClick={handlePrevPage}
+                    disabled={currentPage <= 1}
+                    className="pagination-btn"
+                >
+                    <FiChevronLeft />
+                </button>
+
+                <span>
+                    {currentPage} / {totalPages}
+                </span>
+
+                <button 
+                    onClick={handleNextPage}
+                    disabled={currentPage >= totalPages}
+                    className="pagination-btn"
+                >
+                    <FiChevronRight />
+                </button>
+            </div>
         </section>
     )
 }
