@@ -1,16 +1,18 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Footer } from '@/components/Footer'
 import { CyberNav } from '@/components/CyberNav'
 import '../styles/globals.sass'
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export const metadata: Metadata = {
   title: 'Gustavo Henrique | Portfolio',
   description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas. Confira meus projetos e experiência em desenvolvimento web.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1, // opcional - impede zoom em inputs em iOS
-  },
+  metadataBase: new URL('https://mrpunkdasilva.vercel.app'),
   keywords: 'Full Stack Developer, React, Node.js, TypeScript, Web Development, Portfolio',
   authors: [{ name: 'Gustavo Henrique' }],
   creator: 'Gustavo Henrique',
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas.',
     images: [
       {
-        url: '/og-image.png', // Adicione uma imagem OG
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Gustavo Henrique Portfolio'

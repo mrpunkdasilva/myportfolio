@@ -7,7 +7,7 @@ export const FloatingCubes = () => {
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (!containerRef.current) return
+        if (!containerRef.current) return undefined
 
         // Scene setup
         const scene = new THREE.Scene()
@@ -21,7 +21,7 @@ export const FloatingCubes = () => {
         containerRef.current.appendChild(renderer.domElement)
 
         // Create multiple cubes
-        const cubes: THREE.Mesh[] = []
+        const cubes: THREE.Mesh<THREE.BoxGeometry, THREE.MeshPhongMaterial>[] = []
         const cubeCount = 15
 
         for (let i = 0; i < cubeCount; i++) {
@@ -50,7 +50,6 @@ export const FloatingCubes = () => {
                 y: (Math.random() - 0.5) * 0.01
             }
             
-            // @ts-ignore - Adding custom property
             cube.userData.rotationSpeed = rotationSpeed
             
             cubes.push(cube)
@@ -72,11 +71,12 @@ export const FloatingCubes = () => {
         camera.position.z = 30
 
         // Animation
+        let animationFrameId: number
+
         const animate = () => {
-            requestAnimationFrame(animate)
+            animationFrameId = requestAnimationFrame(animate)
             
             cubes.forEach(cube => {
-                // @ts-ignore - Accessing custom property
                 const speed = cube.userData.rotationSpeed
                 cube.rotation.x += speed.x
                 cube.rotation.y += speed.y
@@ -99,13 +99,18 @@ export const FloatingCubes = () => {
 
         window.addEventListener('resize', handleResize)
 
-        // Cleanup
+        // Cleanup function
         return () => {
             window.removeEventListener('resize', handleResize)
+            cancelAnimationFrame(animationFrameId)
+            
             cubes.forEach(cube => {
                 cube.geometry.dispose()
-                cube.material.dispose()
+                if (cube.material instanceof THREE.Material) {
+                    cube.material.dispose()
+                }
             })
+            
             renderer.dispose()
             if (containerRef.current?.contains(renderer.domElement)) {
                 containerRef.current.removeChild(renderer.domElement)
