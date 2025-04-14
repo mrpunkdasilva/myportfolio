@@ -10,6 +10,8 @@
     position: relative
     overflow: hidden
     height: 100%
+    min-height: 350px
+    width: 100%  // Garantindo largura base
 
     &::before
         content: ''
@@ -157,22 +159,23 @@
     &.featured
         background: rgba(variables.$bg-color-secondary, 0.9)
         backdrop-filter: blur(10px)
+        padding: 2rem
+        min-height: 400px
 
+        @media (min-width: 1024px)  // Desktop
+            width: 100%
+            //max-width: 800px  // Largura máxima em desktop
+            margin: 0 auto    // Centralizar se necessário
+
+        @media (min-width: 1200px)  // Large Desktop
+            max-width: 1000px  // Aumentar ainda mais em telas maiores
 
 @media (max-width: 768px)
     .project-article
         padding: 1rem
+        min-height: 300px
+        width: 100%  // Garantir largura total em mobile
 
-        .project-header
-            h3
-                font-size: 1.25rem
-
-        .project-tabs
-            gap: 0.5rem
-
-            button
-                padding: 0.5rem
-                font-size: 0.8rem
-
-        .tab-content
-            min-height: 150px
+        &.featured
+            padding: 1.5rem
+            min-height: 350px

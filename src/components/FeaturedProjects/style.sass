@@ -162,6 +162,7 @@
     .projects-grid
         display: flex
         flex-wrap: wrap
+        flex-direction: column
         gap: 2.5rem
         justify-content: center
         
@@ -170,16 +171,20 @@
         
         .project-card
             flex: 1
-            min-width: 300px // Reduzido de 400px para melhor adaptação mobile
-            max-width: calc(33.33% - 2.5rem)
+            min-width: 300px
+            max-width: 100%  // Permitir que ocupe toda a largura disponível
+            
+            @media (min-width: 1024px)
+                min-width: 800px  // Aumentar largura mínima em desktop
+                
+            @media (min-width: 1200px)
+                min-width: 1000px  // Aumentar ainda mais em telas maiores
             
             @include mixins.tablet
                 min-width: 280px
-                max-width: calc(50% - 1.5rem)
             
             @include mixins.mobile
                 min-width: 100%
-                max-width: 100%
             background: rgba(variables.$bg-color-secondary, 0.7)
             backdrop-filter: blur(10px)
             border-radius: 4px
