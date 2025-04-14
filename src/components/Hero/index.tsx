@@ -7,7 +7,7 @@ import {CyberModel} from "@/components/CyberModel";
 
 export const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id={"home"}>
       <div className="background-container"></div>
       <div className="model-wrapper">
         <CyberModel />
