@@ -1,89 +1,122 @@
-﻿# Portfolio - Gustavo Henrique
+﻿# 🚀 Portfolio - Gustavo Henrique
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
 
-## 🚀 Overview
+## 📋 Overview
 
-Personal portfolio website built with React and Sass, showcasing my projects and professional experience as a Full-Stack Developer.
+Portfolio pessoal desenvolvido com Next.js 14, TypeScript e Sass, apresentando meus projetos e experiência profissional como Desenvolvedor Full-Stack.
 
-🔗 **Live Demo:** [mrpunkdasilva.vercel.app](https://mrpunkdasilva.vercel.app)
+🔗 **Demo:** [mrpunkdasilva.vercel.app](https://mrpunkdasilva.vercel.app)
 
 ## ✨ Features
 
-- Responsive design
-- Project showcase with live demos
-- Skills and technologies section
-- Downloadable CV
-- Contact information
-- Social media links
+- Design responsivo e moderno
+- Animações 3D com Three.js
+- Navegação suave e interativa
+- Seção de projetos em destaque
+- Filtro de projetos por tecnologia
+- Modo escuro por padrão
+- SEO otimizado
+- Performance otimizada
 
-## 🛠 Technologies
+## 🛠 Tecnologias
 
-- React 18
+- Next.js 14
+- TypeScript
 - Sass
-- Vite
+- Three.js
 - React Icons
+- Nodemailer
+- React Type Animation
 
-## 🚀 Getting Started
+## 🚀 Começando
 
-### Prerequisites
+### Pré-requisitos
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js (v16 ou superior)
+- npm ou yarn
 
-### Installation
+### Instalação
 
-1. Clone the repository
+1. Clone o repositório
 ```bash
-git clone https://github.com/mrpunkdasilva/portfolio-react-sass.git
+git clone https://github.com/mrpunkdasilva/portfolio-next.git
 ```
 
-2. Install dependencies
+2. Instale as dependências
 ```bash
 npm install
-# or
+# ou
 yarn install
 ```
 
-3. Start development server
+3. Inicie o servidor de desenvolvimento
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
-4. Build for production
+4. Build para produção
 ```bash
 npm run build
-# or
+# ou
 yarn build
 ```
 
-## 📁 Project Structure
+## 📁 Estrutura do Projeto
 
 ```
+├── public/          # Arquivos estáticos
 ├── src/
-│   ├── components/
-│   ├── data/
-│   ├── pages/
-│   ├── styles/
-│   └── main.jsx
-├── public/
-├── resources/
+│   ├── app/         # Páginas e layouts Next.js
+│   ├── components/  # Componentes React
+│   ├── data/       # Dados estáticos
+│   └── styles/     # Arquivos Sass
+├── resources/      # Recursos adicionais
 └── package.json
 ```
 
-## 📫 Contact
+## 🔧 Configuração
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto:
+
+```env
+NEXT_PUBLIC_EMAIL_SERVICE=seu_servico_email
+NEXT_PUBLIC_EMAIL_TEMPLATE=seu_template_id
+NEXT_PUBLIC_EMAIL_USER=seu_usuario
+```
+
+## 📱 Responsividade
+
+O site é totalmente responsivo e otimizado para:
+- Desktop (1200px+)
+- Laptop (1024px)
+- Tablet (768px)
+- Mobile (480px)
+
+## ⚡ Performance
+
+- Otimização de imagens automática
+- Code splitting
+- Lazy loading de componentes
+- Minificação de CSS/JS
+- Caching otimizado
+
+## 📫 Contato
 
 - Email: [gustavojs417@gmail.com](mailto:gustavojs417@gmail.com)
 - LinkedIn: [Gustavo Henrique de Jesus](https://www.linkedin.com/in/gustavo-henrique-de-jesus)
 - GitHub: [@mrpunkdasilva](https://github.com/mrpunkdasilva)
 
-## 📄 License
+## 📄 Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
-Made with 💜 by Gustavo Henrique
+Desenvolvido com 💜 por Gustavo Henrique
