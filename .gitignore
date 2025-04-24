@@ -87,3 +87,7 @@ yarn-error.log*
 out/
 build/
 .vercel
+
+# PDF files
+*.pdf
+!public/*.pdf

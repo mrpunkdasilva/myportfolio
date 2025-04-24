@@ -2,6 +2,7 @@
 
 import './style.sass'
 import { FiTerminal, FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
+import { DownloadCV } from '../DownloadCV'
 
 export const AboutMe = () => {
   const scrollToContact = () => {
@@ -47,6 +48,10 @@ export const AboutMe = () => {
               experiência prática com projetos freelance e desenvolvimento de soluções 
               empresariais.
             </p>
+
+            <div className="bio-actions">
+              <DownloadCV />
+            </div>
           </div>
         </div>
 

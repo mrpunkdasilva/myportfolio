@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Footer } from '@/components/Footer'
 import { CyberNav } from '@/components/CyberNav'
 import '../styles/globals.sass'
+import { Toaster } from 'react-hot-toast'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -66,11 +67,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body>
-        <CyberNav />
-        <main>{children}</main>
-        <Footer />
+        {children}
+        <Toaster position="bottom-center" />
       </body>
     </html>
   )

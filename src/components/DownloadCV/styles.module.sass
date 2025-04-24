@@ -1,0 +1,28 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.downloadButton
+    display: flex
+    align-items: center
+    gap: 0.5rem
+    background: variables.$gradient
+    color: variables.$text-color
+    padding: 0.8rem 1.5rem
+    border-radius: 0.5rem
+    border: none
+    font-size: 1rem
+    font-weight: 500
+    cursor: pointer
+    transition: all 0.3s ease
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)
+
+    &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25)
+
+    svg
+        font-size: 1.2rem
+
+    @include mixins.mobile
+        padding: 0.6rem 1.2rem
+        font-size: 0.9rem
