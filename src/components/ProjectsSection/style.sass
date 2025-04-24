@@ -2,7 +2,7 @@
 @use '../../styles/mixins'
 
 // Definindo cores específicas para cada categoria
-$category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42B883, "node": #539E43, "typescript": #3178C6, "javascript": #F7DF1E)
+$category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42B883, "angular": #DD0031, "javascript": #F7DF1E, "typescript": #3178C6, "css": #1572B6, "tailwind": #38B2AC, "sass": #CC6699, "node": #339933, "python": #3776AB, "firebase": #FFCA28, "mongodb": #47A248)
 
 .projects-section
   padding: 6rem 0
@@ -63,7 +63,7 @@ $category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42
       gap: 1rem
       flex-wrap: wrap
       justify-content: center
-      
+
       .filter-btn
         padding: 0.8rem 1.8rem
         background: rgba(variables.$bg-color-secondary, 0.5)
@@ -77,7 +77,7 @@ $category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42
         position: relative
         overflow: hidden
         border: none
-        
+
         // Iterando sobre as categorias para aplicar cores específicas
         @each $category, $color in $category-colors
           &[data-category="#{$category}"]
@@ -97,7 +97,7 @@ $category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42
               &:hover
                 transform: translateY(-2px)
                 box-shadow: 0 8px 20px rgba($color, 0.4)
-        
+
         &::before
           content: ''
           position: absolute
@@ -109,10 +109,10 @@ $category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42
           background: rgba(255, 255, 255, 0.1)
           border-radius: 50%
           transition: width 0.6s ease, height 0.6s ease
-        
+
         &:hover
           transform: translateY(-2px)
-          
+
           &::before
             width: 200px
             height: 200px
@@ -127,7 +127,7 @@ $category-colors: ("all": #7928CA, "react": #61DAFB, "next": #000000, "vue": #42
           opacity: 0
           transition: opacity 0.3s ease
           z-index: -1
-        
+
         &:hover::after
           opacity: 0.5
 

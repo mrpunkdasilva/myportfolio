@@ -16,7 +16,8 @@ import {
     DiJava,
     DiNodejs,
     DiDocker,
-    DiAws
+    DiAws,
+    DiCss3Full // For CSS Modules
 } from 'react-icons/di';
 import {
     FaPhp,
@@ -39,7 +40,14 @@ import {
     SiGraphql,
     SiWebpack,
     SiJira,
-    SiSwagger
+    SiSwagger,
+    SiAngular,
+    SiReactivex,
+    SiVercel,
+    SiFirebase,
+    SiNextdotjs,
+    SiVite,
+    SiReact
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
@@ -92,7 +100,7 @@ export const technologies: Technology[] = [
         id: "typescript",
         name: "TypeScript",
         icon: <SiTypescript />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills", // Updated based on multiple TypeScript projects
         category: 'frontend',
         color: '#3178C6'
     },
@@ -116,7 +124,7 @@ export const technologies: Technology[] = [
         id: "nextjs",
         name: "Next.js",
         icon: <TbBrandNextjs />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills", // Updated based on multiple Next.js projects
         category: 'frontend',
         color: '#000000'
     },
@@ -132,7 +140,7 @@ export const technologies: Technology[] = [
         id: "angular",
         name: "Angular",
         icon: <DiAngularSimple />,
-        desc: "Basic Skills",
+        desc: "Intermediate Skills", // Based on BigbasketEccomerce
         category: 'frontend',
         color: '#DD0031'
     },
@@ -143,6 +151,54 @@ export const technologies: Technology[] = [
         desc: "Intermediate Skills",
         category: 'frontend',
         color: '#06B6D4'
+    },
+    {
+        id: "rxjs",
+        name: "RxJS",
+        icon: <SiReactivex />,
+        desc: "Intermediate Skills", // Based on BigbasketEccomerce
+        category: 'frontend',
+        color: '#B7178C'
+    },
+    {
+        id: "material",
+        name: "Angular Material",
+        icon: <SiAngular />, // Changed from SiAngularmaterial to SiAngular
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#3F51B5'
+    },
+    {
+        id: "headlessui",
+        name: "Headless UI",
+        icon: <SiReact />, // Using React icon as alternative
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#66E3FF'
+    },
+    {
+        id: "cssmodules",
+        name: "CSS Modules",
+        icon: <DiCss3Full />, // Using CSS3 icon as alternative
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#000000'
+    },
+    {
+        id: "vite",
+        name: "Vite",
+        icon: <SiVite />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#646CFF'
+    },
+    {
+        id: "tanstack",
+        name: "TanStack Query",
+        icon: <DiReact />, // Using React icon as it's commonly used with React
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#FF4154'
     },
 
     // Backend Technologies
@@ -158,7 +214,7 @@ export const technologies: Technology[] = [
         id: "express",
         name: "Express",
         icon: <SiExpress />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills", // Updated based on Black Nib project
         category: 'backend',
         color: '#000000'
     },
@@ -198,7 +254,7 @@ export const technologies: Technology[] = [
         id: "python",
         name: "Python",
         icon: <DiPython />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills",
         category: 'backend',
         color: '#3776AB'
     },
@@ -232,7 +288,7 @@ export const technologies: Technology[] = [
         id: "mongodb",
         name: "MongoDB",
         icon: <DiMongodb />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills", // Updated based on Black Nib project
         category: 'database',
         color: '#47A248'
     },
@@ -248,7 +304,7 @@ export const technologies: Technology[] = [
         id: "firebase",
         name: "Firebase",
         icon: <DiFirebase />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills", // Updated based on VChat and Opala Filmes
         category: 'database',
         color: '#FFCA28'
     },
@@ -274,7 +330,7 @@ export const technologies: Technology[] = [
         id: "docker",
         name: "Docker",
         icon: <FaDocker />,
-        desc: "Intermediate Skills",
+        desc: "Advanced Skills",
         category: 'devops',
         color: '#2496ED'
     },
@@ -351,6 +407,14 @@ export const technologies: Technology[] = [
         desc: "Intermediate Skills",
         category: 'tools',
         color: '#F24E1E'
+    },
+    {
+        id: "vercel",
+        name: "Vercel",
+        icon: <SiVercel />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#000000'
     }
 ];
 

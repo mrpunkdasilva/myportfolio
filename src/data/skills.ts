@@ -11,28 +11,36 @@ export const skillCategories: SkillCategory[] = [
         name: "Frontend Development",
         description: "Building responsive and interactive user interfaces",
         skills: technologies.filter(tech => 
-            ["react", "vue", "angular", "html", "css", "js", "nextjs", "tailwindcss"].includes(tech.id)
+            ["react", "vue", "angular", "html", "css", "js", "typescript", "nextjs", 
+             "tailwindcss", "rxjs", "material", "headlessui", "cssmodules", "vite", "tanstack"].includes(tech.id)
         )
     },
     {
         name: "Backend Development",
         description: "Creating robust and scalable server-side applications",
         skills: technologies.filter(tech => 
-            ["java", "python", "php", "express", "springboot", "laravel", "ruby"].includes(tech.id)
+            ["nodejs", "python", "express"].includes(tech.id)
         )
     },
     {
-        name: "Database Management",
-        description: "Working with various database systems",
+        name: "Database & State Management",
+        description: "Working with various database systems and state management solutions",
         skills: technologies.filter(tech => 
-            ["mySql", "sqlServer", "postgres", "mongodb", "firebase"].includes(tech.id)
+            ["firebase", "mongodb", "mysql", "postgres", "tanstack"].includes(tech.id)
+        )
+    },
+    {
+        name: "DevOps & Cloud",
+        description: "Managing development operations and cloud infrastructure",
+        skills: technologies.filter(tech => 
+            ["docker", "git", "vercel", "vite"].includes(tech.id)
         )
     },
     {
         name: "Development Tools",
         description: "Essential tools for modern development workflow",
         skills: technologies.filter(tech => 
-            ["github", "git", "figma"].includes(tech.id)
+            ["github", "figma", "vercel"].includes(tech.id)
         )
     }
-]
+];
