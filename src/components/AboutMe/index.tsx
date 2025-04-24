@@ -36,17 +36,16 @@ export const AboutMe = () => {
           
           <div className="bio-content">
             <p className="intro">
-              <span className="highlight">Desenvolvedor Full-Stack</span> apaixonado por criar 
-              soluções inovadoras e escaláveis. Especializado em arquiteturas modernas e 
-              práticas de desenvolvimento ágil, com foco em performance e experiência do usuário.
+              <span className="highlight">Full-Stack Developer</span> passionate about creating 
+              innovative and scalable solutions. Specialized in modern architectures and 
+              agile development practices, focusing on performance and user experience.
             </p>
             
             <p className="journey">
-              Atualmente cursando <span className="highlight">Engenharia de Software</span> na 
-              Jala University, onde desenvolvo uma base sólida em princípios de arquitetura 
-              de software, padrões de projeto e metodologias ágeis. Minha jornada inclui 
-              experiência prática com projetos freelance e desenvolvimento de soluções 
-              empresariais.
+              Currently pursuing a <span className="highlight">Software Engineering</span> degree at 
+              Jala University, where I'm building a solid foundation in software architecture 
+              principles, design patterns, and agile methodologies. My journey includes 
+              practical experience with freelance projects and enterprise solution development.
             </p>
 
             <div className="bio-actions">
@@ -59,36 +58,36 @@ export const AboutMe = () => {
           <div className="highlight-item">
             <h3>
               <FiCode className="icon" />
-              Desenvolvimento Frontend
+              Frontend Development
             </h3>
             <p>
-              Desenvolvedor com experiência em projetos freelance, utilizando React, 
-              Next.js e tecnologias modernas. Criação de interfaces responsivas e 
-              interativas com HTML5, CSS3, JavaScript e frameworks populares.
+              Developer with experience in freelance projects, using React, 
+              Next.js, and modern technologies. Creation of responsive and 
+              interactive interfaces with HTML5, CSS3, JavaScript, and popular frameworks.
             </p>
           </div>
 
           <div className="highlight-item">
             <h3>
               <FiDatabase className="icon" />
-              Desenvolvimento Backend
+              Backend Development
             </h3>
             <p>
-              Experiência em desenvolvimento backend com Node.js, PHP e Java. 
-              Conhecimento em bancos de dados relacionais como MySQL e PostgreSQL, 
-              e não relacionais como MongoDB.
+              Experience in backend development with Node.js, PHP, and Java. 
+              Knowledge in relational databases like MySQL and PostgreSQL, 
+              and non-relational databases like MongoDB.
             </p>
           </div>
 
           <div className="highlight-item">
             <h3>
               <FiLayers className="icon" />
-              Metodologias & Ferramentas
+              Methodologies & Tools
             </h3>
             <p>
-              Conhecimento em metodologias ágeis (Scrum) e ferramentas de versionamento. 
-              Experiência em desenvolvimento de sistemas web completos, desde o frontend 
-              até o backend.
+              Knowledge in agile methodologies (Scrum) and version control tools. 
+              Experience in developing complete web systems, from frontend 
+              to backend.
             </p>
           </div>
         </div>
