@@ -69,7 +69,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
+        <CyberNav />
         {children}
+        <Footer />
         <Toaster position="bottom-center" />
       </body>
     </html>
