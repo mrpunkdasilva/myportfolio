@@ -103,7 +103,7 @@ export const projects: Project[] = [
     {
         title: "ByteBabe",
         description: "Modular CLI toolkit with cyberpunk aesthetics for development workflow management, featuring Docker, Git, and development tools integration.",
-        technologies: ["Python", "Docker", "Git", "CLI", "DevOps"],
+        technologies: ["Shell", "Docker", "Git", "CLI", "DevOps"],
         challenges: [
             "Creating modular architecture for extensibility",
             "Implementing unified interface for diverse tools",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
         learnings: [
             "CLI application architecture",
             "DevOps tool integration",
-            "Python module development"
+            "Shell module development"
         ],
         link: "https://mrpunkdasilva.github.io/bytebabe/",
         githubLink: "https://github.com/mrpunkdasilva/bytebabe"
@@ -651,5 +651,597 @@ export const projects: Project[] = [
             "Frontend optimization"
         ],
         githubLink: "https://github.com/mrpunkdasilva/vmovies"
+    },
+    {
+        title: "Mashup",
+        description: "Real-time social webapp simulating a chat platform with music and 3D avatar rendering capabilities (3D features coming soon, with a 3D cake prototype already implemented).",
+        technologies: ["TypeScript", "Next.js", "Socket.IO", "Tailwind CSS", "Redux", "THREE.js"],
+        challenges: [
+            "Implementing real-time communication features",
+            "Integrating 3D rendering capabilities",
+            "Creating responsive social app interface",
+            "Managing complex state with Redux"
+        ],
+        solutions: [
+            "Developed Socket.IO integration for real-time features",
+            "Created 3D rendering prototype using THREE.js",
+            "Implemented responsive UI with Tailwind CSS",
+            "Utilized Redux for efficient state management"
+        ],
+        keyFeatures: [
+            "Real-time chat functionality",
+            "Music integration",
+            "3D avatar rendering (coming soon)",
+            "Responsive social interface",
+            "Modern TypeScript implementation"
+        ],
+        learnings: [
+            "Real-time web application development",
+            "3D rendering in web applications",
+            "State management with Redux",
+            "Next.js application architecture"
+        ],
+        link: "https://mashup-kappa.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/mashup"
+    },
+    {
+        title: "CyberNews - Cyberpunk Hacker News Client",
+        description: "A retro-futuristic take on Hacker News, built with Next.js and featuring cyberpunk/retrowave aesthetics.",
+        technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Web Speech API", "IndexedDB", "Service Workers"],
+        challenges: [
+            "Creating an immersive cyberpunk interface with retro effects",
+            "Implementing keyboard-first navigation and voice commands",
+            "Building offline support and real-time updates",
+            "Developing multiple theme customizations"
+        ],
+        solutions: [
+            "Designed terminal-like interface with CRT screen effects",
+            "Implemented vim-style keyboard navigation and voice command system",
+            "Created offline support using Service Workers and IndexedDB",
+            "Developed multiple cyberpunk themes with customization options"
+        ],
+        keyFeatures: [
+            "Terminal-like interface with CRT screen effect",
+            "Keyboard-first navigation (vim-style)",
+            "Hacker mode with pure terminal interface",
+            "Voice command support",
+            "Article decryption animations",
+            "Matrix-style rain effect",
+            "Retro boot sequence",
+            "Multiple cyberpunk themes"
+        ],
+        learnings: [
+            "Advanced Next.js application development",
+            "Voice recognition implementation",
+            "Offline-first application architecture",
+            "Animation and motion design in web applications"
+        ],
+        link: "https://cynews.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/cybernews",
+        isFeatured: true
+    },
+    {
+        title: "Blood Donation Project",
+        description: "A platform connecting individuals in need of blood with willing blood donors, built with modern web technologies and containerized with Docker.",
+        technologies: ["Next.js", "TypeScript", "TailwindCSS", "Docker", "Git"],
+        challenges: [
+            "Creating an intuitive interface for connecting blood donors and recipients",
+            "Implementing responsive design for accessibility across devices",
+            "Setting up containerized development environment with Docker",
+            "Collaborating effectively in a team environment"
+        ],
+        solutions: [
+            "Contributed to interface development with focus on usability",
+            "Implemented responsive design using TailwindCSS",
+            "Utilized Docker for consistent development environments",
+            "Collaborated through Git for version control and team coordination"
+        ],
+        keyFeatures: [
+            "Donor-recipient matching system",
+            "Responsive and accessible interface",
+            "Containerized application architecture",
+            "Collaborative development workflow"
+        ],
+        learnings: [
+            "Collaborative development practices",
+            "Docker containerization",
+            "Modern frontend development with Next.js and TypeScript",
+            "Documentation best practices"
+        ],
+        link: "https://blood-donation-project.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/Blood-Donation-Project"
+    },
+    {
+        title: "Tour de Linux",
+        description: "A Linux forum with a pure terminal-like interface experience, designed for Linux enthusiasts to discuss and share knowledge.",
+        technologies: ["HTML", "CSS", "JavaScript", "Terminal UI", "Linux"],
+        challenges: [
+            "Creating an authentic terminal-like experience on the web",
+            "Implementing forum functionality with terminal aesthetics",
+            "Balancing usability with the terminal interface concept"
+        ],
+        solutions: [
+            "Developed terminal-inspired UI with command-line interaction",
+            "Created intuitive navigation within terminal constraints",
+            "Implemented Linux-themed design elements"
+        ],
+        keyFeatures: [
+            "Terminal-like user interface",
+            "Linux discussion forums",
+            "Command-line navigation",
+            "Linux community features"
+        ],
+        learnings: [
+            "Terminal UI implementation in web applications",
+            "Linux community engagement patterns",
+            "Command-line interface design principles"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/tourdelinux"
+    },
+    {
+        title: "Rocket.Q",
+        description: "An interactive Q&A application where users can create rooms for anonymous questions, with password-protected management features.",
+        technologies: ["HTML", "CSS", "JavaScript", "Node.js", "EJS", "Express", "SQLite"],
+        challenges: [
+            "Implementing secure room creation and management",
+            "Developing anonymous question submission system",
+            "Creating efficient database structure with SQLite"
+        ],
+        solutions: [
+            "Developed password-protected room management",
+            "Created intuitive anonymous question interface",
+            "Implemented efficient data storage with SQLite"
+        ],
+        keyFeatures: [
+            "Anonymous question submission",
+            "Password-protected room management",
+            "Question status tracking",
+            "Interactive user interface"
+        ],
+        learnings: [
+            "Full-stack application development",
+            "Database design with SQLite",
+            "Server-side rendering with EJS",
+            "Express.js application architecture"
+        ],
+        link: "https://nlw-6-discover.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/rocketq"
+    },
+    {
+        title: "Music Generics",
+        description: "A responsive frontend website for concert ticket sales and merchandise, featuring modern HTML5 and CSS3 implementation.",
+        technologies: ["HTML5", "CSS3", "Responsive Design"],
+        challenges: [
+            "Creating an attractive and responsive design for ticket sales",
+            "Implementing intuitive e-commerce interface for merchandise",
+            "Developing mobile-friendly concert information displays"
+        ],
+        solutions: [
+            "Designed responsive layouts for all device sizes",
+            "Created intuitive ticket purchasing interface",
+            "Implemented attractive merchandise showcase"
+        ],
+        keyFeatures: [
+            "Concert ticket sales interface",
+            "Merchandise store",
+            "Responsive design",
+            "Modern visual aesthetics"
+        ],
+        learnings: [
+            "Responsive design techniques",
+            "E-commerce frontend development",
+            "Modern CSS3 implementation",
+            "User experience design for events"
+        ],
+        link: "https://mrpunkdasilva.github.io/site-music-generics/",
+        githubLink: "https://github.com/mrpunkdasilva/site-music-generics"
+    },
+    {
+        title: "Turtle Python Art",
+        description: "Creative drawings and art made with Python's Turtle graphics library, showcasing programming and artistic skills.",
+        technologies: ["Python", "Turtle Graphics"],
+        challenges: [
+            "Translating artistic concepts into programmatic instructions",
+            "Optimizing drawing algorithms for complex patterns",
+            "Creating visually appealing designs with limited graphics tools"
+        ],
+        solutions: [
+            "Developed efficient drawing algorithms",
+            "Created modular code for reusable pattern elements",
+            "Implemented creative use of Turtle's movement capabilities"
+        ],
+        keyFeatures: [
+            "Geometric pattern generation",
+            "Artistic drawings through code",
+            "Visual programming demonstrations",
+            "Creative coding examples"
+        ],
+        learnings: [
+            "Python programming techniques",
+            "Algorithmic thinking for visual art",
+            "Geometry and mathematics in programming",
+            "Creative coding practices"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/Turtle-Python"
+    },
+    {
+        title: "My TODO List",
+        description: "A task management application built with ReactJS and TypeScript, featuring modern state management and type safety.",
+        technologies: ["ReactJS", "TypeScript", "Frontend Development"],
+        challenges: [
+            "Implementing type-safe state management",
+            "Creating intuitive task organization interface",
+            "Developing efficient data persistence"
+        ],
+        solutions: [
+            "Utilized TypeScript for type safety",
+            "Implemented modern React patterns",
+            "Created user-friendly task management interface"
+        ],
+        keyFeatures: [
+            "Task creation and management",
+            "Type-safe implementation",
+            "Modern React architecture",
+            "Intuitive user interface"
+        ],
+        learnings: [
+            "TypeScript integration with React",
+            "Modern state management techniques",
+            "Frontend development best practices",
+            "User experience design for productivity tools"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/my-todo-list-react"
+    },
+    {
+        title: "Trick Lix - Digital Library",
+        description: "A digital library platform for book lovers, featuring a clean interface and book management capabilities.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        challenges: [
+            "Creating an engaging interface for book enthusiasts",
+            "Implementing efficient book catalog management",
+            "Developing responsive design for various devices"
+        ],
+        solutions: [
+            "Designed user-friendly book browsing interface",
+            "Created responsive layouts for all screen sizes",
+            "Implemented intuitive navigation system"
+        ],
+        keyFeatures: [
+            "Digital book catalog",
+            "User-friendly interface",
+            "Responsive design",
+            "Book lover community features"
+        ],
+        learnings: [
+            "Frontend development techniques",
+            "Digital library implementation",
+            "User experience design for readers",
+            "Collaborative development practices"
+        ],
+        link: "https://dev-gustavo-henrique.github.io/trick-lix/",
+        githubLink: "https://github.com/mrpunkdasilva/trick-lix"
+    },
+    {
+        title: "Minerva OS",
+        description: "A browser-based operating system simulation with desktop environment and applications, built with web technologies.",
+        technologies: ["HTML", "SCSS", "JavaScript"],
+        challenges: [
+            "Creating an authentic OS experience in the browser",
+            "Implementing window management and application switching",
+            "Developing a cohesive desktop environment"
+        ],
+        solutions: [
+            "Designed realistic OS interface and interactions",
+            "Implemented window management system",
+            "Created simulated applications and system features"
+        ],
+        keyFeatures: [
+            "Desktop environment simulation",
+            "Window management system",
+            "Application simulation",
+            "OS-like user experience"
+        ],
+        learnings: [
+            "Complex UI/UX implementation",
+            "Advanced JavaScript techniques",
+            "Operating system interface design",
+            "Browser capabilities and limitations"
+        ],
+        link: "https://mrpunkdasilva.github.io/minervaOS/",
+        githubLink: "https://github.com/mrpunkdasilva/minervaOS",
+        isFeatured: true
+    },
+    {
+        title: "REST API",
+        description: "A RESTful API built with Java and Spring Boot, providing CRUD operations and user authentication for data management.",
+        technologies: ["Java", "Spring Boot", "MySQL", "Maven"],
+        challenges: [
+            "Implementing secure authentication system",
+            "Creating efficient data management operations",
+            "Developing well-structured API documentation"
+        ],
+        solutions: [
+            "Developed secure authentication mechanisms",
+            "Implemented efficient CRUD operations",
+            "Created comprehensive API documentation"
+        ],
+        keyFeatures: [
+            "CRUD operations",
+            "User authentication",
+            "JSON response format",
+            "Comprehensive documentation"
+        ],
+        learnings: [
+            "RESTful API development",
+            "Spring Boot framework",
+            "Database integration",
+            "API security best practices",
+            "Open source contribution"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/REST_API"
+    },
+    {
+        title: "ChamaSamu - PHP Debugging Library",
+        description: "A simple and useful debugging library for PHP developers that provides methods to display debugging information in a readable and organized manner.",
+        technologies: ["PHP", "Composer", "Library Development"],
+        challenges: [
+            "Creating intuitive debugging methods for various data types",
+            "Implementing visually clear output formatting",
+            "Developing a package structure for Composer distribution",
+            "Ensuring compatibility across PHP environments"
+        ],
+        solutions: [
+            "Designed specialized debugging methods for different data types",
+            "Created visually distinct output formats for different debugging needs",
+            "Implemented Composer package structure for easy distribution",
+            "Developed consistent API for debugging operations"
+        ],
+        keyFeatures: [
+            "Floating debug panel for visual output",
+            "Specialized formatters for JSON, SQL, XML, and more",
+            "Request data inspection (session, GET, POST)",
+            "Code display with formatting",
+            "Multiple output formats (panel, text, table, list)"
+        ],
+        learnings: [
+            "PHP library development",
+            "Composer package creation and distribution",
+            "Debugging tool design principles",
+            "Developer experience optimization"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/ChamaSamu"
+    },
+    {
+        title: "LinkBucket",
+        description: "A platform that solves the digital chaos for developers and technology professionals by transforming how they organize and share technical resources online.",
+        technologies: ["React", "TypeScript", "Java", "Spring", "Docker"],
+        challenges: [
+            "Creating an intuitive organization system for digital resources",
+            "Implementing efficient sharing mechanisms for technical content",
+            "Developing a scalable full-stack architecture",
+            "Ensuring seamless user experience across devices"
+        ],
+        solutions: [
+            "Designed bucket-based organization system for links",
+            "Implemented flexible sharing options for individual and group use",
+            "Created robust backend with Java Spring and containerization",
+            "Developed responsive frontend with React and TypeScript"
+        ],
+        keyFeatures: [
+            "Bucket-based link organization",
+            "Customizable categorization system",
+            "Shareable link collections",
+            "Full-stack implementation",
+            "Responsive design for all devices"
+        ],
+        learnings: [
+            "Full-stack application architecture",
+            "React and TypeScript integration",
+            "Java Spring backend development",
+            "Docker containerization",
+            "User experience design for productivity tools"
+        ],
+        link: "https://applinkbucket.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/applinkbucket",
+        isFeatured: true
+    },
+    {
+        title: "VNews",
+        description: "VNews is a Feed application built with Vue, Sanity, and Tailwind CSS, providing a modern news reading experience.",
+        technologies: ["Vue.js", "Sanity", "Tailwind CSS", "Frontend Development"],
+        challenges: [
+            "Implementing content management with Sanity",
+            "Creating responsive feed layout",
+            "Developing efficient data fetching mechanisms"
+        ],
+        solutions: [
+            "Integrated Sanity for content management",
+            "Designed responsive UI with Tailwind CSS",
+            "Implemented efficient Vue.js components"
+        ],
+        keyFeatures: [
+            "News feed interface",
+            "Content management system integration",
+            "Responsive design",
+            "Modern UI with Tailwind CSS"
+        ],
+        learnings: [
+            "Vue.js application development",
+            "Headless CMS integration",
+            "Tailwind CSS implementation",
+            "Modern frontend architecture"
+        ],
+        link: "https://vnews-three.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/vnews"
+    },
+    {
+        title: "Event Platform",
+        description: "Uma plataforma de eventos feita com ReactJS e TypeScript, oferecendo gerenciamento completo de eventos online.",
+        technologies: ["ReactJS", "TypeScript", "Frontend Development"],
+        challenges: [
+            "Criação de sistema de gerenciamento de eventos",
+            "Implementação de interface de usuário intuitiva",
+            "Desenvolvimento de funcionalidades de registro e participação"
+        ],
+        solutions: [
+            "Desenvolvido sistema modular com ReactJS",
+            "Implementado TypeScript para maior segurança de código",
+            "Criado interface responsiva e acessível"
+        ],
+        keyFeatures: [
+            "Gerenciamento de eventos",
+            "Sistema de registro de participantes",
+            "Interface de usuário moderna",
+            "Implementação com TypeScript"
+        ],
+        learnings: [
+            "Desenvolvimento React com TypeScript",
+            "Arquitetura de aplicações de eventos",
+            "Práticas modernas de frontend",
+            "Gerenciamento de estado em aplicações React"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/event-platform"
+    },
+    {
+        title: "Solidários",
+        description: "O Solidários é um site de doações de alimentos, facilitando a conexão entre doadores e pessoas necessitadas.",
+        technologies: ["PHP", "MySQL", "JavaScript", "Web Development"],
+        challenges: [
+            "Desenvolvimento de sistema de gerenciamento de doações",
+            "Implementação de banco de dados para rastreamento de alimentos",
+            "Criação de interface acessível para diferentes tipos de usuários"
+        ],
+        solutions: [
+            "Desenvolvido sistema de cadastro e gerenciamento de doações",
+            "Implementado banco de dados MySQL para armazenamento seguro",
+            "Criado interface intuitiva para facilitar o processo de doação"
+        ],
+        keyFeatures: [
+            "Sistema de cadastro de doações",
+            "Gerenciamento de alimentos disponíveis",
+            "Interface para conectar doadores e beneficiários",
+            "Banco de dados para rastreamento de doações"
+        ],
+        learnings: [
+            "Desenvolvimento PHP com MySQL",
+            "Criação de sistemas de impacto social",
+            "Gerenciamento de dados sensíveis",
+            "Desenvolvimento de interfaces inclusivas"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/solidarios"
+    },
+    {
+        title: "Silver Waffle",
+        description: "Um sistema que permite visualizar seguidores do GitHub informando apenas o nome de usuário, utilizando a API do GitHub.",
+        technologies: ["PHP", "SCSS", "JavaScript", "HTML", "API Integration"],
+        challenges: [
+            "Integração com a API do GitHub",
+            "Processamento e exibição de dados de usuários",
+            "Desenvolvimento de interface responsiva e atraente"
+        ],
+        solutions: [
+            "Implementado integração eficiente com a API do GitHub",
+            "Desenvolvido sistema de processamento de dados de usuários",
+            "Criado interface visual com SCSS para melhor experiência"
+        ],
+        keyFeatures: [
+            "Consulta de seguidores do GitHub",
+            "Visualização de perfis de usuários",
+            "Interface responsiva e moderna",
+            "Integração com API externa"
+        ],
+        learnings: [
+            "Integração com APIs externas",
+            "Desenvolvimento PHP moderno",
+            "Estilização avançada com SCSS",
+            "Manipulação de dados JSON"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/silver-waffle"
+    },
+    {
+        title: "Gallery React",
+        description: "Uma galeria de imagens desenvolvida com ReactJS e TypeScript, oferecendo uma experiência visual moderna e responsiva.",
+        technologies: ["ReactJS", "TypeScript", "Frontend Development"],
+        challenges: [
+            "Implementação de galeria de imagens responsiva",
+            "Otimização de carregamento de imagens",
+            "Desenvolvimento de interface de usuário intuitiva"
+        ],
+        solutions: [
+            "Desenvolvido componentes React reutilizáveis",
+            "Implementado carregamento otimizado de imagens",
+            "Criado interface responsiva para diferentes dispositivos"
+        ],
+        keyFeatures: [
+            "Galeria de imagens responsiva",
+            "Navegação intuitiva entre imagens",
+            "Visualização otimizada para diferentes dispositivos",
+            "Implementação com TypeScript para maior segurança"
+        ],
+        learnings: [
+            "Desenvolvimento React com TypeScript",
+            "Otimização de performance em aplicações web",
+            "Gerenciamento de estado em componentes React",
+            "Técnicas modernas de UI/UX"
+        ],
+        link: "https://gallery-react-typescript.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/gallery-react-typescript"
+    },
+    {
+        title: "RPG Game React",
+        description: "Um jogo de RPG desenvolvido com React e TypeScript, oferecendo uma experiência de jogo interativa no navegador.",
+        technologies: ["React", "TypeScript", "Game Development"],
+        challenges: [
+            "Implementação de mecânicas de jogo em ambiente web",
+            "Desenvolvimento de sistema de movimento e interação",
+            "Criação de lógica de jogo com TypeScript"
+        ],
+        solutions: [
+            "Desenvolvido sistema de movimento e interação",
+            "Implementado lógica de jogo com TypeScript",
+            "Criado componentes React para elementos do jogo"
+        ],
+        keyFeatures: [
+            "Sistema de movimento de personagem",
+            "Interação com objetos e NPCs",
+            "Mecânicas de RPG em ambiente web",
+            "Desenvolvimento com TypeScript para maior segurança"
+        ],
+        learnings: [
+            "Desenvolvimento de jogos com React",
+            "Implementação de lógica de jogo em TypeScript",
+            "Gerenciamento de estado em aplicações complexas",
+            "Técnicas de renderização eficiente"
+        ],
+        githubLink: "https://github.com/mrpunkdasilva/rpggame-react"
+    },
+    {
+        title: "Altair Books",
+        description: "O Altair Books é um projeto que consiste em armazenar livros de tecnologia de modo livre, oferecendo acesso a conhecimento técnico.",
+        technologies: ["React", "JavaScript", "MySQL", "Full Stack Development"],
+        challenges: [
+            "Desenvolvimento de sistema de catalogação de livros",
+            "Implementação de banco de dados para armazenamento de informações",
+            "Criação de interface de usuário para acesso aos livros"
+        ],
+        solutions: [
+            "Desenvolvido sistema de catalogação e busca de livros",
+            "Implementado banco de dados MySQL para armazenamento",
+            "Criado interface React para visualização e acesso aos livros"
+        ],
+        keyFeatures: [
+            "Catálogo de livros de tecnologia",
+            "Sistema de busca e filtragem",
+            "Interface de usuário moderna e responsiva",
+            "Integração com banco de dados MySQL"
+        ],
+        learnings: [
+            "Desenvolvimento full stack com React e MySQL",
+            "Gerenciamento de dados bibliográficos",
+            "Implementação de sistemas de busca",
+            "Técnicas de UI/UX para plataformas educacionais"
+        ],
+        link: "https://altair-books.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/altair-books"
     }
 ];
