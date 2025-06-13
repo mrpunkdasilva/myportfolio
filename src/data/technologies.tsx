@@ -7,7 +7,6 @@ import {
     DiReact,
     DiLaravel,
     DiGithub,
-    DiRuby,
     DiPython,
     DiFirebase,
     DiPostgresql,
@@ -15,9 +14,11 @@ import {
     DiAngularSimple, 
     DiJava,
     DiNodejs,
-    DiDocker,
     DiAws,
-    DiCss3Full // For CSS Modules
+    DiCss3Full,
+    DiJqueryLogo,
+    DiBootstrap,
+    DiSqllite
 } from 'react-icons/di';
 import {
     FaPhp,
@@ -26,7 +27,10 @@ import {
     FaSass,
     FaJenkins,
     FaDocker,
-    FaNpm
+    FaNpm,
+    FaAccessibleIcon,
+    FaTerminal,
+    FaDatabase
 } from "react-icons/fa";
 import {
     SiTypescript,
@@ -45,9 +49,25 @@ import {
     SiReactivex,
     SiVercel,
     SiFirebase,
-    SiNextdotjs,
     SiVite,
-    SiReact
+    SiReact,
+    SiNuxtdotjs,
+    SiJsonwebtokens,
+    SiReactrouter,
+    SiSocketdotio,
+    SiThreedotjs,
+    SiFramer,
+    SiApachejmeter,
+    SiComposer,
+    SiContentful,
+    SiPhpmyadmin,
+    SiEmberdotjs,
+    SiGitlab,
+    SiGithubactions,
+    SiMicrosoftexcel,
+    SiMicrosoftpowerpoint,
+    SiMicrosoftoffice,
+    SiFigma
 } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 
@@ -71,6 +91,14 @@ export const technologies: Technology[] = [
         desc: "Advanced Skills",
         category: 'frontend',
         color: '#E44D26'
+    },
+    {
+        id: "responsive",
+        name: "Responsive Design",
+        icon: <DiCss3 />,
+        desc: "Advanced Skills",
+        category: 'frontend',
+        color: '#1572B6'
     },
     {
         id: "css",
@@ -100,7 +128,7 @@ export const technologies: Technology[] = [
         id: "typescript",
         name: "TypeScript",
         icon: <SiTypescript />,
-        desc: "Advanced Skills", // Updated based on multiple TypeScript projects
+        desc: "Intermediate Skills",
         category: 'frontend',
         color: '#3178C6'
     },
@@ -140,7 +168,7 @@ export const technologies: Technology[] = [
         id: "angular",
         name: "Angular",
         icon: <DiAngularSimple />,
-        desc: "Intermediate Skills", // Based on BigbasketEccomerce
+        desc: "Intermediate Skills",
         category: 'frontend',
         color: '#DD0031'
     },
@@ -156,7 +184,7 @@ export const technologies: Technology[] = [
         id: "rxjs",
         name: "RxJS",
         icon: <SiReactivex />,
-        desc: "Intermediate Skills", // Based on BigbasketEccomerce
+        desc: "Intermediate Skills",
         category: 'frontend',
         color: '#B7178C'
     },
@@ -171,7 +199,7 @@ export const technologies: Technology[] = [
     {
         id: "headlessui",
         name: "Headless UI",
-        icon: <SiReact />, // Using React icon as alternative
+        icon: <SiReact />,
         desc: "Intermediate Skills",
         category: 'frontend',
         color: '#66E3FF'
@@ -179,7 +207,7 @@ export const technologies: Technology[] = [
     {
         id: "cssmodules",
         name: "CSS Modules",
-        icon: <DiCss3Full />, // Using CSS3 icon as alternative
+        icon: <DiCss3Full />,
         desc: "Intermediate Skills",
         category: 'frontend',
         color: '#000000'
@@ -195,10 +223,98 @@ export const technologies: Technology[] = [
     {
         id: "tanstack",
         name: "TanStack Query",
-        icon: <DiReact />, // Using React icon as it's commonly used with React
-        desc: "Intermediate Skills",
+        icon: <DiReact />,
+        desc: "Basic Skills",
         category: 'frontend',
         color: '#FF4154'
+    },
+    {
+        id: "jquery",
+        name: "jQuery",
+        icon: <DiJqueryLogo />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#0769AD'
+    },
+    {
+        id: "bootstrap",
+        name: "Bootstrap",
+        icon: <DiBootstrap />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#7952B3'
+    },
+    {
+        id: "nuxtjs",
+        name: "Nuxt.js",
+        icon: <SiNuxtdotjs />,
+        desc: "Basic Skills",
+        category: 'frontend',
+        color: '#00DC82'
+    },
+    {
+        id: "reactrouter",
+        name: "React Router",
+        icon: <SiReactrouter />,
+        desc: "Advanced Skills",
+        category: 'frontend',
+        color: '#CA4245'
+    },
+    {
+        id: "socketio",
+        name: "Socket.IO",
+        icon: <SiSocketdotio />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#010101'
+    },
+    {
+        id: "threejs",
+        name: "THREE.js",
+        icon: <SiThreedotjs />,
+        desc: "Basic Skills",
+        category: 'frontend',
+        color: '#000000'
+    },
+    {
+        id: "framer",
+        name: "Framer Motion",
+        icon: <SiFramer />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#0055FF'
+    },
+    {
+        id: "webspeech",
+        name: "Web Speech API",
+        icon: <SiReact />,
+        desc: "Basic Skills",
+        category: 'frontend',
+        color: '#4285F4'
+    },
+    {
+        id: "indexeddb",
+        name: "IndexedDB",
+        icon: <FaDatabase />,
+        desc: "Basic Skills",
+        category: 'frontend',
+        color: '#FF9800'
+    },
+    {
+        id: "serviceworkers",
+        name: "Service Workers",
+        icon: <SiReact />,
+        desc: "Basic Skills",
+        category: 'frontend',
+        color: '#3740FF'
+    },
+    {
+        id: "accessibility",
+        name: "W3C Accessibility",
+        icon: <FaAccessibleIcon />,
+        desc: "Intermediate Skills",
+        category: 'frontend',
+        color: '#005A9C'
     },
 
     // Backend Technologies
@@ -266,6 +382,46 @@ export const technologies: Technology[] = [
         category: 'backend',
         color: '#E10098'
     },
+    {
+        id: "jwt",
+        name: "JWT",
+        icon: <SiJsonwebtokens />,
+        desc: "Intermediate Skills",
+        category: 'backend',
+        color: '#000000'
+    },
+    {
+        id: "ejs",
+        name: "EJS",
+        icon: <SiEmberdotjs />,
+        desc: "Basic Skills",
+        category: 'backend',
+        color: '#A91E50'
+    },
+    {
+        id: "shell",
+        name: "Shell/CLI",
+        icon: <FaTerminal />,
+        desc: "Intermediate Skills",
+        category: 'backend',
+        color: '#4EAA25'
+    },
+    {
+        id: "maven",
+        name: "Maven",
+        icon: <SiApachejmeter />,
+        desc: "Basic Skills",
+        category: 'backend',
+        color: '#C71A36'
+    },
+    {
+        id: "composer",
+        name: "Composer",
+        icon: <SiComposer />,
+        desc: "Basic Skills",
+        category: 'backend',
+        color: '#885630'
+    },
 
     // Database Technologies
     {
@@ -304,9 +460,41 @@ export const technologies: Technology[] = [
         id: "firebase",
         name: "Firebase",
         icon: <DiFirebase />,
-        desc: "Advanced Skills", // Updated based on VChat and Opala Filmes
+        desc: "Advanced Skills",
         category: 'database',
         color: '#FFCA28'
+    },
+    {
+        id: "firebaseauth",
+        name: "Firebase Authentication",
+        icon: <SiFirebase />,
+        desc: "Advanced Skills",
+        category: 'database',
+        color: '#FFCA28'
+    },
+    {
+        id: "realtimedb",
+        name: "Realtime Database",
+        icon: <SiFirebase />,
+        desc: "Advanced Skills",
+        category: 'database',
+        color: '#FFCA28'
+    },
+    {
+        id: "sqlite",
+        name: "SQLite",
+        icon: <DiSqllite />,
+        desc: "Basic Skills",
+        category: 'database',
+        color: '#003B57'
+    },
+    {
+        id: "phpmyadmin",
+        name: "phpMyAdmin",
+        icon: <SiPhpmyadmin />,
+        desc: "Intermediate Skills",
+        category: 'database',
+        color: '#6C78AF'
     },
 
     // DevOps & Tools
@@ -327,12 +515,36 @@ export const technologies: Technology[] = [
         color: '#181717'
     },
     {
+        id: "githubactions",
+        name: "GitHub Actions",
+        icon: <SiGithubactions />,
+        desc: "Intermediate Skills",
+        category: 'devops',
+        color: '#2088FF'
+    },
+    {
+        id: "gitlab",
+        name: "GitLab",
+        icon: <SiGitlab />,
+        desc: "Intermediate Skills",
+        category: 'devops',
+        color: '#FC6D26'
+    },
+    {
         id: "docker",
         name: "Docker",
         icon: <FaDocker />,
-        desc: "Advanced Skills",
+        desc: "Intermediate Skills",
         category: 'devops',
         color: '#2496ED'
+    },
+    {
+        id: "gitlabci",
+        name: "GitLab CI/CD",
+        icon: <SiGitlab />,
+        desc: "Intermediate Skills",
+        category: 'devops',
+        color: '#FC6D26'
     },
     {
         id: "kubernetes",
@@ -415,6 +627,86 @@ export const technologies: Technology[] = [
         desc: "Advanced Skills",
         category: 'tools',
         color: '#000000'
+    },
+    {
+        id: "sanity",
+        name: "Sanity",
+        icon: <SiContentful />,
+        desc: "Basic Skills",
+        category: 'tools',
+        color: '#F03E2F'
+    },
+    {
+        id: "office",
+        name: "Microsoft Office",
+        icon: <SiMicrosoftoffice />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#D83B01'
+    },
+    {
+        id: "excel",
+        name: "Microsoft Excel",
+        icon: <SiMicrosoftexcel />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#217346'
+    },
+    {
+        id: "powerpoint",
+        name: "Microsoft PowerPoint",
+        icon: <SiMicrosoftpowerpoint />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#B7472A'
+    },
+    {
+        id: "computerrepair",
+        name: "Computer Repair",
+        icon: <FaTerminal />,
+        desc: "Intermediate Skills",
+        category: 'tools',
+        color: '#4CAF50'
+    },
+    {
+        id: "figma",
+        name: "Figma",
+        icon: <SiFigma />,
+        desc: "Intermediate Skills",
+        category: 'tools',
+        color: '#F24E1E'
+    },
+    {
+        id: "webdesign",
+        name: "Web Design",
+        icon: <DiCss3 />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#FF9800'
+    },
+    {
+        id: "uiux",
+        name: "UI/UX Design",
+        icon: <FaFigma />,
+        desc: "Intermediate Skills",
+        category: 'tools',
+        color: '#0ACF83'
+    },
+    {
+        id: "prototyping",
+        name: "Prototyping",
+        icon: <SiFigma />,
+        desc: "Intermediate Skills",
+        category: 'tools',
+        color: '#A259FF'
+    },
+    {
+        id: "agile",
+        name: "Agile Methodology",
+        icon: <SiJira />,
+        desc: "Advanced Skills",
+        category: 'tools',
+        color: '#0052CC'
     }
 ];
 

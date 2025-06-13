@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ProjectsContainer } from '../ProjectsContainer'
+import { projectCategories, groupedCategories } from '@/data/projectCategories'
 import './style.sass'
 
 export const ProjectsSection = () => {
@@ -29,114 +30,76 @@ export const ProjectsSection = () => {
 
         <div className="filter-buttons">
           {/* Main Category */}
-          <button
-            onClick={() => setSelectedCategory('all')}
-            className={`filter-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-            data-category="all"
-          >
-            All Projects
-          </button>
+          {groupedCategories.main.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
 
           {/* Frontend Frameworks */}
-          <button
-            onClick={() => setSelectedCategory('react')}
-            className={`filter-btn ${selectedCategory === 'react' ? 'active' : ''}`}
-            data-category="react"
-          >
-            React
-          </button>
-          <button
-            onClick={() => setSelectedCategory('next')}
-            className={`filter-btn ${selectedCategory === 'next' ? 'active' : ''}`}
-            data-category="next"
-          >
-            Next.js
-          </button>
-          <button
-            onClick={() => setSelectedCategory('vue')}
-            className={`filter-btn ${selectedCategory === 'vue' ? 'active' : ''}`}
-            data-category="vue"
-          >
-            Vue.js
-          </button>
-          <button
-            onClick={() => setSelectedCategory('angular')}
-            className={`filter-btn ${selectedCategory === 'angular' ? 'active' : ''}`}
-            data-category="angular"
-          >
-            Angular
-          </button>
+          {groupedCategories.frontend.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
 
           {/* Core Technologies */}
-          <button
-            onClick={() => setSelectedCategory('javascript')}
-            className={`filter-btn ${selectedCategory === 'javascript' ? 'active' : ''}`}
-            data-category="javascript"
-          >
-            JavaScript
-          </button>
-          <button
-            onClick={() => setSelectedCategory('typescript')}
-            className={`filter-btn ${selectedCategory === 'typescript' ? 'active' : ''}`}
-            data-category="typescript"
-          >
-            TypeScript
-          </button>
+          {groupedCategories.core.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
 
           {/* Styling */}
-          <button
-            onClick={() => setSelectedCategory('css')}
-            className={`filter-btn ${selectedCategory === 'css' ? 'active' : ''}`}
-            data-category="css"
-          >
-            CSS
-          </button>
-          <button
-            onClick={() => setSelectedCategory('tailwind')}
-            className={`filter-btn ${selectedCategory === 'tailwind' ? 'active' : ''}`}
-            data-category="tailwind"
-          >
-            Tailwind
-          </button>
-          <button
-            onClick={() => setSelectedCategory('sass')}
-            className={`filter-btn ${selectedCategory === 'sass' ? 'active' : ''}`}
-            data-category="sass"
-          >
-            Sass
-          </button>
+          {groupedCategories.styling.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
 
           {/* Backend */}
-          <button
-            onClick={() => setSelectedCategory('node')}
-            className={`filter-btn ${selectedCategory === 'node' ? 'active' : ''}`}
-            data-category="node"
-          >
-            Node.js
-          </button>
-          <button
-            onClick={() => setSelectedCategory('python')}
-            className={`filter-btn ${selectedCategory === 'python' ? 'active' : ''}`}
-            data-category="python"
-          >
-            Python
-          </button>
+          {groupedCategories.backend.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
 
           {/* Database */}
-          <button
-            onClick={() => setSelectedCategory('firebase')}
-            className={`filter-btn ${selectedCategory === 'firebase' ? 'active' : ''}`}
-            data-category="firebase"
-          >
-            Firebase
-          </button>
-          <button
-            onClick={() => setSelectedCategory('mongodb')}
-            className={`filter-btn ${selectedCategory === 'mongodb' ? 'active' : ''}`}
-            data-category="mongodb"
-          >
-            MongoDB
-          </button>
+          {groupedCategories.database.map(category => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+              data-category={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
         </div>
       </div>
 
