@@ -10,7 +10,8 @@ const nextConfig = {
       type: 'asset/resource'
     })
     return config
-  }
+  },
+  output: 'standalone'
 }
 
 module.exports = nextConfig
