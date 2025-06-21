@@ -1184,8 +1184,8 @@ export const projects: Project[] = [
             "Gerenciamento de estado em componentes React",
             "Técnicas modernas de UI/UX"
         ],
-        link: "https://gallery-react-typescript.vercel.app/",
-        githubLink: "https://github.com/mrpunkdasilva/gallery-react-typescript"
+        link: "http://mypixelvault.vercel.app/",
+        githubLink: "https://github.com/mrpunkdasilva/PixelVault"
     },
     {
         title: "RPG Game React",
