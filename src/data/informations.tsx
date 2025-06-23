@@ -1,7 +1,7 @@
 const informations = [
 	{
 		id: 0,
-		details: { title: "Phone", content: "55+ (11) 98597-6152" }
+		details: { title: "Phone", content: "55+ (11) 94584-9864" }
 	},
 	{
 		id: 1,
