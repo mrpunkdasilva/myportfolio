@@ -96,7 +96,7 @@ export const projects: Project[] = [
             "Frontend development best practices",
             "Performance optimization techniques"
         ],
-        link: "https://blog-punkdomus.netlify.app/",
+        link: "https://punkdomus.netlify.app/",
         githubLink: "https://github.com/mrpunkdasilva/nuxt-punk-domus",
         isFeatured: true
     },
