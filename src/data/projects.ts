@@ -97,7 +97,7 @@ export const projects: Project[] = [
             "Performance optimization techniques"
         ],
         link: "https://punkdomus.netlify.app/",
-        githubLink: "https://github.com/mrpunkdasilva/nuxt-punk-domus",
+        githubLink: "https://github.com/mrpunkdasilva/PunkDomus",
         isFeatured: true
     },
     {
