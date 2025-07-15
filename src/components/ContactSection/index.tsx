@@ -18,7 +18,7 @@ export const ContactSection = () => {
                         <FiMail className="icon" />
                         <div className="info-content">
                             <h3>Email</h3>
-                            <a href="mailto:contact@gustavohenrique.dev">contact@gustavohenrique.dev</a>
+                            <a href="mailto:gustavojs417@gmail.com">gustavojs417@gmail.com</a>
                         </div>
                     </div>
 
