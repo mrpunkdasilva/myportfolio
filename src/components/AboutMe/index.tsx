@@ -1,15 +1,11 @@
 'use client'
 
 import './style.sass'
-import { FiTerminal, FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
+import { FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
 import { DownloadCV } from '../DownloadCV'
+import { curricula } from '@/data/curricula'
 
 export const AboutMe = () => {
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('.contact-info')
-    contactSection?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section className="about-me" id={"about"}>
       <div className="about-content">
@@ -49,7 +45,14 @@ export const AboutMe = () => {
             </p>
 
             <div className="bio-actions">
-              <DownloadCV />
+              {curricula.map((curriculum, index) => (
+                <DownloadCV 
+                  key={index}
+                  filePath={curriculum.filePath} 
+                  fileName={curriculum.fileName} 
+                  buttonText={curriculum.buttonText} 
+                />
+              ))}
             </div>
           </div>
         </div>
