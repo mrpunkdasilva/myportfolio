@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Gustavo Henrique | Portfolio',
-  description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas. Confira meus projetos e experiência em desenvolvimento web.',
+  description: 'Full Stack Developer specializing in React, Node.js, and modern technologies. Check out my projects and experience in web development.',
   metadataBase: new URL('https://mrpunkdasilva.vercel.app'),
   keywords: 'Full Stack Developer, React, Node.js, TypeScript, Web Development, Portfolio',
   authors: [{ name: 'Gustavo Henrique' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
+      { url: '/favicon.png' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   openGraph: {
     type: 'website',
-    locale: 'pt_BR',
+    locale: 'en_US',
     url: 'https://mrpunkdasilva.vercel.app',
     siteName: 'Gustavo Henrique Portfolio',
     title: 'Gustavo Henrique | Full Stack Developer',
-    description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas.',
+    description: 'Full Stack Developer specializing in React, Node.js, and modern technologies.',
     images: [
       {
         url: '/og-image.png',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Gustavo Henrique | Full Stack Developer',
-    description: 'Full Stack Developer especializado em React, Node.js, e tecnologias modernas.',
+    description: 'Full Stack Developer specializing in React, Node.js, and modern technologies.',
     creator: '@MrPunkSama',
     images: ['/og-image.png']
   }
@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en-US">
       <body>
         <CyberNav />
         {children}
