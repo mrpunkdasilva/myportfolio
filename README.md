@@ -4,7 +4,8 @@ Welcome to the source code of my personal portfolio, a digital space where I bri
 
 🔗 **Explore the Live Version:** [mrpunkdasilva.vercel.app](https://mrpunkdasilva.vercel.app)
 
-*Suggestion: Replace with a high-quality GIF or screenshot of your portfolio.*
+<img width="1681" height="936" alt="image" src="https://github.com/user-attachments/assets/bba6a90b-3c2b-4bfe-80e5-a16996c81b50" />
+
 
 ## ✨ The Story
 
