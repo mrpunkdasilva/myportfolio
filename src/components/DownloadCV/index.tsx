@@ -1,52 +1,58 @@
-import { FaFileDownload } from 'react-icons/fa'
-import { toast } from 'react-hot-toast'
-import styles from './styles.module.sass'
+import { FaFileDownload } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+import styles from './styles.module.sass';
 
-export const DownloadCV = () => {
+interface DownloadCVProps {
+  filePath: string;
+  fileName: string;
+  buttonText: string;
+}
+
+export const DownloadCV = ({ filePath, fileName, buttonText }: DownloadCVProps) => {
   const handleDownload = async () => {
     try {
-      const response = await fetch('/curriculo-gustavo-henrique.pdf')
-      if (!response.ok) throw new Error('Falha ao baixar o arquivo')
+      const response = await fetch(filePath);
+      if (!response.ok) throw new Error('Failed to download file');
 
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = 'Currículo-Gustavo-Henrique.pdf'
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
       
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      window.URL.revokeObjectURL(url)
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
 
-      toast.success('Download iniciado com sucesso!', {
+      toast.success('Download started successfully!', {
         duration: 3000,
         style: {
           background: '#333',
           color: '#fff',
           borderRadius: '8px',
         },
-      })
+      });
     } catch (error) {
-      toast.error('Erro ao baixar o currículo. Tente novamente.', {
+      toast.error('Error downloading the resume. Please try again.', {
         duration: 5000,
         style: {
           background: '#333',
           color: '#fff',
           borderRadius: '8px',
         },
-      })
+      });
     }
-  }
+  };
 
   return (
     <button 
       className={styles.downloadButton}
       onClick={handleDownload}
-      aria-label="Baixar Currículo"
+      aria-label={`Download ${buttonText}`}
     >
       <FaFileDownload />
-      <span>Download CV</span>
+      <span>{buttonText}</span>
     </button>
-  )
-}
+  );
+};

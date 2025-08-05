@@ -49,7 +49,16 @@ export const AboutMe = () => {
             </p>
 
             <div className="bio-actions">
-              <DownloadCV />
+              <DownloadCV 
+                filePath="/curriculo-gustavo-henrique.pdf" 
+                fileName="curriculo-gustavo-henrique.pdf" 
+                buttonText="Download CV (PDF)" 
+              />
+              <DownloadCV 
+                filePath="/resources/curriculum.md" 
+                fileName="curriculum.md" 
+                buttonText="Download CV (MD)" 
+              />
             </div>
           </div>
         </div>
