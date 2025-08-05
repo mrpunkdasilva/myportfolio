@@ -1,59 +1,88 @@
 # Gustavo Henrique de Jesus da Silva
 
-**Francisco Morato, SP, Brasil**  
-**19 anos**  
-**Brasileiro**
+Francisco Morato, SP, Brasil | 20 anos | Brasileiro
 
 ## Contato
-- **E-mail:** [gustavojs417@gmail.com](mailto:gustavojs417@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/gustavo-henrique-de-jesus](https://www.linkedin.com/in/gustavo-henrique-de-jesus)  
-- **Telefone:** +55 (11) 91345-5871  
-- **Portfólio:** [mrpunkdasilva.vercel.app](https://mrpunkdasilva.vercel.app)  
-- **GitHub:** [github.com/mrpunkdasilva](https://github.com/mrpunkdasilva)
+
+E-mail: [gustavojs417@gmail.com](mailto:gustavojs417@gmail.com)   
+Telefone: \+55 11 94584-9864  
+LinkedIn: [linkedin.com/in/gustavo-henrique-de-jesus](http://linkedin.com/in/gustavo-henrique-de-jesus)  
+Portfólio: [mrpunkdasilva.vercel.app](http://mrpunkdasilva.vercel.app)  
+GitHub: [github.com/mrpunkdasilva](http://github.com/mrpunkdasilva)
 
 ## Objetivo
-Iniciar minha carreira como Desenvolvedor Full-Stack, atuando em projetos desafiadores que permitam aplicar meus conhecimentos em desenvolvimento web, colaborar com equipes multidisciplinares e evoluir profissionalmente em um ambiente dinâmico.
+
+Atuar como Desenvolvedor Full-Stack Júnior, aplicando conhecimentos em React, Node.js, Next.js e TypeScript, colaborando em equipes multidisciplinares e contribuindo para projetos inovadores em ambientes ágeis.
 
 ## Resumo de Qualificações
-- Desenvolvedor Full-Stack com experiência em projetos freelancer, utilizando tecnologias como JavaScript, React, PHP, MySQL, Next.js e Bootstrap.  
-- Domínio em desenvolvimento front-end (HTML5, CSS3, React, Vue) e back-end (Node.js, PHP, Java, .NET/C#), além de bancos de dados relacionais e não relacionais (MySQL, MongoDB).  
-- Conhecimento em metodologias ágeis (Scrum) e ferramentas de versionamento (Git, GitHub).  
-- Habilidades em resolução de problemas, comunicação clara e adaptabilidade para aprendizado contínuo.
+
+* Desenvolvedor Full-Stack com experiência em projetos freelancer e acadêmicos, domínio em React, Next.js, Node.js, PHP e MySQL.  
+* Conhecimento em metodologias ágeis (Scrum) e ferramentas de versionamento (Git).  
+* Perfil proativo, comunicativo e focado na entrega de soluções eficientes, com capacidade para gerenciar prazos e adaptar tecnologias.  
+* Experiência internacional com curso intensivo de inglês durante intercâmbio cultural em Dublin, Irlanda, aprimorando habilidades de comunicação e fluência.
 
 ## Experiência Profissional
 
-**Desenvolvedor Web Autônomo**  
-*Novembro de 2023 (Projeto Pontual)*  
-- Desenvolvimento da homepage de um e-commerce com design responsivo, utilizando jQuery, Bootstrap e CSS.  
-- Entrega concluída em 2 dias, garantindo compatibilidade com dispositivos móveis e performance otimizada.
+### **Desenvolvedor Web Freelancer** *Novembro de 2023 – Novembro de 2023 | São Paulo, Brasil*
 
-**Desenvolvedor Full-Stack Freelancer**  
-*Outubro de 2022 (Projeto Pontual)*  
-- Criação completa de um sistema web para clínica odontológica, incluindo interface, front-end, back-end e banco de dados.  
-- Tecnologias: JavaScript, PHP, MySQL para integração de dados e funcionalidades administrativas.
+* Desenvolvi a página inicial responsiva de um e-commerce para loja de roupas JVJ, entregando o protótipo em apenas dois dias para apresentação de TCC.  
+* Criei a identidade visual da loja alinhada à proposta do cliente, utilizando jQuery, Bootstrap e CSS para garantir usabilidade e design moderno.  
+* Gerenciei o tempo e priorizei tecnologias para cumprir o prazo sem comprometer a qualidade do produto fina.
+
+### **Desenvolvedor Web Freelancer** *Abril de 2022 – Setembro de 2022 | São Paulo, Brasil*
+
+* Conduzi o desenvolvimento integral do sistema web para clínica odontológica Cadmo SA, incluindo design, frontend, backend, banco de dados e documentação técnica.  
+* Apliquei PHP, MySQL, JavaScript, jQuery, CSS, HTML e Git para entregar um sistema robusto e escalável dentro do prazo estipulado.  
+* Realizei planejamento e análise de sistemas para garantir aderência às necessidades do cliente e qualidade do produto.
+
+## Projetos
+
+**Black Nib – Modern Blog Platform**
+
+* Plataforma de blog full-stack desenvolvida com React 18, Node.js, Express, MongoDB e Docker, utilizando SSR, autenticação JWT e arquitetura escalável.  
+* Server-side rendering, tema escuro/claro, infinite scroll, organização por categorias e posts em destaque.  
+* Integração de banco de dados com Docker, autenticação segura e SEO avançado.  
+* [Acesse](https://blog-black-nilb.vercel.app/) | [Código no GitHub](https://github.com/Opaleiros-Foundation/Opala-Filmes)
+
+**Opala Filmes**
+
+* Plataforma web para votação e gerenciamento de filmes, construída com Next.js, React, Firebase e TailwindCSS.  
+* Sistema de votação em tempo real, seleção aleatória de filmes, gerenciamento de watchlist e tracking de filmes assistidos.  
+* Interface responsiva, tema escuro/claro e SSR para SEO e performance.  
+* [Acesse](https://opala-filmes.vercel.app/) | [Código no GitHub](https://github.com/Opaleiros-Foundation/Opala-Filmes)
+
+**Doces da Thay**
+
+* Frontend para e-commerce de doces, com foco em design acessível e navegação intuitiva.  
+* Desenvolvimento com JavaScript, jQuery e Bootstrap para garantir responsividade e usabilidade.  
+* Implementação de galeria de produtos e interface amigável para usuários finais.  
+* [Acesse](https://docinhos-da-thay.netlify.app/) | [Código no GitHub](https://github.com/mrpunkdasilva/doces_da_thay)
 
 ## Formação Acadêmica
-- **Bacharelado em Engenharia de Software** — *Jala University*  
-  Junho de 2024 – Dezembro de 2028 (Previsão de Conclusão)
 
-- **Ensino Médio com habilitação técnica em Informática para Internet** — *ETEC de Francisco Morato*  
-  Fevereiro de 2021 – Dezembro de 2023
+**Bacharelado em Engenharia de Software**  
+Jala University | Julho de 2024 – Dezembro de 2028
 
-- **Técnico em Desenvolvimento de Sistemas** — *ETEC de Francisco Morato*  
-  Fevereiro de 2022 – Junho de 2023
+**Ensino Médio com habilitação técnica em Informática para Internet**  
+ETEC de Francisco Morato | 2021 – 2023
 
-## Cursos Complementares
-- **Programa de Intercâmbio do Centro Paula Souza** — *CES Dublin, Irlanda*  
-  60 horas de imersão em inglês (Dezembro/2022 – Fevereiro/2023)
+**Técnico em Desenvolvimento de Sistemas**  
+ETEC de Francisco Morato | Fevereiro de 2022 – Setembro de 2023
 
-- **Web Design** — *Escola Modelo*  
-  Agosto de 2019 – Julho de 2021
+**Programa de Intercâmbio do Centro Paula Souza** 
+
+CES Dublin, Irlanda​ **|** 60 horas de imersão em inglês (Dezembro/2022 – Fevereiro/2023)
+
+**Curso de Web Design**  
+Escola Modelo | Outubro de 2019 – Outubro de 2021
 
 ## Habilidades Técnicas
-- **Front-end:** HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Vue, Angular, Bootstrap  
-- **Back-end:** Node.js, PHP, Laravel, Java, Spring Boot, .NET, C#, Express  
-- **Banco de Dados:** MySQL, PostgreSQL, MongoDB, SQL Server  
-- **Ferramentas:** Git, GitHub, GitLab, Scrum, UX/UI Design
+
+* Frontend: React, Next.js, Vue.js, Angular, JavaScript, TypeScript, HTML5, CSS3, TailwindCSS, Bootstrap, jQuery  
+* Backend: Node.js, PHP, Java, Spring Boot, Express  
+* Banco de Dados: MySQL, PostgreSQL, MongoDB, Firebase  
+* Ferramentas: Git, GitHub, Docker, Vercel, Scrum, Jira
 
 ## Idiomas
-- **Inglês:** Intermediário (Leitura, Escrita e Conversação)
+
+Inglês – Intermediário (Leitura, Escrita e Conversação)  

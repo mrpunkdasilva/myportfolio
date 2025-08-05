@@ -1,11 +1,22 @@
 'use client'
 
+import { useState } from 'react'
 import './style.sass'
-import { FiCode, FiDatabase, FiLayers } from 'react-icons/fi'
+import { FiCode, FiDatabase, FiLayers, FiX } from 'react-icons/fi'
 import { DownloadCV } from '../DownloadCV'
 import { curricula } from '@/data/curricula'
 
 export const AboutMe = () => {
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null)
+
+  const openPreview = (url: string) => {
+    setPreviewUrl(url)
+  }
+
+  const closePreview = () => {
+    setPreviewUrl(null)
+  }
+
   return (
     <section className="about-me" id={"about"}>
       <div className="about-content">
@@ -46,12 +57,16 @@ export const AboutMe = () => {
 
             <div className="bio-actions">
               {curricula.map((curriculum, index) => (
-                <DownloadCV 
-                  key={index}
-                  filePath={curriculum.filePath} 
-                  fileName={curriculum.fileName} 
-                  buttonText={curriculum.buttonText} 
-                />
+                <div key={index} className="curriculum-actions">
+                  <DownloadCV 
+                    filePath={curriculum.filePath} 
+                    fileName={curriculum.fileName} 
+                    buttonText={curriculum.buttonText} 
+                  />
+                  <button onClick={() => openPreview(curriculum.filePath)} className="preview-button">
+                    Preview
+                  </button>
+                </div>
               ))}
             </div>
           </div>
@@ -95,6 +110,17 @@ export const AboutMe = () => {
           </div>
         </div>
       </div>
+
+      {previewUrl && (
+        <div className="preview-modal-overlay" onClick={closePreview}>
+          <div className="preview-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-preview-button" onClick={closePreview}>
+              <FiX />
+            </button>
+            <iframe src={previewUrl} title="Curriculum Preview" width="100%" height="100%"></iframe>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

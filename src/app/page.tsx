@@ -4,6 +4,7 @@ import {AboutMe} from "@/components/AboutMe"
 import {FeaturedProjects} from "@/components/FeaturedProjects"
 import {ContactSection} from "@/components/ContactSection"
 import {SkillsSection} from "@/components/SkillsSection";
+import {ExperienceSection} from "@/components/ExperienceSection";
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function Home() {
                 <Hero/>
                 <AboutMe/>
                 <SkillsSection/>
+                <ExperienceSection/>
                 <FeaturedProjects/>
                 <ContactSection/>
                 
