@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import './style.sass'
+import { menuItems } from "@/data/menuItems";
 
 export const CyberNav = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,14 +17,6 @@ export const CyberNav = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/#about' },
-    { label: 'Skills', href: '/#skills' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Contact', href: '/#contact' }
-  ]
 
   return (
     <nav className={`cyber-nav ${scrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
