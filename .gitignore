@@ -90,4 +90,5 @@ build/
 
 # PDF files
 *.pdf
-!public/*.pdf
+# Un-ignore PDFs in the public directory and its subdirectories
+!/public/**/*.pdf
