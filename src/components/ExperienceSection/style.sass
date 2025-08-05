@@ -1,0 +1,97 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.experience-section
+  padding: 4rem 2rem
+  background-color: variables.$bg-color
+  position: relative
+  overflow: hidden
+
+  .section-header
+    margin-bottom: 3rem
+    text-align: center
+
+    h2
+      @include mixins.section-title
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 1rem
+      font-size: 2.5rem
+
+      .header-decorator
+        color: variables.$accent-color
+        font-size: 1.5rem
+        opacity: 0.8
+
+      .blink
+        animation: blink 1s infinite
+
+  .experience-list
+    max-width: variables.$max-width
+    margin: 0 auto
+    display: grid
+    gap: 2rem
+
+    .experience-item
+      @include mixins.glass-effect
+      padding: 2rem
+      border-radius: 12px
+      border: 1px solid rgba(variables.$accent-color, 0.1)
+      transition: all 0.3s ease
+
+      &:hover
+        transform: translateY(-5px)
+        border-color: rgba(variables.$accent-color, 0.3)
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+
+      h3
+        margin-bottom: 0.5rem
+        color: variables.$text-color
+        font-family: variables.$font-mono
+        font-size: 1.5rem
+
+      .period
+        font-size: 1rem
+        color: variables.$text-color-secondary
+        margin-bottom: 1rem
+
+      .star-details
+        p
+          font-size: 1.1rem
+          line-height: 1.6
+          color: variables.$text-color
+          margin-bottom: 0.5rem
+
+          strong
+            color: variables.$accent-color
+
+@keyframes blink
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
+
+@media (max-width: 768px)
+  .experience-section
+    padding: 3rem 1rem
+
+    .section-header h2
+      font-size: 2rem
+
+    .experience-list
+      padding: 0 1rem
+
+      .experience-item
+        padding: 1.5rem
+
+        h3
+          font-size: 1.3rem
+
+        .period
+          font-size: 0.9rem
+
+        .star-details p
+          font-size: 1rem

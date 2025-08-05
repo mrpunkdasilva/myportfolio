@@ -46,7 +46,7 @@ export const SkillsSection = () => {
     }
 
     return (
-        <section id="skills" className="skills-section">
+        <section id="'skills'" className="skills-section">
             <div className="section-header">
                 <h2 data-text="Skills & Technologies">Skills & Technologies</h2>
                 <p>Technologies I've been working with recently</p>
