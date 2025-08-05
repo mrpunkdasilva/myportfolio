@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { ExperienceSection } from '@/components/ExperienceSection';
 
 export const metadata: Metadata = {
   title: 'Gustavo Henrique | Experience',
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <main>
-      <ExperienceSection />
+      <h1>Experience Page (Temporary)</h1>
     </main>
   );
 }
