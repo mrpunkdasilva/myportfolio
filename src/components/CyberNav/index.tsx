@@ -18,10 +18,10 @@ export const CyberNav = () => {
   }, [])
 
   const menuItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/#about' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Contact', href: '/#contact' }
   ]
 
   return (

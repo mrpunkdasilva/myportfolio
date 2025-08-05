@@ -4,7 +4,7 @@ import {AboutMe} from "@/components/AboutMe"
 import {FeaturedProjects} from "@/components/FeaturedProjects"
 import {ContactSection} from "@/components/ContactSection"
 import {SkillsSection} from "@/components/SkillsSection";
-import {ProjectsSection} from "@/components/ProjectsSection";
+
 
 export const metadata: Metadata = {
     title: 'Gustavo Henrique | Full Stack Developer',
@@ -23,7 +23,7 @@ export default function Home() {
                 <SkillsSection/>
                 <FeaturedProjects/>
                 <ContactSection/>
-                <ProjectsSection/>
+                
             </article>
         </main>
     )
