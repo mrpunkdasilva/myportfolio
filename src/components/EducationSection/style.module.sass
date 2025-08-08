@@ -1,0 +1,117 @@
+@use 'src/styles/variables'
+
+@keyframes fadeInUp
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes timelineGlow
+  0%
+    box-shadow: 0 0 5px variables.$accent-color
+  50%
+    box-shadow: 0 0 20px variables.$accent-color-secondary
+  100%
+    box-shadow: 0 0 5px variables.$accent-color
+
+.educationSection
+  padding: 2rem
+  max-width: 800px
+  margin: 0 auto
+  margin-top: 4rem
+
+  .title
+    font-size: 2.5rem
+    color: variables.$accent-color
+    margin-bottom: 4rem
+    text-align: center
+    position: relative
+    top: 148px
+    z-index: 2
+
+  .educationList
+    position: relative
+    padding-left: 60px
+    // Increased padding for more space
+
+    &::before
+      content: ''
+      position: absolute
+      left: 28px
+      // Position of the timeline line
+      top: 0
+      bottom: 0
+      width: 6px
+      // Thicker line
+      background: linear-gradient(to bottom, variables.$accent-color, variables.$accent-color-secondary)
+      // Cyberpunk gradient com variáveis Sass
+      animation: timelineGlow 3s infinite alternate
+
+  .educationItem
+    position: relative
+    background-color: variables.$bg-color-secondary
+    // Usando variável Sass
+    padding: 1.5rem
+    border-radius: 4px
+    // Sharper edges for cyberpunk look
+    box-shadow: 0 0 15px variables.$accent-color, 0 0 5px variables.$accent-color-secondary
+    // Neon glow com variáveis Sass
+    margin-bottom: 2.5rem
+    // More separation between items
+    border: 2px solid variables.$accent-color
+    // Stronger border com variável Sass
+    animation: fadeInUp 0.8s ease-out forwards
+    opacity: 0
+    // Start hidden for animation
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+
+    &:hover
+      transform: translateY(-5px)
+      // Lift effect on hover
+      box-shadow: 0 0 25px variables.$accent-color, 0 0 10px variables.$accent-color-secondary
+    // Stronger glow on hover
+
+    &::before
+      content: ''
+      position: absolute
+      left: -38px
+      // Position of the marker relative to the item
+      top: 18px
+      width: 24px
+      // Larger square marker
+      height: 24px
+      // Larger square marker
+      background-color: variables.$accent-color
+      // Usando variável Sass
+      border-radius: 4px
+      // Square shape
+      border: 2px solid variables.$bg-color
+      // Border to create a "cut-out" effect com variável Sass
+      box-shadow: 0 0 10px variables.$accent-color, 0 0 20px variables.$accent-color
+    // Stronger neon glow com variável Sass
+
+    h3
+      font-size: 1.8rem
+      color: variables.$text-color
+      // Usando variável Sass
+      margin-bottom: 0.5rem
+
+    .institution
+      font-size: 1.2rem
+      color: variables.$text-color-secondary
+      // Usando variável Sass
+      margin-bottom: 0.25rem
+
+    .period
+      font-size: 1rem
+      color: variables.$text-color-secondary
+      // Usando variável Sass
+      margin-bottom: 0.75rem
+
+    .description
+      font-size: 1rem
+      color: variables.$text-color
+      // Usando variável Sass
+      line-height: 1.5
