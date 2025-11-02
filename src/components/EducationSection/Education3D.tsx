@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import React, {useRef, useMemo} from 'react';
+import {Canvas, useFrame} from '@react-three/fiber';
+import {OrbitControls} from '@react-three/drei';
 import * as THREE from 'three';
 
 const KnowledgeNetwork: React.FC = () => {
   const groupRef = useRef<THREE.Group>(null);
 
-  const { positions, colors } = useMemo(() => {
+  const {positions, colors} = useMemo(() => {
     const numPoints = 50;
     const positions = new Float32Array(numPoints * 3);
     const colors = new Float32Array(numPoints * 3);
@@ -31,7 +31,7 @@ const KnowledgeNetwork: React.FC = () => {
       colors[i * 3 + 2] = color.b;
     }
 
-    return { positions, colors };
+    return {positions, colors};
   }, []);
 
   useFrame((state) => {
@@ -65,7 +65,7 @@ const KnowledgeNetwork: React.FC = () => {
             itemSize={3}
           />
         </bufferGeometry>
-        <pointsMaterial size={0.1} vertexColors={true} transparent opacity={0.8} />
+        <pointsMaterial size={0.1} vertexColors={true} transparent opacity={0.8}/>
       </points>
       {/* Add some lines to connect points */}
       {positions.map((_, i) => {
@@ -75,7 +75,9 @@ const KnowledgeNetwork: React.FC = () => {
           const geometry = new THREE.BufferGeometry().setFromPoints([p1, p2]);
           return (
             <line key={i} geometry={geometry}>
-              <lineBasicMaterial color={colors[i] ? new THREE.Color(colors[i], colors[i + 1], colors[i + 2]) : '#00FFFF'} transparent opacity={0.5} />
+              <lineBasicMaterial
+                color={colors[i] ? new THREE.Color(colors[i], colors[i + 1], colors[i + 2]) : '#00FFFF'} transparent
+                opacity={0.5}/>
             </line>
           );
         }
@@ -87,12 +89,12 @@ const KnowledgeNetwork: React.FC = () => {
 
 const Education3D: React.FC = () => {
   return (
-    <div style={{ height: '300px', width: '100%', marginTop: '2rem', position: 'relative' }}>
-      <Canvas camera={{ position: [0, 0, 5] }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <KnowledgeNetwork />
-        <OrbitControls enableZoom={false} enablePan={false} />
+    <div className={"education3D"} style={{height: '300px', width: '100%', marginTop: '2rem', position: 'relative'}}>
+      <Canvas camera={{position: [0, 0, 5]}}>
+        <ambientLight intensity={0.5}/>
+        <pointLight position={[10, 10, 10]}/>
+        <KnowledgeNetwork/>
+        <OrbitControls enableZoom={false} enablePan={false}/>
       </Canvas>
     </div>
   );

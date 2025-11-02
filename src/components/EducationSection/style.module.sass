@@ -8,19 +8,18 @@
     opacity: 1
     transform: translateY(0)
 
-@keyframes timelineGlow
-  0%
-    box-shadow: 0 0 5px variables.$accent-color
-  50%
-    box-shadow: 0 0 20px variables.$accent-color-secondary
-  100%
-    box-shadow: 0 0 5px variables.$accent-color
-
 .educationSection
   padding: 2rem
   max-width: 800px
   margin: 0 auto
   margin-top: 4rem
+
+  header
+    display: flex
+
+  .education3D
+    position: relative
+    left: -40%
 
   .title
     font-size: 2.5rem
@@ -47,7 +46,6 @@
       // Thicker line
       background: linear-gradient(to bottom, variables.$accent-color, variables.$accent-color-secondary)
       // Cyberpunk gradient com variáveis Sass
-      animation: timelineGlow 3s infinite alternate
 
   .educationItem
     position: relative
@@ -56,8 +54,6 @@
     padding: 1.5rem
     border-radius: 4px
     // Sharper edges for cyberpunk look
-    box-shadow: 0 0 15px variables.$accent-color, 0 0 5px variables.$accent-color-secondary
-    // Neon glow com variáveis Sass
     margin-bottom: 2.5rem
     // More separation between items
     border: 2px solid variables.$accent-color
@@ -65,13 +61,11 @@
     animation: fadeInUp 0.8s ease-out forwards
     opacity: 0
     // Start hidden for animation
-    transition: transform 0.3s ease, box-shadow 0.3s ease
+    transition: transform 0.3s ease
 
     &:hover
       transform: translateY(-5px)
       // Lift effect on hover
-      box-shadow: 0 0 25px variables.$accent-color, 0 0 10px variables.$accent-color-secondary
-    // Stronger glow on hover
 
     &::before
       content: ''
@@ -89,8 +83,6 @@
       // Square shape
       border: 2px solid variables.$bg-color
       // Border to create a "cut-out" effect com variável Sass
-      box-shadow: 0 0 10px variables.$accent-color, 0 0 20px variables.$accent-color
-    // Stronger neon glow com variável Sass
 
     h3
       font-size: 1.8rem
