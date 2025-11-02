@@ -68,20 +68,18 @@ const KnowledgeNetwork: React.FC = () => {
         <pointsMaterial size={0.1} vertexColors={true} transparent opacity={0.8}/>
       </points>
       {/* Add some lines to connect points */}
-      {positions.map((_, i) => {
-        if (i % 3 === 0 && i + 3 < positions.length) {
-          const p1 = new THREE.Vector3(positions[i], positions[i + 1], positions[i + 2]);
-          const p2 = new THREE.Vector3(positions[i + 3], positions[i + 4], positions[i + 5]);
-          const geometry = new THREE.BufferGeometry().setFromPoints([p1, p2]);
-          return (
-            <line key={i} geometry={geometry}>
-              <lineBasicMaterial
-                color={colors[i] ? new THREE.Color(colors[i], colors[i + 1], colors[i + 2]) : '#00FFFF'} transparent
-                opacity={0.5}/>
-            </line>
-          );
-        }
-        return null;
+      {Array.from({length: (positions.length / 3) - 1}).map((_, i) => {
+        const p1 = new THREE.Vector3(positions[i * 3], positions[i * 3 + 1], positions[i * 3 + 2]);
+        const p2 = new THREE.Vector3(positions[(i + 1) * 3], positions[(i + 1) * 3 + 1], positions[(i + 1) * 3 + 2]);
+        const geometry = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+        const colorIndex = i * 3;
+        return (
+          <primitive object={new THREE.Line(geometry, new THREE.LineBasicMaterial({
+                color: colors[colorIndex] ? new THREE.Color(colors[colorIndex], colors[colorIndex + 1], colors[colorIndex + 2]) : '#00FFFF',
+                transparent: true,
+                opacity: 0.5
+            }))} key={i} />
+        );
       })}
     </group>
   );
