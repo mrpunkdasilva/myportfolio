@@ -42,6 +42,7 @@ export const CyberNav = () => {
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className="nav-link"
+                {...(item.external && { target: "_blank", rel: "noopener noreferrer" })}
               >
                 <span className="link-text">{item.label}</span>
                 <span className="link-decorator"></span>
