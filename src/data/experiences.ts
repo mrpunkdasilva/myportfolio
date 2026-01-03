@@ -1,5 +1,29 @@
 export const experiences = [
   {
+    title: 'System Analyst',
+    company: 'Mutant',
+    period: 'October 2025 - Present',
+    location: 'Remote',
+    star: [
+      {
+        type: 'Situation',
+        description: 'Mutant required a developer with a strong focus on frontend technologies to enhance their projects.',
+      },
+      {
+        type: 'Task',
+        description: 'My role was to develop and maintain frontend applications, working primarily with TypeScript, Redux, and React.',
+      },
+      {
+        type: 'Action',
+        description: 'I actively contributed to the development of user interfaces, implementing new features, and managing state with Redux, all within a TypeScript-based React environment.',
+      },
+      {
+        type: 'Result',
+        description: 'Successfully delivered high-quality frontend solutions, improving application performance and user experience.',
+      },
+    ],
+  },
+  {
     title: 'Freelance Web Developer',
     company: 'JVJ E-commerce',
     period: 'November 2023',
