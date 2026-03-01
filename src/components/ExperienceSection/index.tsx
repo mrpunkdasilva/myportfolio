@@ -1,6 +1,6 @@
 'use client'
 
-import { experiences } from '@/data/experiences'
+import {experiences} from '@/data/experiences'
 import './style.sass'
 
 export const ExperienceSection = () => {
@@ -19,13 +19,7 @@ export const ExperienceSection = () => {
           <div key={index} className="experience-item">
             <h3>{exp.title} at {exp.company}</h3>
             <p className="period">{exp.period} | {exp.location}</p>
-            <div className="star-details">
-              {exp.star.map((detail, detailIndex) => (
-                <p key={detailIndex}>
-                  <strong>{detail.type}:</strong> {detail.description}
-                </p>
-              ))}
-            </div>
+            <p className="description">{exp.description}</p>
           </div>
         ))}
       </div>

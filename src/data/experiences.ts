@@ -4,71 +4,40 @@ export const experiences = [
     company: 'Mutant',
     period: 'October 2025 - Present',
     location: 'Remote',
-    star: [
-      {
-        type: 'Situation',
-        description: 'Mutant required a developer with a strong focus on frontend technologies to enhance their projects.',
-      },
-      {
-        type: 'Task',
-        description: 'My role was to develop and maintain frontend applications, working primarily with TypeScript, Redux, and React.',
-      },
-      {
-        type: 'Action',
-        description: 'I actively contributed to the development of user interfaces, implementing new features, and managing state with Redux, all within a TypeScript-based React environment.',
-      },
-      {
-        type: 'Result',
-        description: 'Successfully delivered high-quality frontend solutions, improving application performance and user experience.',
-      },
-    ],
+    description: 'Working as a frontend-focused developer, I specialize in building and maintaining high-quality user interfaces using TypeScript, Redux, and React. My role involves implementing new features, managing complex application states, and ensuring optimal performance and user experience across diverse digital solutions.',
   },
   {
-    title: 'Freelance Web Developer',
-    company: 'JVJ E-commerce',
+    title: 'Volunteer Programming Mentor (Programming 1)',
+    company: 'Jala University',
+    period: 'July 2025 – August 2025',
+    location: 'Remote',
+    description: 'Acted as a volunteer mentor in the Mentor U Program, guiding students through the fundamentals of Java programming. To support their learning journey, I developed and shared "NetRunner: Java Mastery Guide", an interactive roadmap that covers everything from basic concepts to advanced development practices, while facilitating engaging mentoring sessions.',
+  },
+  {
+    title: 'Volunteer Programming Mentor (Programming 2)',
+    company: 'Jala University',
+    period: 'July 2025 – August 2025',
+    location: 'Remote',
+          description: 'Participated as a mentor in the Mentor U Program at Jala University, providing academic and technical support to students in the Programming 2 course. I contributed 26 mentoring hours focused on strengthening their understanding of advanced programming concepts and problem-solving strategies, helping mentees overcome technical challenges.',
+      },
+      {
+        title: 'Volunteer Software Development Mentor (Software Development 1)',
+        company: 'Jala University',
+        period: 'September 2025',
+        location: 'Remote',
+        description: 'Served as a mentor in the Mentor U Program during Module 1 of T2 2025, dedicating 8 hours to mentoring students in the Software Development 1 course. My role included providing technical guidance, supporting students in learning fundamental software development concepts, and assisting with practical challenges, contributing to their academic growth and success.',
+      },
+      {
+        title: 'Freelance Web Developer',    company: 'JVJ E-commerce',
     period: 'November 2023',
     location: 'São Paulo, Brazil',
-    star: [
-      {
-        type: 'Situation',
-        description: 'JVJ E-commerce needed a responsive homepage for a final project presentation.',
-      },
-      {
-        type: 'Task',
-        description: 'Develop a responsive homepage and create the visual identity for the store.',
-      },
-      {
-        type: 'Action',
-        description: "Developed a responsive homepage using jQuery, Bootstrap, and CSS. Created the visual identity aligned with the client's proposal. Managed time and prioritized technologies.",
-      },
-      {
-        type: 'Result',
-        description: "Delivered the prototype in just two days, ensuring usability and modern design, and meeting the deadline without compromising final product quality.",
-      },
-    ],
+    description: 'Developed a responsive homepage and created the visual identity for JVJ E-commerce. Using a stack of jQuery, Bootstrap, and CSS, I delivered a fully functional prototype in just two days, ensuring a modern design and excellent usability while meeting a tight deadline for a final project presentation.',
   },
   {
     title: 'Freelance Web Developer',
     company: 'Cadmo SA Dental Clinic',
     period: 'April 2022 – September 2022',
     location: 'São Paulo, Brazil',
-    star: [
-      {
-        type: 'Situation',
-        description: 'Cadmo SA Dental Clinic required a comprehensive web system.',
-      },
-      {
-        type: 'Task',
-        description: 'Lead the full web system development, including design, frontend, backend, database, and technical documentation.',
-      },
-      {
-        type: 'Action',
-        description: 'Applied PHP, MySQL, JavaScript, jQuery, CSS, HTML, and Git. Performed system planning and analysis.',
-      },
-      {
-        type: 'Result',
-        description: 'Delivered a robust and scalable system within the stipulated deadline, ensuring adherence to client needs and product quality.',
-      },
-    ],
+    description: 'Led the end-to-end development of a comprehensive web system for Cadmo SA Dental Clinic. Responsible for planning, design, frontend, backend, and database implementation using PHP, MySQL, and JavaScript, I delivered a robust and scalable solution that fully met the client’s operational needs and technical requirements.',
   },
 ];

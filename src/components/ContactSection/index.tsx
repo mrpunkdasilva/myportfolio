@@ -2,9 +2,14 @@
 
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 import listSocialNetworks from '@/data/socialNetworks'
+import informations from '@/data/informations'
 import './style.sass'
 
 export const ContactSection = () => {
+    const email = informations.find(info => info.details.title === "Email")?.details.content;
+    const phone = informations.find(info => info.details.title === "Phone")?.details.content;
+    const location = informations.find(info => info.details.title === "Location")?.details.content;
+
     return (
         <section className="contact-section" id="contact">
             <div className="section-header">
@@ -18,7 +23,7 @@ export const ContactSection = () => {
                         <FiMail className="icon" />
                         <div className="info-content">
                             <h3>Email</h3>
-                            <a href="mailto:gustavojs417@gmail.com">gustavojs417@gmail.com</a>
+                            <a href={`mailto:${email}`}>{email}</a>
                         </div>
                     </div>
 
@@ -26,7 +31,7 @@ export const ContactSection = () => {
                         <FiPhone className="icon" />
                         <div className="info-content">
                             <h3>Phone</h3>
-                            <a href="tel:+5511985976152">+55 (11) 98597-6152</a>
+                            <a href={`tel:${phone?.replace(/\D/g, '')}`}>{phone}</a>
                         </div>
                     </div>
 
@@ -34,7 +39,7 @@ export const ContactSection = () => {
                         <FiMapPin className="icon" />
                         <div className="info-content">
                             <h3>Location</h3>
-                            <p>SP - SP, Brazil</p>
+                            <p>{location}</p>
                         </div>
                     </div>
 
