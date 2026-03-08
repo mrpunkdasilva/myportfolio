@@ -13,7 +13,7 @@ export interface Project {
 
 export const projects: Project[] = [
      {
-        title: "Coffee Website",
+        title: "BeanToWeb",
         description: "Development of a responsive landing page for a coffee shop using HTML, CSS, and JavaScript.",
         technologies: ["JavaScript", "CSS", "HTML", "UI/UX", "Semantic HTML", "Web Project Management"],
         challenges: [
@@ -38,8 +38,8 @@ export const projects: Project[] = [
             "Modern web development practices",
             "SEO optimization techniques"
         ],
-        link: "https://mrpunkdasilva.github.io/coffee-website/",
-        githubLink: "https://github.com/mrpunkdasilva/coffee-website/"
+        link: "https://mrpunkdasilva.github.io/BeanToWeb/",
+        githubLink: "https://github.com/mrpunkdasilva/BeanToWeb"
     },
     {
         title: "Doces da Thay - E-commerce Frontend",

@@ -47,7 +47,7 @@ export const Hero = () => {
           ))}
         </div>
         <div className="cta-buttons">
-          <a href="#projects" className="primary-btn">View Projects</a>
+          <a href="/projects" className="primary-btn">View Projects</a>
           <a href="#contact" className="secondary-btn">Contact Me</a>
         </div>
       </div>
