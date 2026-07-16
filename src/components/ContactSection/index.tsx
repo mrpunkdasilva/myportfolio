@@ -28,14 +28,6 @@ export const ContactSection = () => {
                     </div>
 
                     <div className="info-item">
-                        <FiPhone className="icon" />
-                        <div className="info-content">
-                            <h3>Phone</h3>
-                            <a href={`tel:${phone?.replace(/\D/g, '')}`}>{phone}</a>
-                        </div>
-                    </div>
-
-                    <div className="info-item">
                         <FiMapPin className="icon" />
                         <div className="info-content">
                             <h3>Location</h3>
